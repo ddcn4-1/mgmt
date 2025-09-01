@@ -1,0 +1,11 @@
+{
+  "title": "공연 티켓팅 서비스 GitBook",
+  "plugins": [
+    "mermaid-gb3"
+  ],
+  "pluginsConfig": {
+    "mermaid-gb3": {
+      "theme": "default"
+    }
+  }
+}

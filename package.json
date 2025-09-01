@@ -1,0 +1,14 @@
+{
+  "name": "ticketing-gitbook",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "docs:install": "npm i -D honkit gitbook-plugin-mermaid-gb3",
+    "docs:serve": "honkit serve",
+    "docs:build": "honkit build"
+  },
+  "devDependencies": {
+    "gitbook-plugin-mermaid-gb3": "^2.1.0",
+    "honkit": "^6.0.3"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "installCommand": "npm ci",
+  "buildCommand": "npm run docs:build",
+  "outputDirectory": "_book",
+  "git": {
+    "deploymentEnabled": {
+      "main": true
+    }
+  }
+}
