@@ -20,20 +20,20 @@
 ## 적용한 Feature Request 템플릿
 
 ```markdown
-### 이슈 타입 (하나 이상의 타입을 선택)
+### 이슈 타입
 - [ ] Feat : 새로운 기능 추가
 - [ ] Fix : 버그 수정
 
-### 반영 브랜치
-ex) feat/#1 (이슈 넘버)
-
-### 기능 내용
+### 목표 기능 내용
 ex) 로그인 시, 구글 소셜 로그인 기능을 추가했습니다.
 
 ### 작업 상세 내용
-- [ ] TODO 1
-- [ ] TODO 2  
-- [ ] TODO 3
+
+- [ ] TODO
+- [ ] TODO
+- [ ] TODO
+
+### References
 ```
 
 ## Issue Template 활용
