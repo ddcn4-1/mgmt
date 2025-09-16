@@ -2,10 +2,10 @@ name: Deploy Main Documentation
 
 on:
     push:
-        branches: [main] # main 브랜치에 푸시할 때
-        paths: ['**/*.md', 'book.json', 'package.json', 'SUMMARY.md'] # 관련 파일 변경시에만
+        branches: [main]
+        paths: ['**/*.md', 'book.json', 'package.json', 'SUMMARY.md']
     workflow_run:
-        workflows: ['Update SUMMARY.md'] # SUMMARY 업데이트 후 자동 실행
+        workflows: ['Update SUMMARY.md']
         types: [completed]
         branches: [main]
 
