@@ -63,3 +63,7 @@
 ## 01 Intro
 
 * [Main Test2](01-intro/main-test2.md)
+
+## 01 Intro
+
+* [Permission Test](01-intro/permission-test.md)
