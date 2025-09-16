@@ -2,8 +2,7 @@ name: Build
 on:
     pull_request:
         paths: ['**/*.md', 'book.json', 'package.json']
-    push: #for test in feat/#33. todo: delete
-        branches: ['feat/#33']
+
 jobs:
     build:
         runs-on: ubuntu-latest
