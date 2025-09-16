@@ -51,3 +51,7 @@
 ## 01 Intro
 
 * [Extrat Logic Auto Summary2](01-intro/extrat-logic-auto-summary2.md)
+
+## 06 Frontend
+
+* [Frontend Migration](06-frontend/frontend-migration.md)
