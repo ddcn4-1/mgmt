@@ -3,7 +3,7 @@
 <html lang="" >
     <head>
         <meta charset="UTF-8">
-        <title>클라이언트 (사용자 예매) · 공연 티켓팅 서비스 GitBook</title>
+        <title>Permission Test · 공연 티켓팅 서비스 GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="HonKit 6.0.3">
@@ -68,10 +68,8 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="../09-admin/01-backoffice.html" />
     
-    
-    <link rel="prev" href="../07-backend/01-api.html" />
+    <link rel="prev" href="main-test2.md" />
     
 
     </head>
@@ -120,9 +118,9 @@
         
         
     
-        <li class="chapter " data-level="2.1" data-path="../01-intro/01-overview.html">
+        <li class="chapter " data-level="2.1" data-path="01-overview.html">
             
-                <a href="../01-intro/01-overview.html">
+                <a href="01-overview.html">
             
                     
                     주제 및 기대 효과
@@ -238,9 +236,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="4.3" data-path="01-client.html">
+        <li class="chapter " data-level="4.3" data-path="../06-frontend/01-client.html">
             
-                <a href="01-client.html">
+                <a href="../06-frontend/01-client.html">
             
                     
                     클라이언트 (사용자 예매)
@@ -384,7 +382,7 @@
         
         
     
-        <li class="chapter " data-level="10.1" data-path="../01-intro/auto-summary-test.md">
+        <li class="chapter " data-level="10.1" data-path="auto-summary-test.md">
             
                 <span>
             
@@ -509,7 +507,7 @@
         
         
     
-        <li class="chapter " data-level="13.1" data-path="../01-intro/extrat-logic-auto-summary2.md">
+        <li class="chapter " data-level="13.1" data-path="extrat-logic-auto-summary2.md">
             
                 <span>
             
@@ -529,9 +527,9 @@
         
         
     
-        <li class="chapter " data-level="14.1" data-path="frontend-migration.html">
+        <li class="chapter " data-level="14.1" data-path="../06-frontend/frontend-migration.html">
             
-                <a href="frontend-migration.html">
+                <a href="../06-frontend/frontend-migration.html">
             
                     
                     Frontend Migration
@@ -549,7 +547,7 @@
         
         
     
-        <li class="chapter " data-level="15.1" data-path="../01-intro/main-test.md">
+        <li class="chapter " data-level="15.1" data-path="main-test.md">
             
                 <span>
             
@@ -569,7 +567,7 @@
         
         
     
-        <li class="chapter " data-level="16.1" data-path="../01-intro/main-test2.md">
+        <li class="chapter " data-level="16.1" data-path="main-test2.md">
             
                 <span>
             
@@ -589,9 +587,9 @@
         
         
     
-        <li class="chapter " data-level="17.1" data-path="../01-intro/permission-test.html">
+        <li class="chapter active" data-level="17.1" data-path="permission-test.html">
             
-                <a href="../01-intro/permission-test.html">
+                <a href="permission-test.html">
             
                     
                     Permission Test
@@ -632,7 +630,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >클라이언트 (사용자 예매)</a>
+        <a href=".." >Permission Test</a>
     </h1>
 </div>
 
@@ -647,39 +645,7 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="클라이언트-사용자-예매">클라이언트 (사용자 예매)</h1>
-<h2 id="주요-화면기능">주요 화면/기능</h2>
-<ul>
-<li>로그인/회원: JWT 기반 인증(또는 세션)</li>
-<li>공연 목록/상세: 검색/필터, 상세 페이지</li>
-<li>예매: 좌석 맵 선택(선착순), 예약/결제 플로우</li>
-<li>취소: 예매 취소 요청 및 상태 확인</li>
-</ul>
-<h2 id="ux-고려사항">UX 고려사항</h2>
-<ul>
-<li>좌석 선택 충돌 최소화: 선택 상태 즉시 표시, 타임아웃 안내</li>
-<li>실패 복구 플로우: 네트워크 오류/락 실패 시 재시도 가이드</li>
-<li>접근성: 키보드 내비게이션, 명확한 오류 메시지</li>
-</ul>
-<h2 id="api-연계-예시">API 연계 예시</h2>
-<pre><code class="lang-http">GET /api/v1/events
-GET /api/v1/events/{eventId}
-POST /api/v1/orders  (body: eventId, seatIds)
-DELETE /api/v1/orders/{orderId}
-</code></pre>
-<h2 id="학습-포인트">학습 포인트</h2>
-<ul>
-<li>낙관적/비관적 UI 업데이트 전략</li>
-<li>실시간 선택 상태 반영(폴링/웹소켓/서버센트 이벤트 비교)</li>
-<li>API 실패 시 UX 복구 설계 패턴</li>
-</ul>
-<h2 id="실습-과제">실습 과제</h2>
-<ul>
-<li>좌석 맵 모의 데이터로 선택/해제/타임아웃 UI 프로토타입 구현</li>
-<li>React Query로 예매 상태 폴링/에러 핸들링 추가</li>
-<li>OpenAPI 스펙으로 타입생성 → API 클라이언트 연동</li>
-</ul>
-
+                                
                                 
                                 </section>
                             
@@ -706,14 +672,10 @@ DELETE /api/v1/orders/{orderId}
 
             
                 
-                <a href="../07-backend/01-api.html" class="navigation navigation-prev " aria-label="Previous page: 백엔드 API 설계">
+                <a href="main-test2.md" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Main Test2">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
-                
-                <a href="../09-admin/01-backoffice.html" class="navigation navigation-next " aria-label="Next page: 어드민/백오피스">
-                    <i class="fa fa-angle-right"></i>
-                </a>
                 
             
         
@@ -722,7 +684,7 @@ DELETE /api/v1/orders/{orderId}
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"클라이언트 (사용자 예매)","level":"4.3","depth":1,"next":{"title":"어드민/백오피스","level":"4.4","depth":1,"path":"09-admin/01-backoffice.md","ref":"09-admin/01-backoffice.md","articles":[]},"previous":{"title":"백엔드 API 설계","level":"4.2","depth":1,"path":"07-backend/01-api.md","ref":"07-backend/01-api.md","articles":[]},"dir":"ltr"},"config":{"plugins":["mermaid-gb3"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"mermaid-gb3":{"theme":"default"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"공연 티켓팅 서비스 GitBook","gitbook":"*"},"file":{"path":"06-frontend/01-client.md","mtime":"2025-09-16T07:16:59.981Z","type":"markdown"},"gitbook":{"version":"6.0.3","time":"2025-09-16T07:17:14.742Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Permission Test","level":"17.1","depth":1,"previous":{"title":"Main Test2","level":"16.1","depth":1,"path":"01-intro/main-test2.md","ref":"01-intro/main-test2.md","articles":[]},"dir":"neutral"},"config":{"plugins":["mermaid-gb3"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"mermaid-gb3":{"theme":"default"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"공연 티켓팅 서비스 GitBook","gitbook":"*"},"file":{"path":"01-intro/permission-test.md","mtime":"2025-09-16T07:16:59.980Z","type":"markdown"},"gitbook":{"version":"6.0.3","time":"2025-09-16T07:17:14.742Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
