@@ -2,7 +2,7 @@ name: Update SUMMARY.md
 
 on:
     push:
-        branches: [main, 'feat/#32']
+        branches: [main]
         paths: ['**/*.md', '!SUMMARY.md']
 
 jobs:
@@ -22,6 +22,7 @@ jobs:
               uses: actions/setup-node@v3
               with:
                   node-version: 'lts/*'
+                  cache: 'npm'
 
             - name: Update SUMMARY.md
               run: npm run docs:update-summary
