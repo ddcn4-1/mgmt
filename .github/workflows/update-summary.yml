@@ -1,0 +1,41 @@
+name: Update SUMMARY.md
+
+on:
+    push:
+        branches: [main, 'feat/#32']
+        paths: ['**/*.md', '!SUMMARY.md']
+
+jobs:
+    update-summary:
+        runs-on: ubuntu-latest
+
+        permissions:
+            contents: write
+
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v4
+              with:
+                  token: ${{ secrets.GITHUB_TOKEN }}
+
+            - name: Setup Node.js LTS
+              uses: actions/setup-node@v3
+              with:
+                  node-version: 'lts/*'
+
+            - name: Update SUMMARY.md
+              run: npm run docs:update-summary
+
+            - name: Commit updated SUMMARY.md
+              run: |
+                  git config --local user.email "action@github.com"
+                  git config --local user.name "GitHub Action"
+
+                  if ! git diff --quiet SUMMARY.md; then
+                    echo "SUMMARY.md has been updated, committing..."
+                    git add SUMMARY.md
+                    git commit -m "docs: Auto-update SUMMARY.md with new documents [skip ci]"
+                    git push
+                  else
+                    echo "No changes in SUMMARY.md"
+                  fi
