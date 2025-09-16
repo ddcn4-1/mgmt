@@ -1,7 +1,7 @@
 name: Build
 on:
     pull_request:
-    push:
+    push: #for test in feat/#32. todo: delete
 
 jobs:
     build:
