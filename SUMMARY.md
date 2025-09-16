@@ -47,3 +47,7 @@
 * [Folder Structure in SpringBoot](07-backend/04-springboot-folder-structure.md)
 * [Error 처리 공통 클래스 in Spring Boot](07-backend/05-springboot-utils-error.md)
 * [Spring Boot Actuator](07-backend/06-springboot-actuator.md)
+
+## 01 Intro
+
+* [Extrat Logic Auto Summary2](01-intro/extrat-logic-auto-summary2.md)
