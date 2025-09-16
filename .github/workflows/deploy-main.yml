@@ -1,0 +1,41 @@
+name: Deploy Main Documentation
+
+on:
+    push:
+        branches: [main] # main 브랜치에 푸시할 때
+        paths: ['**/*.md', 'book.json', 'package.json', 'SUMMARY.md'] # 관련 파일 변경시에만
+    workflow_run:
+        workflows: ['Update SUMMARY.md'] # SUMMARY 업데이트 후 자동 실행
+        types: [completed]
+        branches: [main]
+
+jobs:
+    deploy-main:
+        runs-on: ubuntu-latest
+
+        permissions:
+            contents: read
+            pages: write
+            id-token: write
+
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v4
+
+            - name: Setup Node.js
+              uses: actions/setup-node@v3
+              with:
+                  node-version: 'lts/*'
+                  cache: 'npm'
+
+            - name: Build documentation
+              run: |
+                  npm install
+                  npx honkit build
+
+            - name: Deploy to GitHub Pages
+              uses: peaceiris/actions-gh-pages@v3
+              with:
+                  github_token: ${{ secrets.GITHUB_TOKEN }}
+                  publish_dir: ./_book
+                  commit_message: 'Deploy: ${{ github.sha }}'
