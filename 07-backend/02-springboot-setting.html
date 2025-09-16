@@ -1,0 +1,1030 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <title>Spring Boot 세팅 · 공연 티켓팅 서비스 GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="HonKit 6.0.3">
+        
+        
+        
+    
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-mermaid-gb3/mermaid/mermaid.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/@honkit/honkit-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/@honkit/honkit-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+
+    
+        
+        
+        <link rel="stylesheet" href="../gitbook/gitbook-plugin-mermaid-gb3/mermaid/mermaid.default.css" />
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="03-test CRUD controller.html" />
+    
+    
+    <link rel="prev" href="../03-conventions/github-project-v1.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book honkit-cloak">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    소개
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">개요</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../01-intro/01-overview.html">
+            
+                <a href="../01-intro/01-overview.html">
+            
+                    
+                    주제 및 기대 효과
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../02-goals/01-mvp.html">
+            
+                <a href="../02-goals/01-mvp.html">
+            
+                    
+                    목표 및 구현 계획
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="../03-conventions/01-standards.html">
+            
+                <a href="../03-conventions/01-standards.html">
+            
+                    
+                    공통 규칙(컨벤션)
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">아키텍처</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="../04-architecture/01-stack.html">
+            
+                <a href="../04-architecture/01-stack.html">
+            
+                    
+                    기술 스택
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="../04-architecture/02-design.html">
+            
+                <a href="../04-architecture/02-design.html">
+            
+                    
+                    설계 다이어그램
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="../05-security/01-guide.html">
+            
+                <a href="../05-security/01-guide.html">
+            
+                    
+                    보안 가이드
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">도메인/구현</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="../08-database/01-erd.html">
+            
+                <a href="../08-database/01-erd.html">
+            
+                    
+                    데이터베이스 ERD
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="01-api.html">
+            
+                <a href="01-api.html">
+            
+                    
+                    백엔드 API 설계
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="../06-frontend/01-client.html">
+            
+                <a href="../06-frontend/01-client.html">
+            
+                    
+                    클라이언트 (사용자 예매)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4" data-path="../09-admin/01-backoffice.html">
+            
+                <a href="../09-admin/01-backoffice.html">
+            
+                    
+                    어드민/백오피스
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">테스트와 성능</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="../10-testing/01-performance.html">
+            
+                <a href="../10-testing/01-performance.html">
+            
+                    
+                    테스트와 성능
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">인프라</li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" data-path="../11-infra/01-deployment.html">
+            
+                <a href="../11-infra/01-deployment.html">
+            
+                    
+                    인프라 배포
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">운영/모니터링</li>
+        
+        
+    
+        <li class="chapter " data-level="7.1" data-path="../12-operations/01-monitoring.html">
+            
+                <a href="../12-operations/01-monitoring.html">
+            
+                    
+                    운영/모니터링
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">프로젝트 관리</li>
+        
+        
+    
+        <li class="chapter " data-level="8.1" data-path="../13-sprints/01-plan.html">
+            
+                <a href="../13-sprints/01-plan.html">
+            
+                    
+                    스프린트/절차
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.2" data-path="../14-team/01-roles.html">
+            
+                <a href="../14-team/01-roles.html">
+            
+                    
+                    팀 구성/역할
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">부록</li>
+        
+        
+    
+        <li class="chapter " data-level="9.1" data-path="../15-appendix/01-exercises.html">
+            
+                <a href="../15-appendix/01-exercises.html">
+            
+                    
+                    실습 모음
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">01 Intro</li>
+        
+        
+    
+        <li class="chapter " data-level="10.1" data-path="../01-intro/auto-summary-test.html">
+            
+                <a href="../01-intro/auto-summary-test.html">
+            
+                    
+                    Auto Summary Test
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">03 Conventions</li>
+        
+        
+    
+        <li class="chapter " data-level="11.1" data-path="../03-conventions/02-issue-template.html">
+            
+                <a href="../03-conventions/02-issue-template.html">
+            
+                    
+                    GitHub Issue Template 생성 및 활용 가이드
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="11.2" data-path="../03-conventions/github-project-v1.html">
+            
+                <a href="../03-conventions/github-project-v1.html">
+            
+                    
+                    GitHub 프로젝트 관리 가이드 (v1)
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">07 Backend</li>
+        
+        
+    
+        <li class="chapter active" data-level="12.1" data-path="02-springboot-setting.html">
+            
+                <a href="02-springboot-setting.html">
+            
+                    
+                    Spring Boot 세팅
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="12.2" data-path="03-test CRUD controller.html">
+            
+                <a href="03-test CRUD controller.html">
+            
+                    
+                    [실습] test CRUD controller 만들기
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="12.3" data-path="04-springboot-folder-structure.html">
+            
+                <a href="04-springboot-folder-structure.html">
+            
+                    
+                    Folder Structure in SpringBoot
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="12.4" data-path="05-springboot-utils-error.html">
+            
+                <a href="05-springboot-utils-error.html">
+            
+                    
+                    Error 처리 공통 클래스 in Spring Boot
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="12.5" data-path="06-springboot-actuator.html">
+            
+                <a href="06-springboot-actuator.html">
+            
+                    
+                    Spring Boot Actuator
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">01 Intro</li>
+        
+        
+    
+        <li class="chapter " data-level="13.1" data-path="../01-intro/extrat-logic-auto-summary2.html">
+            
+                <a href="../01-intro/extrat-logic-auto-summary2.html">
+            
+                    
+                    Extrat Logic Auto Summary2
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">06 Frontend</li>
+        
+        
+    
+        <li class="chapter " data-level="14.1" data-path="../06-frontend/frontend-migration.html">
+            
+                <a href="../06-frontend/frontend-migration.html">
+            
+                    
+                    Frontend Migration
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">01 Intro</li>
+        
+        
+    
+        <li class="chapter " data-level="15.1" data-path="../01-intro/main-test.html">
+            
+                <a href="../01-intro/main-test.html">
+            
+                    
+                    Main Test
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
+            Published with HonKit
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Spring Boot 세팅</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="spring-boot-세팅">Spring Boot 세팅</h1>
+<p>코드 스니펫들은 모두 예시로, 실제 프로젝트에서의 코드와는 다를 수 있습니다.
+<br></br> 필요 시 하단 reference의 공식문서를 참고 바랍니다.</p>
+<h2 id="spring-boot란">Spring Boot란?</h2>
+<p>Spring 기반 애플리케이션 개발 프레임워크입니다.</p>
+<ul>
+<li>주요 특징<ul>
+<li>자동 설정(Auto Configuration): 복잡한 설정을 자동으로 처리</li>
+<li>내장 서버: Tomcat, Jetty 등 내장 WAS 제공</li>
+<li>스타터 패키지: 관련 의존성을 묶어서 제공</li>
+<li>운영 편의성: Actuator를 통한 모니터링 기능</li>
+</ul>
+</li>
+</ul>
+<pre><code class="lang-properties"><span class="hljs-comment">#기존 Spring (복잡한 XML 설정)</span>
+<span class="hljs-attr">&lt;bean</span> <span class="hljs-string">id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"&gt;</span>
+    <span class="hljs-attr">&lt;property</span> <span class="hljs-string">name="driverClassName" value="org.postgresql.Driver"/&gt;</span>
+    <span class="hljs-attr">&lt;property</span> <span class="hljs-string">name="url" value="jdbc:postgresql://localhost/ticketing"/&gt;</span>
+<span class="hljs-attr">&lt;/bean&gt;</span>
+<span class="hljs-comment">
+# Spring Boot (간단한 설정)</span>
+<span class="hljs-attr">spring</span>:<span class="hljs-string"></span>
+  <span class="hljs-attr">datasource</span>:<span class="hljs-string"></span>
+    <span class="hljs-attr">url</span>: <span class="hljs-string">jdbc:postgresql://localhost/ticketing</span>
+</code></pre>
+<h2 id="jpa란">JPA란?</h2>
+<p>Java Persistence API는 Java 진영의 ORM(Object-Relational Mapping) 표준 명세</p>
+<ul>
+<li>객체 지향적 데이터 접근: SQL 대신 메서드로 데이터 조작</li>
+<li>데이터베이스 독립성: 데이터베이스 변경 시 코드 수정 최소화</li>
+<li>생산성 향상: 반복적인 CRUD 코드 자동 생성</li>
+</ul>
+<pre><code class="lang-java"> <span class="hljs-comment">// 복잡한 SQL 없이 객체 관계로 데이터 접근</span>
+<span class="hljs-meta">@Entity</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Performance</span> {
+    <span class="hljs-meta">@Id</span>
+    <span class="hljs-meta">@GeneratedValue(strategy = GenerationType.IDENTITY)</span>
+    <span class="hljs-keyword">private</span> Long performanceId;
+
+    <span class="hljs-meta">@OneToMany(mappedBy = "performance")</span>
+    <span class="hljs-keyword">private</span> List&lt;Seat&gt; seats;
+}
+</code></pre>
+<h2 id="프로젝트-개요">프로젝트 개요</h2>
+<h3 id="mvp">MVP</h3>
+<ul>
+<li><p>클라이언트 페이지</p>
+<ol>
+<li>공연 조회: 전체 공연 목록과 상세 정보 제공</li>
+<li>예매 기능: 좌석 선택(선착순 방식), 예약 프로세스 진행</li>
+<li>취소: 예매 취소</li>
+</ol>
+</li>
+<li><p>어드민 페이지</p>
+<ol>
+<li>대시보드: 트래픽 지표 등의 데이터 시각화</li>
+<li>권한 관리: 개발자, 데브옵스, 운영으로 나누어 권한 설정/관리</li>
+<li>사용자 계정 권한에 따른 서버 증설 등의 권한 차별 부여<ul>
+<li>트래픽 제어: 백오피스 인프라 확장 및 스케일링 기능
+(AWS CLI를 이용한 간단한 스케일링)</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+<p>Auth는 소셜 로그인 없이 구현할 예정입니다.</p>
+<h2 id="spring-initializr"><a href="https://start.spring.io/" target="_blank">spring initializr</a></h2>
+<p><img src="image/springboot1.png" alt="screenshot"></img></p>
+<h3 id="dependancy">Dependancy</h3>
+<h4 id="developer-tool">Developer Tool</h4>
+<ul>
+<li><p>Spring Boot DevTools</p>
+<ul>
+<li>개발 중 코드 변경 시 애플리케이션을 자동으로 재시작하여 개발 생산성을 향상시킵니다.</li>
+</ul>
+</li>
+<li><p>Lombok</p>
+<ul>
+<li>보일러플레이트 코드를 자동 생성하여 코드 작성량을 줄입니다.<pre><code class="lang-java"><span class="hljs-meta">@Entity</span>
+<span class="hljs-meta">@Getter</span> <span class="hljs-meta">@Setter</span>
+<span class="hljs-meta">@NoArgsConstructor</span> <span class="hljs-meta">@AllArgsConstructor</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Performance</span> {
+    <span class="hljs-comment">// getter, setter, 생성자 자동 생성</span>
+}
+</code></pre>
+</li>
+</ul>
+</li>
+<li><p>Docker Compose Support</p>
+<ul>
+<li>개발 환경에서 PostgreSQL, Redis 등의 외부 서비스를 쉽게 실행할 수 있도록 지원합니다.</li>
+</ul>
+</li>
+</ul>
+<h4 id="web">Web</h4>
+<ul>
+<li><p>Spring Web</p>
+<ul>
+<li><p>REST API 개발을 위한 핵심 의존성으로, 내장 Tomcat과 Spring MVC를 포함합니다.</p>
+<pre><code class="lang-java"><span class="hljs-meta">@RestController</span>
+<span class="hljs-meta">@RequestMapping("/api/performances")</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">PerformanceController</span> {
+    <span class="hljs-comment">// REST API 엔드포인트 구현</span>
+}
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="security">Security</h4>
+<ul>
+<li>Spring Security<ul>
+<li>인증/인가 처리를 위한 프레임워크입니다. JWT 토큰 기반 인증을 구현할 예정<pre><code class="lang-java"><span class="hljs-comment">// 향후 JWT 인증 구현 예정</span>
+<span class="hljs-meta">@PostMapping("/login")</span>
+<span class="hljs-keyword">public</span> ResponseEntity&lt;LoginResponse&gt; <span class="hljs-title function_">login</span><span class="hljs-params">(<span class="hljs-meta">@RequestBody</span> LoginRequest request)</span> {
+    <span class="hljs-type">String</span> <span class="hljs-variable">token</span> <span class="hljs-operator">=</span> jwtUtil.generateToken(user);
+    <span class="hljs-keyword">return</span> ResponseEntity.ok(<span class="hljs-keyword">new</span> <span class="hljs-title class_">LoginResponse</span>(token));
+}
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="sql--nosql">SQL &amp; NOSQL</h4>
+<ul>
+<li><p>Spring Data JPA</p>
+<ul>
+<li>ORM 및 데이터 접근 계층을 제공합니다.<pre><code class="lang-java"><span class="hljs-meta">@Repository</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">interface</span> <span class="hljs-title class_">PerformanceRepository</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">JpaRepository</span>&lt;Performance, Long&gt; {
+    List&lt;Performance&gt; <span class="hljs-title function_">findByStatusAndStartDateAfter</span><span class="hljs-params">(Status status, LocalDateTime date)</span>;
+}
+</code></pre>
+</li>
+</ul>
+</li>
+<li><p>PostgreSQL Driver</p>
+<ul>
+<li>운영 환경에서 사용할 메인 데이터베이스 드라이버</li>
+</ul>
+</li>
+<li>H2 Database<ul>
+<li>개발 및 테스트용 인메모리 데이터베이스</li>
+</ul>
+</li>
+<li>Spring Data Redis(Access + Driver)<ul>
+<li>캐싱, 좌석 잠금, 세션 관리를 위한 Redis 연동</li>
+</ul>
+</li>
+</ul>
+<h4 id="ops">OPS</h4>
+<ul>
+<li>Spring Boot Actuator<ul>
+<li>운영 환경에서 애플리케이션 모니터링을 위한 엔드포인트/기능 제공 <br></br> 이후 AWS CloutWatch, Dynatrace등의 툴로 모니터링<pre><code class="lang-java"><span class="hljs-comment">// 관리자 대시보드에서 활용 예정</span>
+<span class="hljs-meta">@GetMapping("/admin/dashboard")</span>
+<span class="hljs-keyword">public</span> DashboardResponse <span class="hljs-title function_">getDashboard</span><span class="hljs-params">()</span> {
+    <span class="hljs-type">double</span> <span class="hljs-variable">cpuUsage</span> <span class="hljs-operator">=</span> meterRegistry.get(<span class="hljs-string">"system.cpu.usage"</span>).gauge().value();
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">DashboardResponse</span>(cpuUsage, memoryUsage, activeUsers);
+}
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="folder-structure">Folder Structure</h2>
+<p>initializr에서 필요한 dependancy 추가 후 generate를 실행하게 되면 아래와 같은 폴더 구조를 갖게 됩니다.
+<br></br>자주 확인하게 될 몇가지 파일에 대해 설명을 추가해 두었습니다.</p>
+<pre><code>
+.
+├── build.gradle                    # 의존성 및 빌드 설정
+├── compose.yaml                    # Docker Compose 설정
+├── gradlew
+├── gradlew.bat
+├── settings.gradle
+└── src
+    ├── main
+    │   ├── java
+    │   │   └── org
+    │   │       └── ddcn41
+    │   │           └── ticketing_system
+    │   │               └── TicketingSystemApplication.java  # 메인 클래스
+    │   └── resources
+    │       ├── application.yml      # 애플리케이션 설정
+    └── test                        # 테스트 코드
+        └── java
+            └── org
+                └── ddcn41
+                    └── ticketing_system
+                        └── TicketingSystemApplicationTests.java
+</code></pre><h3 id="buildgradle">build.gradle</h3>
+<p>프로젝트의 의존성과 빌드 설정을 관리하는 파일입니다.</p>
+<pre><code class="lang-gradle"><span class="hljs-keyword">dependencies</span> {
+    implementation <span class="hljs-string">'org.springframework.boot:spring-boot-starter-actuator'</span>
+    implementation <span class="hljs-string">'org.springframework.boot:spring-boot-starter-data-jpa'</span>
+    implementation <span class="hljs-string">'org.springframework.boot:spring-boot-starter-data-redis'</span>
+    implementation <span class="hljs-string">'org.springframework.boot:spring-boot-starter-security'</span>
+    implementation <span class="hljs-string">'org.springframework.boot:spring-boot-starter-web'</span>
+
+    compileOnly <span class="hljs-string">'org.projectlombok:lombok'</span>
+    developmentOnly <span class="hljs-string">'org.springframework.boot:spring-boot-devtools'</span>
+    developmentOnly <span class="hljs-string">'org.springframework.boot:spring-boot-docker-compose'</span>
+
+    runtimeOnly <span class="hljs-string">'com.h2database:h2'</span>
+    runtimeOnly <span class="hljs-string">'org.postgresql:postgresql'</span>
+
+    annotationProcessor <span class="hljs-string">'org.projectlombok:lombok'</span>
+    testImplementation <span class="hljs-string">'org.springframework.boot:spring-boot-starter-test'</span>
+    testImplementation <span class="hljs-string">'org.springframework.security:spring-security-test'</span>
+}
+</code></pre>
+<h3 id="composeyaml">compose.yaml</h3>
+<p>개발 환경에서 PostgreSQL과 Redis를 쉽게 실행하기 위한 Docker Compose 설정 파일입니다.</p>
+<pre><code class="lang-yaml"><span class="hljs-attr">services:</span>
+    <span class="hljs-attr">postgres:</span>
+        <span class="hljs-attr">image:</span> <span class="hljs-string">'postgres:latest'</span>
+        <span class="hljs-attr">environment:</span>
+            <span class="hljs-bullet">-</span> <span class="hljs-string">'POSTGRES_DB=ticketing'</span>
+            <span class="hljs-bullet">-</span> <span class="hljs-string">'POSTGRES_PASSWORD=secret'</span>
+            <span class="hljs-bullet">-</span> <span class="hljs-string">'POSTGRES_USER=myuser'</span>
+        <span class="hljs-attr">ports:</span>
+            <span class="hljs-bullet">-</span> <span class="hljs-string">'5432:5432'</span>
+
+    <span class="hljs-attr">redis:</span>
+        <span class="hljs-attr">image:</span> <span class="hljs-string">'redis:latest'</span>
+        <span class="hljs-attr">ports:</span>
+            <span class="hljs-bullet">-</span> <span class="hljs-string">'6379:6379'</span>
+</code></pre>
+<h3 id="main-class">Main Class</h3>
+<p><code>./src/main/java/~</code> 하위에 initializr에서 설정했던 artifact 이름이 카멜케이스로 적용되어 있습니다.
+우리 프로젝트의 경우에는 <code>TicketingSystemApplication.java</code> 입니다.</p>
+<h3 id="resources">Resources</h3>
+<p><code>application.yml</code> 파일에서 애플리케이션의 설정을 관리합니다.</p>
+<pre><code class="lang-yaml"><span class="hljs-attr">spring:</span>
+    <span class="hljs-attr">application:</span>
+        <span class="hljs-attr">name:</span> <span class="hljs-string">ticketing-system</span>
+
+    <span class="hljs-comment"># 데이터베이스 설정</span>
+    <span class="hljs-attr">datasource:</span>
+        <span class="hljs-attr">url:</span> <span class="hljs-string">jdbc:h2:mem:ticketing</span> <span class="hljs-comment"># 개발용 H2</span>
+        <span class="hljs-attr">driver-class-name:</span> <span class="hljs-string">org.h2.Driver</span>
+        <span class="hljs-attr">username:</span> <span class="hljs-string">sa</span>
+        <span class="hljs-attr">password:</span>
+
+    <span class="hljs-comment"># JPA 설정</span>
+    <span class="hljs-attr">jpa:</span>
+        <span class="hljs-attr">hibernate:</span>
+            <span class="hljs-attr">ddl-auto:</span> <span class="hljs-string">create-drop</span>
+        <span class="hljs-attr">show-sql:</span> <span class="hljs-literal">true</span>
+
+    <span class="hljs-comment"># Redis 설정</span>
+    <span class="hljs-attr">data:</span>
+        <span class="hljs-attr">redis:</span>
+            <span class="hljs-attr">host:</span> <span class="hljs-string">localhost</span>
+            <span class="hljs-attr">port:</span> <span class="hljs-number">6379</span>
+
+<span class="hljs-comment"># Actuator 설정</span>
+<span class="hljs-attr">management:</span>
+    <span class="hljs-attr">endpoints:</span>
+        <span class="hljs-attr">web:</span>
+            <span class="hljs-attr">exposure:</span>
+                <span class="hljs-attr">include:</span> <span class="hljs-string">health,info,metrics</span>
+</code></pre>
+<h2 id="security-config-세팅">Security Config 세팅</h2>
+<p>아래 설정은 개발 초기 단계에서만 사용하며, 향후 실제 인증/인가 로직으로 대체해야 합니다.</p>
+<p><code>./src/main/java/org/ddcn41/ticketing_system/config/SecurityConfig.java</code>
+위 경로에 아래와 같이 모든 auth에 대해 모두 허용을 해줍니다.</p>
+<pre><code class="lang-java"><span class="hljs-meta">@Configuration</span>
+<span class="hljs-meta">@EnableWebSecurity</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">SecurityConfig</span> {
+
+    <span class="hljs-meta">@Bean</span>
+    <span class="hljs-keyword">public</span> SecurityFilterChain <span class="hljs-title function_">filterChain</span><span class="hljs-params">(HttpSecurity http)</span> <span class="hljs-keyword">throws</span> Exception {
+        http
+                .authorizeHttpRequests(authz -&gt; authz
+                        .anyRequest().permitAll()  <span class="hljs-comment">// 모든 요청 허용 (개발용만!)</span>
+                )
+                .csrf(csrf -&gt; csrf.disable())
+                .headers(headers -&gt; headers.frameOptions().disable());
+        <span class="hljs-keyword">return</span> http.build();
+    }
+}
+</code></pre>
+<hr></hr>
+<h2 id="troubleshooting">TroubleShooting</h2>
+<h3 id="docker-cannot-connect-to-the-docker-daemon">docker: Cannot connect to the Docker daemon</h3>
+<p>도커를 실행하지 않고 빌드를 진행하여 발생한 문제입니다.
+<br></br> Mac의 경우 도커 데스크탑을 실행하여 해결하였습니다.</p>
+<h2 id="references">References</h2>
+<ul>
+<li><a href="https://docs.spring.io/spring-boot/" target="_blank">https://docs.spring.io/spring-boot/</a></li>
+<li><a href="https://start.spring.io/" target="_blank">https://start.spring.io/</a></li>
+<li>Building a RESTful Web Service: <a href="https://spring.io/guides/gs/rest-service/" target="_blank">https://spring.io/guides/gs/rest-service/</a></li>
+<li>Accessing Data with JPA: <a href="https://spring.io/guides/gs/accessing-data-jpa/" target="_blank">https://spring.io/guides/gs/accessing-data-jpa/</a></li>
+<li>Securing a Web Application: <a href="https://spring.io/guides/gs/securing-web/" target="_blank">https://spring.io/guides/gs/securing-web/</a></li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../03-conventions/github-project-v1.html" class="navigation navigation-prev " aria-label="Previous page: GitHub 프로젝트 관리 가이드 (v1)">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="03-test CRUD controller.html" class="navigation navigation-next " aria-label="Next page: [실습] test CRUD controller 만들기">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Spring Boot 세팅","level":"12.1","depth":1,"next":{"title":"[실습] test CRUD controller 만들기","level":"12.2","depth":1,"path":"07-backend/03-test CRUD controller.md","ref":"07-backend/03-test CRUD controller.md","articles":[]},"previous":{"title":"GitHub 프로젝트 관리 가이드 (v1)","level":"11.2","depth":1,"path":"03-conventions/github-project-v1.md","ref":"03-conventions/github-project-v1.md","articles":[]},"dir":"ltr"},"config":{"plugins":["mermaid-gb3"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"mermaid-gb3":{"theme":"default"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"공연 티켓팅 서비스 GitBook","gitbook":"*"},"file":{"path":"07-backend/02-springboot-setting.md","mtime":"2025-09-16T07:03:24.512Z","type":"markdown"},"gitbook":{"version":"6.0.3","time":"2025-09-16T07:03:36.877Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    
+    <noscript>
+        <style>
+            .honkit-cloak {
+                display: block !important;
+            }
+        </style>
+    </noscript>
+    <script>
+        // Restore sidebar state as critical path for prevent layout shift
+        function __init__getSidebarState(defaultValue){
+            var baseKey = "";
+            var key = baseKey + ":sidebar";
+            try {
+                var value = localStorage[key];
+                if (value === undefined) {
+                    return defaultValue;
+                }
+                var parsed = JSON.parse(value);
+                return parsed == null ? defaultValue : parsed;
+            } catch (e) {
+                return defaultValue;
+            }
+        }
+        function __init__restoreLastSidebarState() {
+            var isMobile = window.matchMedia("(max-width: 600px)").matches;
+            if (isMobile) {
+                // Init last state if not mobile
+                return;
+            }
+            var sidebarState = __init__getSidebarState(true);
+            var book = document.querySelector(".book");
+            // Show sidebar if it enabled
+            if (sidebarState && book) {
+                book.classList.add("without-animation", "with-summary");
+            }
+        }
+
+        try {
+            __init__restoreLastSidebarState();
+        } finally {
+            var book = document.querySelector(".book");
+            book.classList.remove("honkit-cloak");
+        }
+    </script>
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-mermaid-gb3/book/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/@honkit/honkit-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    <script src="../gitbook/gitbook-plugin-mermaid-gb3/mermaid/mermaid.min.js"></script>
+
+    </body>
+</html>
+

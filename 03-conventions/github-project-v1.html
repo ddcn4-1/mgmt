@@ -1,0 +1,1196 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <title>GitHub 프로젝트 관리 가이드 (v1) · 공연 티켓팅 서비스 GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="HonKit 6.0.3">
+        
+        
+        
+    
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-mermaid-gb3/mermaid/mermaid.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/@honkit/honkit-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/@honkit/honkit-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+
+    
+        
+        
+        <link rel="stylesheet" href="../gitbook/gitbook-plugin-mermaid-gb3/mermaid/mermaid.default.css" />
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../07-backend/02-springboot-setting.html" />
+    
+    
+    <link rel="prev" href="02-issue-template.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book honkit-cloak">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    소개
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">개요</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../01-intro/01-overview.html">
+            
+                <a href="../01-intro/01-overview.html">
+            
+                    
+                    주제 및 기대 효과
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../02-goals/01-mvp.html">
+            
+                <a href="../02-goals/01-mvp.html">
+            
+                    
+                    목표 및 구현 계획
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="01-standards.html">
+            
+                <a href="01-standards.html">
+            
+                    
+                    공통 규칙(컨벤션)
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">아키텍처</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="../04-architecture/01-stack.html">
+            
+                <a href="../04-architecture/01-stack.html">
+            
+                    
+                    기술 스택
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="../04-architecture/02-design.html">
+            
+                <a href="../04-architecture/02-design.html">
+            
+                    
+                    설계 다이어그램
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="../05-security/01-guide.html">
+            
+                <a href="../05-security/01-guide.html">
+            
+                    
+                    보안 가이드
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">도메인/구현</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="../08-database/01-erd.html">
+            
+                <a href="../08-database/01-erd.html">
+            
+                    
+                    데이터베이스 ERD
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="../07-backend/01-api.html">
+            
+                <a href="../07-backend/01-api.html">
+            
+                    
+                    백엔드 API 설계
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="../06-frontend/01-client.html">
+            
+                <a href="../06-frontend/01-client.html">
+            
+                    
+                    클라이언트 (사용자 예매)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4" data-path="../09-admin/01-backoffice.html">
+            
+                <a href="../09-admin/01-backoffice.html">
+            
+                    
+                    어드민/백오피스
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">테스트와 성능</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="../10-testing/01-performance.html">
+            
+                <a href="../10-testing/01-performance.html">
+            
+                    
+                    테스트와 성능
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">인프라</li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" data-path="../11-infra/01-deployment.html">
+            
+                <a href="../11-infra/01-deployment.html">
+            
+                    
+                    인프라 배포
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">운영/모니터링</li>
+        
+        
+    
+        <li class="chapter " data-level="7.1" data-path="../12-operations/01-monitoring.html">
+            
+                <a href="../12-operations/01-monitoring.html">
+            
+                    
+                    운영/모니터링
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">프로젝트 관리</li>
+        
+        
+    
+        <li class="chapter " data-level="8.1" data-path="../13-sprints/01-plan.html">
+            
+                <a href="../13-sprints/01-plan.html">
+            
+                    
+                    스프린트/절차
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.2" data-path="../14-team/01-roles.html">
+            
+                <a href="../14-team/01-roles.html">
+            
+                    
+                    팀 구성/역할
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">부록</li>
+        
+        
+    
+        <li class="chapter " data-level="9.1" data-path="../15-appendix/01-exercises.html">
+            
+                <a href="../15-appendix/01-exercises.html">
+            
+                    
+                    실습 모음
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">01 Intro</li>
+        
+        
+    
+        <li class="chapter " data-level="10.1" data-path="../01-intro/auto-summary-test.html">
+            
+                <a href="../01-intro/auto-summary-test.html">
+            
+                    
+                    Auto Summary Test
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">03 Conventions</li>
+        
+        
+    
+        <li class="chapter " data-level="11.1" data-path="02-issue-template.html">
+            
+                <a href="02-issue-template.html">
+            
+                    
+                    GitHub Issue Template 생성 및 활용 가이드
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="11.2" data-path="github-project-v1.html">
+            
+                <a href="github-project-v1.html">
+            
+                    
+                    GitHub 프로젝트 관리 가이드 (v1)
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">07 Backend</li>
+        
+        
+    
+        <li class="chapter " data-level="12.1" data-path="../07-backend/02-springboot-setting.html">
+            
+                <a href="../07-backend/02-springboot-setting.html">
+            
+                    
+                    Spring Boot 세팅
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="12.2" data-path="../07-backend/03-test CRUD controller.html">
+            
+                <a href="../07-backend/03-test CRUD controller.html">
+            
+                    
+                    [실습] test CRUD controller 만들기
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="12.3" data-path="../07-backend/04-springboot-folder-structure.html">
+            
+                <a href="../07-backend/04-springboot-folder-structure.html">
+            
+                    
+                    Folder Structure in SpringBoot
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="12.4" data-path="../07-backend/05-springboot-utils-error.html">
+            
+                <a href="../07-backend/05-springboot-utils-error.html">
+            
+                    
+                    Error 처리 공통 클래스 in Spring Boot
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="12.5" data-path="../07-backend/06-springboot-actuator.html">
+            
+                <a href="../07-backend/06-springboot-actuator.html">
+            
+                    
+                    Spring Boot Actuator
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">01 Intro</li>
+        
+        
+    
+        <li class="chapter " data-level="13.1" data-path="../01-intro/extrat-logic-auto-summary2.html">
+            
+                <a href="../01-intro/extrat-logic-auto-summary2.html">
+            
+                    
+                    Extrat Logic Auto Summary2
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">06 Frontend</li>
+        
+        
+    
+        <li class="chapter " data-level="14.1" data-path="../06-frontend/frontend-migration.html">
+            
+                <a href="../06-frontend/frontend-migration.html">
+            
+                    
+                    Frontend Migration
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">01 Intro</li>
+        
+        
+    
+        <li class="chapter " data-level="15.1" data-path="../01-intro/main-test.html">
+            
+                <a href="../01-intro/main-test.html">
+            
+                    
+                    Main Test
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
+            Published with HonKit
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >GitHub 프로젝트 관리 가이드 (v1)</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="github-프로젝트-관리-가이드-v1">GitHub 프로젝트 관리 가이드 (v1)</h1>
+<p>이 가이드는 우리 팀이 GitHub Projects를 활용해 프로젝트를 체계적으로 관리하기 위해 정리한 문서입니다.<br></br>새 프로젝트를 시작하거나, 스프린트·로드맵·이슈 관리를 GitHub Projects로 해보려는 분들께 도움이 되길 바랍니다.</p>
+<p><strong>이 문서에서 다루는 내용:</strong></p>
+<ul>
+<li>GitHub Projects의 기본 개념</li>
+<li>우리 팀 깃헙 프로젝트 관리 전략</li>
+<li>실제 운영 워크플로우와 개선 아이디어</li>
+</ul>
+<h2 id="part-1-github-projects-기본-개념">Part 1: GitHub Projects 기본 개념</h2>
+<h3 id="github-projects-버전-비교-v1-vs-v2">GitHub Projects 버전 비교: v1 vs v2</h3>
+<table>
+<thead>
+<tr>
+<th>버전</th>
+<th>특징</th>
+<th>주요 기능</th>
+<th>활용 사례</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Projects v1</strong></td>
+<td>[레거시] 단순 칸반 보드 형태로 기본적인 작업 관리에 적합</td>
+<td>기본 칸반 보드 (To do, In Progress, Done), 기본 필터링, 이슈 연결</td>
+<td>소규모 프로젝트 및 단순 태스크 트래킹</td>
+</tr>
+<tr>
+<td><strong>Projects v2</strong></td>
+<td>커스텀 필드, 로드맵 뷰, 자동화 기능 등 확장된 기능 제공</td>
+<td>커스텀 필드 (날짜, 단일 선택, 번호 등), 다양한 뷰 (보드, 표, 로드맵, 간트차트), 자동화 워크플로우, 이슈 그룹화 및 필터링, 이터레이션 관리</td>
+<td>중대규모 프로젝트, 애자일 스프린트, 복잡한 작업 흐름 관리</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Note:</strong></p>
+<ul>
+<li><strong>Projects v1</strong>은 현재 레거시로 취급되며, 더 이상 선택할 수 없습니다.</li>
+<li><strong>Projects v2</strong>는 Jira나 Notion만큼은 아니지만 유사한 프로젝트 관리 경험을 제공하며, 로드맵 뷰로 전체 일정과 진행률을 한눈에 확인할 수 있습니다.</li>
+<li><strong>Projects v2</strong>는 사용자·조직 설정에서 웹훅 트리거를 설정할 때, 아래 이미지와 같이 선택 가능한 이벤트 목록을 제공합니다.</li>
+</ul>
+</blockquote>
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/57ac032e-29ba-434d-9b51-a0bda6548465" alt="Projects v2 Webhook 이벤트 선택 화면" style="max-width: 80%; height: auto; border-radius: 6px;"></img>
+</p>
+
+<h3 id="기본-필드-설명">기본 필드 설명</h3>
+<p>GitHub Projects에서는 기본적으로 다음과 같은 필드를 제공하여 이슈의 상태를 직관적으로 추적합니다.</p>
+<ul>
+<li><strong>Status (상태):</strong> 이슈의 현재 진행 상황을 나타냅니다. (예: <code>Todo</code>, <code>In Progress</code>, <code>Done</code>)</li>
+<li><strong>Sub-issues progress (하위 이슈 진행률):</strong> 부모 이슈에 연결된 하위 이슈들의 완료 상태를 바탕으로 전체 진행률을 시각적으로 보여줍니다. (예: <code>2/5 40%</code>)</li>
+<li>이 외의 필드(Assignee, Labels, Milestone 등)는 기존 리포지토리의 이슈 필드를 그대로 사용합니다.</li>
+</ul>
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/ff7e3a8c-1af7-45e5-87b3-d8b0dcc14426" alt="기본 필드 예시 화면 1" style="max-width: 50%; height: auto; border-radius: 6px;"></img>
+</p>
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/a1f18aec-5e0c-4c66-b9cd-1018bdddfc79" alt="기본 필드 예시 화면 2" style="max-width: 50%; height: auto; border-radius: 6px;"></img>
+</p>
+
+<h3 id="이슈-타입-issue-type-개념">이슈 타입 (Issue Type) 개념</h3>
+<p>이슈의 성격을 명확히 구분하기 위한 분류 체계입니다. 기본적으로 다음과 같은 타입을 제공합니다.
+라벨과 달리 개별 리포지토리나 이슈 페이지에서는 추가할 수 없으며, 조직(Organization) 설정에서만 관리할 수 있습니다.</p>
+<ul>
+<li><strong>Bug:</strong> 잘못된 동작이나 오류 수정이 필요한 경우</li>
+<li><strong>Task:</strong> 구체적인 할 일이나 작업 단위</li>
+<li><strong>Feature:</strong> 새로운 기능 개발 또는 기존 기능 변경</li>
+</ul>
+<blockquote>
+<p>Note: Epic과 Refactor는 조직에서 새롭게 정의해 추가한 커스텀 이슈 타입입니다.</p>
+<p align="center">
+<img width="685" height="705" alt="image" src="https://github.com/user-attachments/assets/fbfaa353-50fa-4a6a-ba8f-9041c93f4867" style="max-width: 50%; height: auto; border-radius: 6px;"></img>
+</p>
+
+
+</blockquote>
+<h3 id="마일스톤">마일스톤</h3>
+<ul>
+<li><strong>마일스톤(Milestone)</strong>: 리포지토리 단위에서 설정하는 주요 목표나 중간 점검 기준입니다. 주로 프로젝트의 중요한 분기점(예: MVP 출시, Feature Freeze)을 관리하는 데 활용됩니다.</li>
+<li>필요 시 직접 생성해야 하며, 기본적으로는 설정되어 있지 않습니다.</li>
+</ul>
+<p align="center">
+<img width="705" height="350" alt="image" src="https://github.com/user-attachments/assets/a21e4897-bd82-432e-9954-deca38d088f0" style="max-width: 50%; height: auto; border-radius: 6px;"></img>
+</p>
+
+<h2 id="part-2-깃헙-프로젝트-관리-전략">Part 2: 깃헙 프로젝트 관리 전략</h2>
+<h3 id="프로젝트-개요">프로젝트 개요</h3>
+<ul>
+<li><strong>목표:</strong> 프로젝트 관리, 코드 버전 관리, CI/CD를 GitHub 플랫폼 하나로 통합하여 운영합니다. 이를 통해 여러 도구를 오가는 번거로움 없이 프로젝트 진행 상황 추적부터 배포까지 연결된 워크플로우를 구축합니다.</li>
+<li><strong>적용:</strong> 이 문서는 버전 1.0으로, 2025년 8월 28일부터 9월 23일까지 진행되는 클라우드 네이티브 과정 1차 프로젝트에 적용됩니다. 프로젝트 종료 후 회고를 통해 개선점을 도출하여 다음 버전에 반영할 예정입니다.</li>
+</ul>
+<h3 id="커스텀-필드-정의-project-setting">커스텀 필드 정의 (Project Setting)</h3>
+<p>기본 필드 외에 팀의 특성과 작업 흐름에 맞춰 다음과 같은 커스텀 필드를 정의하여 사용합니다.</p>
+<table>
+<thead>
+<tr>
+<th>필드</th>
+<th>설명</th>
+<th>예시</th>
+<th>기본 제공</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Status</strong></td>
+<td>이슈 진행 상태</td>
+<td>Done</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><strong>Sub-issues progress</strong></td>
+<td>서브 이슈 진행율</td>
+<td>2/5 40%</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><strong>Phase</strong></td>
+<td>프로젝트 단계 (기획, 설계, 구현 등)</td>
+<td>Implementation</td>
+<td>No</td>
+</tr>
+<tr>
+<td><strong>Start Date</strong></td>
+<td>작업 시작일</td>
+<td>2025-09-01</td>
+<td>No</td>
+</tr>
+<tr>
+<td><strong>Due Date</strong></td>
+<td>마감 예정일</td>
+<td>2025-09-12</td>
+<td>No</td>
+</tr>
+<tr>
+<td><strong>Iteration</strong></td>
+<td>스프린트/주차 구분</td>
+<td>Iteration 1</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<p><strong>필드별 상세 설명:</strong></p>
+<ul>
+<li><strong>Status 필드:</strong> 기본값(<code>Todo</code> / <code>In Progress</code> / <code>Done</code>) 외에 <code>UpNext</code> 옵션을 추가하여 다음 스프린트에서 진행할 작업을 명확히 구분합니다.</li>
+<li><strong>Start/Due 필드:</strong> 로드맵 뷰에서 작업 기간을 시각화하여 계획 대비 진행률과 지연 여부를 쉽게 파악할 수 있습니다.</li>
+<li><strong>Phase 필드:</strong> <code>Planning</code> → <code>Design</code> → <code>Implementation</code> → <code>Testing</code> → <code>Delivery</code> 단계로 구분하여 각 작업의 현재 위치를 명확히 표시합니다.</li>
+<li><strong>Iteration 필드:</strong> 로드맵에서 그룹화 기준으로 활용할 수 있으며, 현재는 기간 체크용 보조 지표로 사용하고 있습니다.</li>
+</ul>
+<h3 id="조직별-이슈-타입">조직별 이슈 타입</h3>
+<p>기본 제공 타입(Bug, Task, Feature) 외에 아래 타입을 추가하여 작업 단위를 세분화합니다.</p>
+<ul>
+<li><strong>Refactor:</strong> 코드 품질 개선 및 구조 변경 작업을 위한 타입</li>
+<li><strong>Epic:</strong> 여러 Feature와 Task를 포함하는 대규모 작업 단위. Epic을 생성하고 세부 구현은 하위 이슈로 분할하여 관리합니다.</li>
+</ul>
+<blockquote>
+<p>Note: Epic과 Refactor는 조직에서 새롭게 정의해 추가한 커스텀 이슈 타입입니다.<br></br>⚠️ 현재 Epic 외의 이슈들에 대한 타입 할당 기준과 라벨 활용 방식(예: 우선순위, 영역별 분류)에 대해서는 추가 논의가 필요합니다.</p>
+</blockquote>
+<h3 id="리포지토리-구조-mgmtapp-분리-전략">리포지토리 구조 (mgmt/app 분리 전략)</h3>
+<p>문서와 코드의 역할을 명확히 분리하여 관리 효율을 높입니다.</p>
+<table>
+<thead>
+<tr>
+<th>리포지토리</th>
+<th>역할</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>mgmt</strong></td>
+<td>Epic 이슈 관리, GitBook 문서 관리, 프로젝트 종료 시 학습·회고 내용 업로드</td>
+</tr>
+<tr>
+<td><strong>app</strong></td>
+<td>애플리케이션 코드 개발, 기능 구현 및 변경 관련 이슈 관리</td>
+</tr>
+</tbody>
+</table>
+<p><strong>기대 효과:</strong></p>
+<ul>
+<li>기록(문서)과 구현(코드)의 이력을 분리하여 관리 용이</li>
+<li>GitBook 배포 시 불필요한 코드가 포함되지 않도록 설계</li>
+<li>각 리포지토리의 목적이 명확해져 협업 시 충돌 최소화</li>
+</ul>
+<h3 id="마일스톤-설정">마일스톤 설정</h3>
+<p>app 리포지토리에서만 운영하며, 로드맵에서 마감일 기준 마커로 표시됩니다.</p>
+<table>
+<thead>
+<tr>
+<th>마일스톤</th>
+<th>설명</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>MVP</strong></td>
+<td>최소기능제품 (Minimum Viable Product) 완성</td>
+</tr>
+<tr>
+<td><strong>Feature Freeze</strong></td>
+<td>기능 개발 완료, 버그 수정만 허용</td>
+</tr>
+<tr>
+<td><strong>Code Freeze</strong></td>
+<td>코드 변경 제한, 배포 전 QA 집중</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>참고: 마일스톤은 리포지토리 단위에서만 설정 가능하므로, 프로젝트 전역 관리가 필요한 경우 커스텀 필드로 별도 정의 필요</p>
+</blockquote>
+<h3 id="이슈-분류-규칙-prefix-규칙과-예시">이슈 분류 규칙 (Prefix 규칙과 예시)</h3>
+<p>이슈 제목에 Prefix를 사용하여 어떤 종류의 작업인지 쉽게 식별할 수 있도록 합니다.</p>
+<table>
+<thead>
+<tr>
+<th>리포지토리</th>
+<th>Prefix</th>
+<th>타입</th>
+<th>설명</th>
+<th>브랜치 예시</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>mgmt</strong></td>
+<td>(없음)</td>
+<td>Epic</td>
+<td>프로젝트 전반 단계 관리</td>
+<td>-</td>
+</tr>
+<tr>
+<td><strong>mgmt</strong></td>
+<td><code>Docs:</code></td>
+<td>Task</td>
+<td>문서 작성 및 회고 이슈</td>
+<td><code>docs/#24</code></td>
+</tr>
+<tr>
+<td><strong>app</strong></td>
+<td><code>Feature:</code></td>
+<td>Feature</td>
+<td>새로운 기능 추가/변경</td>
+<td><code>feat/#42</code></td>
+</tr>
+<tr>
+<td><strong>app</strong></td>
+<td><code>Refactor:</code></td>
+<td>Refactor</td>
+<td>코드 리팩터링 및 구조 개선</td>
+<td><code>refactor/#18</code></td>
+</tr>
+<tr>
+<td><strong>app</strong></td>
+<td><code>BUG:</code></td>
+<td>Bug</td>
+<td>잘못된 동작 수정</td>
+<td><code>fix/#35</code></td>
+</tr>
+<tr>
+<td><strong>app</strong></td>
+<td><code>ERROR:</code></td>
+<td>Bug</td>
+<td>크래시 등 심각한 문제 해결</td>
+<td><code>hotfix/#67</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>예시: MVP 개발 Epic (Parent Issue &amp; Sub-Issue 구조)</strong></p>
+<table>
+<thead>
+<tr>
+<th>구분</th>
+<th>Prefix</th>
+<th>제목</th>
+<th>Type</th>
+<th>리포지토리</th>
+<th>담당자</th>
+<th>상태</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Parent-Issue</strong></td>
+<td>(없음)</td>
+<td>MVP 개발</td>
+<td>Epic</td>
+<td>mgmt</td>
+<td>-</td>
+<td>In Progress</td>
+</tr>
+<tr>
+<td><strong>Sub-Issues</strong></td>
+<td><code>Feature</code></td>
+<td>JWT 기반 인증 시스템</td>
+<td>Feature</td>
+<td>app</td>
+<td>GukDaHye</td>
+<td>Done</td>
+</tr>
+<tr>
+<td></td>
+<td><code>Feature</code></td>
+<td>공연 CRUD API</td>
+<td>Feature</td>
+<td>app</td>
+<td>yhjune</td>
+<td>Done</td>
+</tr>
+<tr>
+<td></td>
+<td><code>Feature</code></td>
+<td>사용자(어드민) CRUD API</td>
+<td>Feature</td>
+<td>app</td>
+<td>Hwara</td>
+<td>Done</td>
+</tr>
+<tr>
+<td></td>
+<td><code>Feature</code></td>
+<td>예매(Booking) API CRUD</td>
+<td>Feature</td>
+<td>app</td>
+<td>kimhxsong</td>
+<td>Done</td>
+</tr>
+<tr>
+<td></td>
+<td><code>Feature</code></td>
+<td>Front 연결 – 공연 API</td>
+<td>Feature</td>
+<td>app</td>
+<td>yhjune</td>
+<td>Todo</td>
+</tr>
+<tr>
+<td></td>
+<td><code>Feature</code></td>
+<td>AWS 연결</td>
+<td>Feature</td>
+<td>app</td>
+<td>yhjune</td>
+<td>UpNext</td>
+</tr>
+<tr>
+<td></td>
+<td><code>Feature</code></td>
+<td>좌석 잠금</td>
+<td>Feature</td>
+<td>app</td>
+<td>GukDaHye</td>
+<td>Todo</td>
+</tr>
+<tr>
+<td></td>
+<td><code>Docs</code></td>
+<td>스프링부트 예외 처리 유틸 클래스 공유</td>
+<td>Task</td>
+<td>mgmt</td>
+<td>yhjune</td>
+<td>Done</td>
+</tr>
+<tr>
+<td></td>
+<td><code>Refactor</code></td>
+<td>folder structure 수정 (계층→도메인)</td>
+<td>Refactor</td>
+<td>app</td>
+<td>GukDaHye, Hwara</td>
+<td>Done</td>
+</tr>
+<tr>
+<td></td>
+<td><code>Docs</code></td>
+<td>로그 목록 정리</td>
+<td>Task</td>
+<td>mgmt</td>
+<td>yhjune</td>
+<td>Done</td>
+</tr>
+<tr>
+<td></td>
+<td><code>Feature</code></td>
+<td>Spring OpenAPI Generator 도입</td>
+<td>Feature</td>
+<td>app</td>
+<td>kimhxsong</td>
+<td>Done</td>
+</tr>
+<tr>
+<td></td>
+<td><code>Feature</code></td>
+<td>Swagger(OpenAPI) 도입</td>
+<td>Feature</td>
+<td>app</td>
+<td>kimhxsong</td>
+<td>Todo</td>
+</tr>
+</tbody>
+</table>
+<h3 id="워크플로우">워크플로우</h3>
+<ol>
+<li><strong>일반적인 개발·문서 작업 흐름:</strong> 체계적인 관리가 필요한 대부분의 작업에 적용됩니다.<ul>
+<li><code>Epic</code> → <code>Parent Issue</code> → <code>Sub-Issue</code> → <code>브랜치 생성</code> → <code>PR 생성</code> → <code>코드 리뷰</code> → <code>Merge</code></li>
+</ul>
+</li>
+<li><strong>간단·긴급 수정:</strong> 이슈 생성 없이 빠르게 수정 및 반영이 필요할 때 사용됩니다.<ul>
+<li><code>브랜치 생성</code> → <code>PR 생성</code> → <code>바로 Merge</code></li>
+</ul>
+</li>
+</ol>
+<h3 id="프로젝트-대시보드">프로젝트 대시보드</h3>
+<ul>
+<li><strong>로드맵 뷰</strong><p align="center">
+<img src="https://github.com/user-attachments/assets/3f5e5073-7448-4f05-a798-32b6822cdd3a" alt="로드맵 뷰 전체 화면" style="max-width: 85%; height: auto; border-radius: 6px;"></img>
+</p>
+
+</li>
+</ul>
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/725a1ed0-bce2-484c-bc8f-61414b9513fc" alt="로드맵 뷰 세부 화면" style="max-width: 85%; height: auto; border-radius: 6px;"></img>
+</p>
+
+<ul>
+<li><strong>테이블 뷰</strong></li>
+</ul>
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/b533fd36-cda4-4130-a0b9-7ce5b7b15839" alt="테이블 뷰 예시 화면" style="max-width: 85%; height: auto; border-radius: 6px;"></img>
+</p>
+
+<h2 id="part-3-운영-및-개선">Part 3: 운영 및 개선</h2>
+<h3 id="설계-의도">설계 의도</h3>
+<ul>
+<li>GitHub Projects를 통해 <strong>Epic-Story-Task 계층 구조</strong>로 프로젝트를 체계적으로 관리합니다.</li>
+<li>커스텀 필드(Phase, Start/Due Date)로 작업 흐름과 일정을 시각화하여 팀원과 관리자 모두에게 명확한 정보를 제공합니다.</li>
+<li><strong>Parent-Sub Issue 구조</strong>를 통해 작업 간 관계를 명확히 추적하고, 코드 변경 이력과 연결함으로써 문제 발생 시 원인을 신속하게 파악할 수 있습니다.</li>
+</ul>
+<h3 id="기대-효과">기대 효과</h3>
+<ul>
+<li>프로젝트, 코드, CI/CD를 한 곳에서 <strong>통합 관리</strong>하여 작업 흐름을 간소화합니다.</li>
+<li>팀원 간 실시간 진행 상황 공유로 <strong>프로젝트 투명성</strong>을 확보합니다.</li>
+<li>이슈와 코드 변경 내역을 직접 연결함으로써 <strong>협업 효율성</strong>을 향상시킵니다.</li>
+</ul>
+<h3 id="향후-개선-아이디어">향후 개선 아이디어</h3>
+<ul>
+<li><strong>자동화:</strong><ul>
+<li>이슈 제목 기반 자동 라벨링 및 Type 설정 자동화</li>
+<li>PR 생성 시 프로젝트 커스텀 필드 자동 업데이트</li>
+</ul>
+</li>
+<li><strong>프로세스 개선:</strong><ul>
+<li>Notion 회고 관리 → GitHub Discussion으로 이전 시도</li>
+</ul>
+</li>
+<li><strong>외부 도구 연동:</strong><ul>
+<li>Notion 데이터베이스와 GitHub Project를 n8n으로 연동해 양방향 동기화 구현 (예: Notion에서 상태 변경 시 GitHub Status 필드 업데이트, GitHub 이슈 종료 시 Notion DB 자동 반영)</li>
+</ul>
+</li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="02-issue-template.html" class="navigation navigation-prev " aria-label="Previous page: GitHub Issue Template 생성 및 활용 가이드">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../07-backend/02-springboot-setting.html" class="navigation navigation-next " aria-label="Next page: Spring Boot 세팅">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"GitHub 프로젝트 관리 가이드 (v1)","level":"11.2","depth":1,"next":{"title":"Spring Boot 세팅","level":"12.1","depth":1,"path":"07-backend/02-springboot-setting.md","ref":"07-backend/02-springboot-setting.md","articles":[]},"previous":{"title":"GitHub Issue Template 생성 및 활용 가이드","level":"11.1","depth":1,"path":"03-conventions/02-issue-template.md","ref":"03-conventions/02-issue-template.md","articles":[]},"dir":"ltr"},"config":{"plugins":["mermaid-gb3"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"mermaid-gb3":{"theme":"default"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"공연 티켓팅 서비스 GitBook","gitbook":"*"},"file":{"path":"03-conventions/github-project-v1.md","mtime":"2025-09-16T07:03:24.500Z","type":"markdown"},"gitbook":{"version":"6.0.3","time":"2025-09-16T07:03:36.877Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    
+    <noscript>
+        <style>
+            .honkit-cloak {
+                display: block !important;
+            }
+        </style>
+    </noscript>
+    <script>
+        // Restore sidebar state as critical path for prevent layout shift
+        function __init__getSidebarState(defaultValue){
+            var baseKey = "";
+            var key = baseKey + ":sidebar";
+            try {
+                var value = localStorage[key];
+                if (value === undefined) {
+                    return defaultValue;
+                }
+                var parsed = JSON.parse(value);
+                return parsed == null ? defaultValue : parsed;
+            } catch (e) {
+                return defaultValue;
+            }
+        }
+        function __init__restoreLastSidebarState() {
+            var isMobile = window.matchMedia("(max-width: 600px)").matches;
+            if (isMobile) {
+                // Init last state if not mobile
+                return;
+            }
+            var sidebarState = __init__getSidebarState(true);
+            var book = document.querySelector(".book");
+            // Show sidebar if it enabled
+            if (sidebarState && book) {
+                book.classList.add("without-animation", "with-summary");
+            }
+        }
+
+        try {
+            __init__restoreLastSidebarState();
+        } finally {
+            var book = document.querySelector(".book");
+            book.classList.remove("honkit-cloak");
+        }
+    </script>
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-mermaid-gb3/book/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/@honkit/honkit-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    <script src="../gitbook/gitbook-plugin-mermaid-gb3/mermaid/mermaid.min.js"></script>
+
+    </body>
+</html>
+

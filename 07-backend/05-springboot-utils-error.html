@@ -1,0 +1,1125 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <title>Error 처리 공통 클래스 in Spring Boot · 공연 티켓팅 서비스 GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="HonKit 6.0.3">
+        
+        
+        
+    
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-mermaid-gb3/mermaid/mermaid.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/@honkit/honkit-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/@honkit/honkit-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+
+    
+        
+        
+        <link rel="stylesheet" href="../gitbook/gitbook-plugin-mermaid-gb3/mermaid/mermaid.default.css" />
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="06-springboot-actuator.html" />
+    
+    
+    <link rel="prev" href="04-springboot-folder-structure.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book honkit-cloak">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    소개
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">개요</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../01-intro/01-overview.html">
+            
+                <a href="../01-intro/01-overview.html">
+            
+                    
+                    주제 및 기대 효과
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../02-goals/01-mvp.html">
+            
+                <a href="../02-goals/01-mvp.html">
+            
+                    
+                    목표 및 구현 계획
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="../03-conventions/01-standards.html">
+            
+                <a href="../03-conventions/01-standards.html">
+            
+                    
+                    공통 규칙(컨벤션)
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">아키텍처</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="../04-architecture/01-stack.html">
+            
+                <a href="../04-architecture/01-stack.html">
+            
+                    
+                    기술 스택
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="../04-architecture/02-design.html">
+            
+                <a href="../04-architecture/02-design.html">
+            
+                    
+                    설계 다이어그램
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="../05-security/01-guide.html">
+            
+                <a href="../05-security/01-guide.html">
+            
+                    
+                    보안 가이드
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">도메인/구현</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="../08-database/01-erd.html">
+            
+                <a href="../08-database/01-erd.html">
+            
+                    
+                    데이터베이스 ERD
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="01-api.html">
+            
+                <a href="01-api.html">
+            
+                    
+                    백엔드 API 설계
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="../06-frontend/01-client.html">
+            
+                <a href="../06-frontend/01-client.html">
+            
+                    
+                    클라이언트 (사용자 예매)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4" data-path="../09-admin/01-backoffice.html">
+            
+                <a href="../09-admin/01-backoffice.html">
+            
+                    
+                    어드민/백오피스
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">테스트와 성능</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="../10-testing/01-performance.html">
+            
+                <a href="../10-testing/01-performance.html">
+            
+                    
+                    테스트와 성능
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">인프라</li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" data-path="../11-infra/01-deployment.html">
+            
+                <a href="../11-infra/01-deployment.html">
+            
+                    
+                    인프라 배포
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">운영/모니터링</li>
+        
+        
+    
+        <li class="chapter " data-level="7.1" data-path="../12-operations/01-monitoring.html">
+            
+                <a href="../12-operations/01-monitoring.html">
+            
+                    
+                    운영/모니터링
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">프로젝트 관리</li>
+        
+        
+    
+        <li class="chapter " data-level="8.1" data-path="../13-sprints/01-plan.html">
+            
+                <a href="../13-sprints/01-plan.html">
+            
+                    
+                    스프린트/절차
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.2" data-path="../14-team/01-roles.html">
+            
+                <a href="../14-team/01-roles.html">
+            
+                    
+                    팀 구성/역할
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">부록</li>
+        
+        
+    
+        <li class="chapter " data-level="9.1" data-path="../15-appendix/01-exercises.html">
+            
+                <a href="../15-appendix/01-exercises.html">
+            
+                    
+                    실습 모음
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">01 Intro</li>
+        
+        
+    
+        <li class="chapter " data-level="10.1" data-path="../01-intro/auto-summary-test.html">
+            
+                <a href="../01-intro/auto-summary-test.html">
+            
+                    
+                    Auto Summary Test
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">03 Conventions</li>
+        
+        
+    
+        <li class="chapter " data-level="11.1" data-path="../03-conventions/02-issue-template.html">
+            
+                <a href="../03-conventions/02-issue-template.html">
+            
+                    
+                    GitHub Issue Template 생성 및 활용 가이드
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="11.2" data-path="../03-conventions/github-project-v1.html">
+            
+                <a href="../03-conventions/github-project-v1.html">
+            
+                    
+                    GitHub 프로젝트 관리 가이드 (v1)
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">07 Backend</li>
+        
+        
+    
+        <li class="chapter " data-level="12.1" data-path="02-springboot-setting.html">
+            
+                <a href="02-springboot-setting.html">
+            
+                    
+                    Spring Boot 세팅
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="12.2" data-path="03-test CRUD controller.html">
+            
+                <a href="03-test CRUD controller.html">
+            
+                    
+                    [실습] test CRUD controller 만들기
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="12.3" data-path="04-springboot-folder-structure.html">
+            
+                <a href="04-springboot-folder-structure.html">
+            
+                    
+                    Folder Structure in SpringBoot
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="12.4" data-path="05-springboot-utils-error.html">
+            
+                <a href="05-springboot-utils-error.html">
+            
+                    
+                    Error 처리 공통 클래스 in Spring Boot
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="12.5" data-path="06-springboot-actuator.html">
+            
+                <a href="06-springboot-actuator.html">
+            
+                    
+                    Spring Boot Actuator
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">01 Intro</li>
+        
+        
+    
+        <li class="chapter " data-level="13.1" data-path="../01-intro/extrat-logic-auto-summary2.html">
+            
+                <a href="../01-intro/extrat-logic-auto-summary2.html">
+            
+                    
+                    Extrat Logic Auto Summary2
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">06 Frontend</li>
+        
+        
+    
+        <li class="chapter " data-level="14.1" data-path="../06-frontend/frontend-migration.html">
+            
+                <a href="../06-frontend/frontend-migration.html">
+            
+                    
+                    Frontend Migration
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">01 Intro</li>
+        
+        
+    
+        <li class="chapter " data-level="15.1" data-path="../01-intro/main-test.html">
+            
+                <a href="../01-intro/main-test.html">
+            
+                    
+                    Main Test
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
+            Published with HonKit
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Error 처리 공통 클래스 in Spring Boot</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="error-처리-공통-클래스-in-spring-boot">Error 처리 공통 클래스 in Spring Boot</h1>
+<h2 id="들어가며">들어가며</h2>
+<p>Reference에 표기된 스프링 MVC 패턴에서의 에러 핸들링 공식 블로그를 참고했습니다. 블로그 글은 2013년 글이지만 데모 어플리케이션은 2024년 기준으로 업데이트가 되어있습니다. 추가적으로 최신 예제에 관심 있으시면 <a href="https://github.com/paulc4/mvc-exceptions" target="_blank">https://github.com/paulc4/mvc-exceptions</a> 참고 부탁드립니다.</p>
+<p>아래 글에서는 다음 부분을 확인 가능합니다.</p>
+<ul>
+<li>기존 코드</li>
+<li>리팩토링한 코드와 <strong>개선점</strong></li>
+<li>주요 어노테이션</li>
+<li><strong>새로운 API에서 어떻게 에러를 추가할 수 있는지</strong></li>
+</ul>
+<p>리팩토링 코드 부분은 건너 뛰셔도 됩니다.</p>
+<h2 id="스프링-공식-블로그-권장-사항">스프링 공식 블로그 권장 사항</h2>
+<ul>
+<li>Global Exception Handling<ul>
+<li>Using @ControllerAdvice Classes<ul>
+<li>Exception handling methods annotated with @ExceptionHandler</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Errors and REST<blockquote>
+<p>RESTful GET requests may also generate exceptions and we have already seen how we can return standard HTTP Error response codes. However, what if you want to return information about the error? This is very easy to do. Firstly define an error class. we can return an instance from a handler as the @ResponseBody</p>
+</blockquote>
+</li>
+<li>What to Use When?<blockquote>
+<p>Warning: Be careful mixing too many of these options in the same application. If the same exception can be handed in more than one way, you may not get the behavior you wanted. @ExceptionHandler methods on the Controller are always selected before those on any @ControllerAdvice instance. It is undefined what order controller-advices are processed.</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="logout-기존-코드--포스트맨-응답값">logout 기존 코드 &amp; 포스트맨 응답값</h2>
+<p><img src="image/login.png" alt="기존 포스트맨 응답값"></img>
+<img src="image/logout.png" alt="기존 포스트맨 로그아웃 응답값"></img>
+<img src="image.png" alt="기존 포스트맨 에러 응답값"></img></p>
+<pre><code class="lang-java"> <span class="hljs-meta">@PostMapping("/logout")</span>
+    <span class="hljs-keyword">public</span> ResponseEntity&lt;?&gt; logout(HttpServletRequest request, Authentication authentication) {
+        <span class="hljs-type">String</span> <span class="hljs-variable">username</span> <span class="hljs-operator">=</span> authentication != <span class="hljs-literal">null</span> ? authentication.getName() : <span class="hljs-string">"anonymous"</span>;
+
+        <span class="hljs-comment">// Authorization 헤더에서 토큰 추출</span>
+        <span class="hljs-type">String</span> <span class="hljs-variable">authHeader</span> <span class="hljs-operator">=</span> request.getHeader(<span class="hljs-string">"Authorization"</span>);
+        <span class="hljs-keyword">if</span> (authHeader != <span class="hljs-literal">null</span> &amp;&amp; authHeader.startsWith(<span class="hljs-string">"Bearer "</span>)) {
+            <span class="hljs-type">String</span> <span class="hljs-variable">token</span> <span class="hljs-operator">=</span> authHeader.substring(<span class="hljs-number">7</span>);
+
+            <span class="hljs-keyword">try</span> {
+                <span class="hljs-comment">// 토큰 만료 시간 가져오기</span>
+                <span class="hljs-type">long</span> <span class="hljs-variable">expirationTime</span> <span class="hljs-operator">=</span> jwtUtil.extractClaims(token).getExpiration().getTime();
+                <span class="hljs-type">long</span> <span class="hljs-variable">timeLeft</span> <span class="hljs-operator">=</span> (expirationTime - System.currentTimeMillis()) / <span class="hljs-number">1000</span> / <span class="hljs-number">60</span>; <span class="hljs-comment">// 분 단위</span>
+
+                <span class="hljs-keyword">return</span> ResponseEntity.ok(Map.of(
+                        <span class="hljs-string">"message"</span>, <span class="hljs-string">"로그아웃 완료"</span>,
+                        <span class="hljs-string">"username"</span>, username,
+                        <span class="hljs-string">"tokenTimeLeft"</span>, timeLeft + <span class="hljs-string">"분"</span>,
+                        <span class="hljs-string">"timestamp"</span>, LocalDateTime.now(),
+                        <span class="hljs-string">"success"</span>, <span class="hljs-literal">true</span>
+                ));
+            } <span class="hljs-keyword">catch</span> (Exception e) {
+                <span class="hljs-keyword">return</span> ResponseEntity.badRequest().body(Map.of(
+                        <span class="hljs-string">"error"</span>, <span class="hljs-string">"토큰 처리 중 오류 발생"</span>,
+                        <span class="hljs-string">"message"</span>, e.getMessage(),
+                        <span class="hljs-string">"username"</span>, username,
+                        <span class="hljs-string">"success"</span>, <span class="hljs-literal">false</span>
+                ));
+            }
+        }
+
+        <span class="hljs-keyword">return</span> ResponseEntity.ok(Map.of(
+                <span class="hljs-string">"message"</span>, <span class="hljs-string">"로그아웃 완료"</span>,
+                <span class="hljs-string">"username"</span>, username,
+                <span class="hljs-string">"timestamp"</span>, LocalDateTime.now(),
+                <span class="hljs-string">"success"</span>, <span class="hljs-literal">true</span>
+        ));
+    }
+</code></pre>
+<h2 id="refactor-전-생각한-지점">Refactor 전 생각한 지점</h2>
+<ul>
+<li>로그아웃 완료 responseEntity의 코드 반복</li>
+<li>에러 처리를 컨트롤러에서 분리하여 컨트롤러를 깨끗하게(?) 변경 (단일 책임 원칙)<ul>
+<li>분리해야할 부분 : 토큰 시간 계산 처리, 토큰 추출 로직</li>
+</ul>
+</li>
+<li>DTO 및 응답값은 유지해야 함 (다른 코드에 사용하고 있을 수 있으므로)</li>
+<li>스프링 공식 블로그 권장 글로벌 에러 핸들링 어노테이션 사용</li>
+<li>다른 API에서도 동일하게 사용 가능하도록 확장성 유지</li>
+</ul>
+<h2 id="refactor-과정">Refactor 과정</h2>
+<h3 id="1-공통-응답-dto-생성">1. 공통 응답 DTO 생성</h3>
+<pre><code class="lang-java"><span class="hljs-meta">@Getter</span>
+<span class="hljs-meta">@Builder</span>
+<span class="hljs-meta">@JsonInclude(JsonInclude.Include.NON_NULL)</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">ApiResponse</span>&lt;T&gt; {
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> String message;
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> T data;
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> <span class="hljs-type">boolean</span> success;
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> String error;
+    <span class="hljs-meta">@Builder</span>.Default
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> <span class="hljs-type">LocalDateTime</span> <span class="hljs-variable">timestamp</span> <span class="hljs-operator">=</span> LocalDateTime.now();
+
+    <span class="hljs-comment">// 성공 응답 생성 메서드들</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> &lt;T&gt; ApiResponse&lt;T&gt; <span class="hljs-title function_">success</span><span class="hljs-params">(String message, T data)</span> {
+        <span class="hljs-keyword">return</span> ApiResponse.&lt;T&gt;builder()
+                .message(message)
+                .data(data)
+                .success(<span class="hljs-literal">true</span>)
+                .build();
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> &lt;T&gt; ApiResponse&lt;T&gt; <span class="hljs-title function_">success</span><span class="hljs-params">(String message)</span> {
+        <span class="hljs-keyword">return</span> ApiResponse.&lt;T&gt;builder()
+                .message(message)
+                .success(<span class="hljs-literal">true</span>)
+                .build();
+    }
+
+    <span class="hljs-comment">// 실패 응답 생성 메서드들</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> &lt;T&gt; ApiResponse&lt;T&gt; <span class="hljs-title function_">error</span><span class="hljs-params">(String message, String error, T data)</span> {
+        <span class="hljs-keyword">return</span> ApiResponse.&lt;T&gt;builder()
+                .message(message)
+                .error(error)
+                .data(data)
+                .success(<span class="hljs-literal">false</span>)
+                .build();
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> &lt;T&gt; ApiResponse&lt;T&gt; <span class="hljs-title function_">error</span><span class="hljs-params">(String message, String error)</span> {
+        <span class="hljs-keyword">return</span> ApiResponse.&lt;T&gt;builder()
+                .message(message)
+                .error(error)
+                .success(<span class="hljs-literal">false</span>)
+                .build();
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> &lt;T&gt; ApiResponse&lt;T&gt; <span class="hljs-title function_">error</span><span class="hljs-params">(String message)</span> {
+        <span class="hljs-keyword">return</span> ApiResponse.&lt;T&gt;builder()
+                .message(message)
+                .success(<span class="hljs-literal">false</span>)
+                .build();
+    }
+}
+</code></pre>
+<h3 id="2-로그아웃-응답-dto-생성">2. 로그아웃 응답 DTO 생성</h3>
+<pre><code class="lang-java"><span class="hljs-meta">@Getter</span>
+<span class="hljs-meta">@Setter</span>
+<span class="hljs-meta">@NoArgsConstructor</span>
+<span class="hljs-meta">@AllArgsConstructor</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">LogoutResponse</span> {
+    <span class="hljs-keyword">private</span> String username;
+    <span class="hljs-keyword">private</span> String tokenTimeLeft;
+
+    <span class="hljs-comment">// username만 받는 생성자</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-title function_">LogoutResponse</span><span class="hljs-params">(String username)</span> {
+        <span class="hljs-built_in">this</span>.username = username;
+    }
+}
+</code></pre>
+<h3 id="3-authcontroller에서-service-레이어-분리">3. AuthController에서 Service 레이어 분리</h3>
+<pre><code class="lang-java"><span class="hljs-meta">@Service</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">AuthService</span> {
+
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> JwtUtil jwtUtil;
+
+    <span class="hljs-keyword">public</span> <span class="hljs-title function_">AuthService</span><span class="hljs-params">(JwtUtil jwtUtil)</span> {
+        <span class="hljs-built_in">this</span>.jwtUtil = jwtUtil;
+    }
+
+    <span class="hljs-keyword">public</span> LogoutResponse <span class="hljs-title function_">processLogout</span><span class="hljs-params">(String token, String username)</span> {
+        <span class="hljs-keyword">if</span> (token != <span class="hljs-literal">null</span>) {
+            <span class="hljs-keyword">try</span> {
+                <span class="hljs-comment">// 토큰 만료 시간 계산</span>
+                <span class="hljs-type">long</span> <span class="hljs-variable">expirationTime</span> <span class="hljs-operator">=</span> jwtUtil.extractClaims(token).getExpiration().getTime();
+                <span class="hljs-type">long</span> <span class="hljs-variable">timeLeft</span> <span class="hljs-operator">=</span> (expirationTime - System.currentTimeMillis()) / <span class="hljs-number">1000</span> / <span class="hljs-number">60</span>;
+
+                <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">LogoutResponse</span>(username, timeLeft + <span class="hljs-string">"분"</span>);
+            } <span class="hljs-keyword">catch</span> (Exception e) {
+                <span class="hljs-comment">// 서비스에서는 예외를 그대로 던져서 컨트롤러에서 처리하도록 함</span>
+                <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">TokenProcessingException</span>(<span class="hljs-string">"토큰 처리 중 오류 발생: "</span> + e.getMessage(), e);
+            }
+        }
+
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">LogoutResponse</span>(username);
+    }
+}
+</code></pre>
+<h3 id="4-커스텀-예외-생성">4. 커스텀 예외 생성</h3>
+<p>JWT 토큰 처리 중 발생하는 예외를 처리하는 커스텀 예외 클래스</p>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">TokenProcessingException</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">RuntimeException</span> {
+    <span class="hljs-keyword">public</span> <span class="hljs-title function_">TokenProcessingException</span><span class="hljs-params">(String message)</span> {
+        <span class="hljs-built_in">super</span>(message);
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-title function_">TokenProcessingException</span><span class="hljs-params">(String message, Throwable cause)</span> {
+        <span class="hljs-built_in">super</span>(message, cause);
+    }
+}
+</code></pre>
+<h3 id="5-글로벌-예외-핸들러-생성">5. 글로벌 예외 핸들러 생성</h3>
+<pre><code class="lang-java"><span class="hljs-meta">@RestControllerAdvice</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">GlobalExceptionHandler</span> {
+
+    <span class="hljs-meta">@ExceptionHandler(TokenProcessingException.class)</span>
+    <span class="hljs-keyword">public</span> ResponseEntity&lt;ApiResponse&lt;?&gt;&gt; handleTokenProcessingException(
+            TokenProcessingException ex, HttpServletRequest request) {
+
+        <span class="hljs-comment">// 현재 인증된 사용자 정보 가져오기</span>
+        <span class="hljs-type">String</span> <span class="hljs-variable">username</span> <span class="hljs-operator">=</span> getCurrentUsername(request);
+
+        <span class="hljs-type">LogoutResponse</span> <span class="hljs-variable">errorData</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">LogoutResponse</span>(username);
+
+        ApiResponse&lt;LogoutResponse&gt; response = ApiResponse.error(
+                <span class="hljs-string">"토큰 처리 중 오류 발생"</span>,
+                ex.getMessage(),
+                errorData
+        );
+
+        <span class="hljs-keyword">return</span> ResponseEntity.badRequest().body(response);
+    }
+
+    <span class="hljs-keyword">private</span> String <span class="hljs-title function_">getCurrentUsername</span><span class="hljs-params">(HttpServletRequest request)</span> {
+        <span class="hljs-type">Authentication</span> <span class="hljs-variable">authentication</span> <span class="hljs-operator">=</span> SecurityContextHolder.getContext().getAuthentication();
+        <span class="hljs-keyword">return</span> authentication != <span class="hljs-literal">null</span> ? authentication.getName() : <span class="hljs-string">"anonymous"</span>;
+    }
+
+    <span class="hljs-comment">// 다른 예외들도 필요에 따라 추가</span>
+    <span class="hljs-meta">@ExceptionHandler(Exception.class)</span>
+    <span class="hljs-keyword">public</span> ResponseEntity&lt;ApiResponse&lt;?&gt;&gt; handleGeneralException(Exception ex) {
+        ApiResponse&lt;?&gt; response = ApiResponse.error(<span class="hljs-string">"서버 오류가 발생했습니다."</span>, ex.getMessage());
+        <span class="hljs-keyword">return</span> ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(response);
+    }
+}
+</code></pre>
+<h3 id="6-토큰-처리하는-유틸리티-클래스-생성">6. 토큰 처리하는 유틸리티 클래스 생성</h3>
+<pre><code class="lang-java"><span class="hljs-meta">@Component</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">TokenExtractor</span> {
+
+    <span class="hljs-keyword">public</span> String <span class="hljs-title function_">extractTokenFromRequest</span><span class="hljs-params">(HttpServletRequest request)</span> {
+        <span class="hljs-type">String</span> <span class="hljs-variable">authHeader</span> <span class="hljs-operator">=</span> request.getHeader(<span class="hljs-string">"Authorization"</span>);
+        <span class="hljs-keyword">if</span> (authHeader != <span class="hljs-literal">null</span> &amp;&amp; authHeader.startsWith(<span class="hljs-string">"Bearer "</span>)) {
+            <span class="hljs-keyword">return</span> authHeader.substring(<span class="hljs-number">7</span>);
+        }
+        <span class="hljs-keyword">return</span> <span class="hljs-literal">null</span>;
+    }
+}
+</code></pre>
+<h3 id="7-리팩토링된-컨트롤러로-수정">7. 리팩토링된 컨트롤러로 수정</h3>
+<pre><code class="lang-java"><span class="hljs-meta">@RestController</span>
+<span class="hljs-meta">@RequestMapping("/auth")</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">AuthController</span> {
+
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> AuthService authService;
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> TokenExtractor tokenExtractor;
+
+    <span class="hljs-keyword">public</span> <span class="hljs-title function_">AuthController</span><span class="hljs-params">(AuthenticationManager authenticationManager, JwtUtil jwtUtil, UserService userService, AuthService authService, TokenExtractor tokenExtractor)</span> {
+        <span class="hljs-built_in">this</span>.authenticationManager = authenticationManager;
+        <span class="hljs-built_in">this</span>.jwtUtil = jwtUtil;
+        <span class="hljs-built_in">this</span>.userService = userService;
+        <span class="hljs-built_in">this</span>.authService = authService;
+        <span class="hljs-built_in">this</span>.tokenExtractor = tokenExtractor;
+    }
+
+     <span class="hljs-meta">@PostMapping("/logout")</span>
+    <span class="hljs-keyword">public</span> ResponseEntity&lt;ApiResponse&lt;LogoutResponse&gt;&gt; <span class="hljs-title function_">logout</span><span class="hljs-params">(
+            HttpServletRequest request,
+            Authentication authentication)</span> {
+
+        <span class="hljs-type">String</span> <span class="hljs-variable">username</span> <span class="hljs-operator">=</span> authentication != <span class="hljs-literal">null</span> ? authentication.getName() : <span class="hljs-string">"anonymous"</span>;
+        <span class="hljs-type">String</span> <span class="hljs-variable">token</span> <span class="hljs-operator">=</span> tokenExtractor.extractTokenFromRequest(request);
+
+        <span class="hljs-type">LogoutResponse</span> <span class="hljs-variable">logoutData</span> <span class="hljs-operator">=</span> authService.processLogout(token, username);
+        ApiResponse&lt;LogoutResponse&gt; response = ApiResponse.success(<span class="hljs-string">"로그아웃 완료"</span>, logoutData);
+
+        <span class="hljs-keyword">return</span> ResponseEntity.ok(response);
+    }
+}
+</code></pre>
+<h3 id="사용한-주요-어노테이션">사용한 주요 어노테이션</h3>
+<h4 id="spring-boot-어노테이션">Spring Boot 어노테이션</h4>
+<p><code>@RestControllerAdvice</code></p>
+<pre><code class="lang-java"><span class="hljs-meta">@RestControllerAdvice</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">GlobalExceptionHandler</span> {
+    <span class="hljs-comment">// 전역 예외 처리 로직</span>
+}
+</code></pre>
+<ul>
+<li>용도: 전체 애플리케이션에서 발생하는 예외를 중앙집중식으로 처리</li>
+<li>특징: @ControllerAdvice + @ResponseBody의 조합</li>
+<li>작동 방식: 모든 컨트롤러에서 발생하는 예외를 가로채서 처리</li>
+</ul>
+<p><code>@ExceptionHandler</code></p>
+<pre><code class="lang-java"><span class="hljs-meta">@ExceptionHandler(TokenProcessingException.class)</span>
+<span class="hljs-keyword">public</span> ResponseEntity&lt;ApiResponse&lt;LogoutResponse&gt;&gt; <span class="hljs-title function_">handleTokenProcessingException</span><span class="hljs-params">(
+        TokenProcessingException ex, HttpServletRequest request)</span> {
+    <span class="hljs-comment">// 특정 예외 처리 로직</span>
+}
+</code></pre>
+<ul>
+<li>용도: 특정 예외 타입에 대한 처리 메서드 지정</li>
+<li>파라미터: 처리할 예외 클래스 타입</li>
+<li>우선순위: 구체적인 예외 → 추상적인 예외 순으로 처리</li>
+</ul>
+<p><code>@Component</code></p>
+<pre><code class="lang-java"><span class="hljs-meta">@Component</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">TokenExtractor</span> {
+    <span class="hljs-comment">// 유틸리티 로직</span>
+}
+</code></pre>
+<ul>
+<li>용도: 일반적인 Spring 관리 컴포넌트 표시</li>
+<li>특징: 재사용 가능한 유틸리티 클래스에 사용</li>
+<li>스캔: @ComponentScan에 의해 자동으로 빈 등록</li>
+</ul>
+<h4 id="jackson-어노테이션">Jackson 어노테이션</h4>
+<p><code>@JsonInclude(JsonInclude.Include.NON_NULL)</code></p>
+<ul>
+<li>용도: JSON 직렬화 시 null 값 제외</li>
+<li>옵션:<ul>
+<li>NON_NULL: null 값 제외</li>
+<li>NON_EMPTY: 빈 값 제외</li>
+<li>ALWAYS: 항상 포함</li>
+</ul>
+</li>
+</ul>
+<h2 id="refactor-결과">Refactor 결과</h2>
+<p><img src="refactorResult.png" alt="refactor result"></img></p>
+<h2 id="새로운-api에서-공통-구조-사용하기">새로운 API에서 공통 구조 사용하기</h2>
+<ol>
+<li>새로운 예외 타입 추가</li>
+<li>GlobalExceptionHandler에 예외 처리 추가</li>
+<li>새로운 API에서 ApiResponse 사용</li>
+</ol>
+<h2 id="refactor-개선된-점">Refactor 개선된 점</h2>
+<h3 id="1-코드-재사용성">1. 코드 재사용성</h3>
+<ul>
+<li>ApiResponse 클래스로 일관된 응답 형태</li>
+<li>TokenExtractor로 토큰 추출 로직 재사용</li>
+</ul>
+<h3 id="2-관심사-분리">2. 관심사 분리</h3>
+<ul>
+<li>컨트롤러: HTTP 요청/응답 처리에만 집중</li>
+<li>서비스: 비즈니스 로직 처리</li>
+<li>예외 처리기: 전역 예외 처리</li>
+</ul>
+<h3 id="3-유지보수성-향상">3. 유지보수성 향상</h3>
+<ul>
+<li>응답 형태 변경 시 ApiResponse만 수정</li>
+<li>에러 처리 로직 변경 시 GlobalExceptionHandler만 수정</li>
+</ul>
+<h3 id="4-확장성">4. 확장성</h3>
+<ul>
+<li>새로운 API 추가 시 동일한 구조 사용 가능</li>
+<li>새로운 예외 타입 쉽게 추가 가능</li>
+</ul>
+<h2 id="추가-공부-사항">추가 공부 사항</h2>
+<ul>
+<li>Factory Method Pattern: 객체 생성을 위한 정적 팩토리 메서드<ul>
+<li>Java의 Optional, Collections 클래스에서도 동일하게 정적 팩토리 메소드를 사용하고 있으니 참고 바랍니다.</li>
+</ul>
+</li>
+</ul>
+<p><code>ApiResponse</code> 에서 이 패턴을 사용했는데, 아래와 같은 의도가 있습니다.</p>
+<h3 id="1메서드-이름만-봐도-어떤-응답을-생성하는지-즉시-알-수-있다">1.메서드 이름만 봐도 어떤 응답을 생성하는지 즉시 알 수 있다.</h3>
+<pre><code class="lang-java"><span class="hljs-comment">// 생성자만 사용하는 경우</span>
+ApiResponse&lt;User&gt; response1 = <span class="hljs-keyword">new</span> <span class="hljs-title class_">ApiResponse</span>&lt;&gt;(<span class="hljs-string">"성공"</span>, user, <span class="hljs-literal">true</span>, <span class="hljs-literal">null</span>, LocalDateTime.now());
+ApiResponse&lt;User&gt; response2 = <span class="hljs-keyword">new</span> <span class="hljs-title class_">ApiResponse</span>&lt;&gt;(<span class="hljs-string">"실패"</span>, <span class="hljs-literal">null</span>, <span class="hljs-literal">false</span>, <span class="hljs-string">"에러 메시지"</span>, LocalDateTime.now());
+
+<span class="hljs-comment">// 정적 팩토리 메서드 사용</span>
+ApiResponse&lt;User&gt; response1 = ApiResponse.success(<span class="hljs-string">"성공"</span>, user);
+ApiResponse&lt;User&gt; response2 = ApiResponse.error(<span class="hljs-string">"실패"</span>, <span class="hljs-string">"에러 메시지"</span>);
+</code></pre>
+<h3 id="2-매개변수가-같은-경우-구분-가능하다">2. 매개변수가 같은 경우 구분 가능하다</h3>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">ApiResponse</span>&lt;T&gt; {
+    <span class="hljs-comment">// 생성자로는 불가능 (같은 시그니처)</span>
+    <span class="hljs-comment">// public ApiResponse(String message) { ... } // 성공용</span>
+    <span class="hljs-comment">// public ApiResponse(String message) { ... } // 실패용</span>
+
+    <span class="hljs-comment">// 정적 팩토리 메서드로 해결</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> &lt;T&gt; ApiResponse&lt;T&gt; <span class="hljs-title function_">success</span><span class="hljs-params">(String message)</span> {
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">ApiResponse</span>&lt;&gt;(message, <span class="hljs-literal">null</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">null</span>, LocalDateTime.now());
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> &lt;T&gt; ApiResponse&lt;T&gt; <span class="hljs-title function_">error</span><span class="hljs-params">(String message)</span> {
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">ApiResponse</span>&lt;&gt;(message, <span class="hljs-literal">null</span>, <span class="hljs-literal">false</span>, <span class="hljs-literal">null</span>, LocalDateTime.now());
+    }
+}
+</code></pre>
+<h2 id="reference">Reference</h2>
+<ul>
+<li>SpringBoot Exception handling <a href="https://spring.io/blog/2013/11/01/exception-handling-in-spring-mvc" target="_blank">https://spring.io/blog/2013/11/01/exception-handling-in-spring-mvc</a></li>
+<li><a href="https://github.com/paulc4/mvc-exceptions" target="_blank">https://github.com/paulc4/mvc-exceptions</a></li>
+<li>jackson annotation <a href="https://github.com/FasterXML/jackson-annotations" target="_blank">https://github.com/FasterXML/jackson-annotations</a></li>
+<li>Factory Method Pattern: 객체 생성을 위한 정적 팩토리 메서드</li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="04-springboot-folder-structure.html" class="navigation navigation-prev " aria-label="Previous page: Folder Structure in SpringBoot">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="06-springboot-actuator.html" class="navigation navigation-next " aria-label="Next page: Spring Boot Actuator">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Error 처리 공통 클래스 in Spring Boot","level":"12.4","depth":1,"next":{"title":"Spring Boot Actuator","level":"12.5","depth":1,"path":"07-backend/06-springboot-actuator.md","ref":"07-backend/06-springboot-actuator.md","articles":[]},"previous":{"title":"Folder Structure in SpringBoot","level":"12.3","depth":1,"path":"07-backend/04-springboot-folder-structure.md","ref":"07-backend/04-springboot-folder-structure.md","articles":[]},"dir":"ltr"},"config":{"plugins":["mermaid-gb3"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"mermaid-gb3":{"theme":"default"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"공연 티켓팅 서비스 GitBook","gitbook":"*"},"file":{"path":"07-backend/05-springboot-utils-error.md","mtime":"2025-09-16T07:03:24.513Z","type":"markdown"},"gitbook":{"version":"6.0.3","time":"2025-09-16T07:03:36.877Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    
+    <noscript>
+        <style>
+            .honkit-cloak {
+                display: block !important;
+            }
+        </style>
+    </noscript>
+    <script>
+        // Restore sidebar state as critical path for prevent layout shift
+        function __init__getSidebarState(defaultValue){
+            var baseKey = "";
+            var key = baseKey + ":sidebar";
+            try {
+                var value = localStorage[key];
+                if (value === undefined) {
+                    return defaultValue;
+                }
+                var parsed = JSON.parse(value);
+                return parsed == null ? defaultValue : parsed;
+            } catch (e) {
+                return defaultValue;
+            }
+        }
+        function __init__restoreLastSidebarState() {
+            var isMobile = window.matchMedia("(max-width: 600px)").matches;
+            if (isMobile) {
+                // Init last state if not mobile
+                return;
+            }
+            var sidebarState = __init__getSidebarState(true);
+            var book = document.querySelector(".book");
+            // Show sidebar if it enabled
+            if (sidebarState && book) {
+                book.classList.add("without-animation", "with-summary");
+            }
+        }
+
+        try {
+            __init__restoreLastSidebarState();
+        } finally {
+            var book = document.querySelector(".book");
+            book.classList.remove("honkit-cloak");
+        }
+    </script>
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-mermaid-gb3/book/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/@honkit/honkit-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    <script src="../gitbook/gitbook-plugin-mermaid-gb3/mermaid/mermaid.min.js"></script>
+
+    </body>
+</html>
+
