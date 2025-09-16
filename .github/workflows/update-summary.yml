@@ -3,14 +3,14 @@ name: Update SUMMARY.md
 on:
     push:
         branches: [main, 'feat/#32']
-        paths: ['**/*.md', '!SUMMARY.md'] # SUMMARY.md 변경은 제외
+        paths: ['**/*.md', '!SUMMARY.md']
 
 jobs:
     update-summary:
         runs-on: ubuntu-latest
 
         permissions:
-            contents: write #summary commit을 위해
+            contents: write
 
         steps:
             - name: Checkout
@@ -18,142 +18,13 @@ jobs:
               with:
                   token: ${{ secrets.GITHUB_TOKEN }}
 
-            - name: Auto-update SUMMARY.md
-              run: |
-                  echo "Checking for new markdown files..."
+            - name: Setup Node.js LTS
+              uses: actions/setup-node@v3
+              with:
+                  node-version: 'lts/*'
 
-                  python3 << 'EOF'
-                  import os
-                  import re
-                  from pathlib import Path
-
-                  def find_markdown_files():
-                      """모든 .md 파일 찾기"""
-                      exclude_files = {'README.md', 'SUMMARY.md'}
-                      exclude_dirs = {'.git', 'node_modules', '_book', '.github'}
-                      
-                      md_files = []
-                      for root, dirs, files in os.walk('.'):
-                          dirs[:] = [d for d in dirs if d not in exclude_dirs and not d.startswith('.')]
-                          
-                          for file in files:
-                              if file.endswith('.md') and file not in exclude_files:
-                                  rel_path = os.path.relpath(os.path.join(root, file))
-                                  md_files.append(rel_path)
-                      
-                      return sorted(md_files)
-
-                  def extract_title(file_path):
-                      """마크다운에서 제목 추출"""
-                      try:
-                          with open(file_path, 'r', encoding='utf-8') as f:
-                              content = f.read()
-                              match = re.search(r'^#\s+(.+)', content, re.MULTILINE)
-                              if match:
-                                  return match.group(1).strip()
-                      except Exception as e:
-                          print(f"Warning: Could not read {file_path}: {e}")
-                      
-                      return Path(file_path).stem.replace('-', ' ').replace('_', ' ').title()
-
-                  def get_existing_files():
-                      """기존 SUMMARY.md에서 파일들 추출"""
-                      if not os.path.exists('SUMMARY.md'):
-                          return set()
-                      
-                      try:
-                          with open('SUMMARY.md', 'r', encoding='utf-8') as f:
-                              content = f.read()
-                          
-                          existing = set()
-                          for match in re.finditer(r'\[.*?\]\(([^)]+\.md)\)', content):
-                              existing.add(match.group(1))
-                          
-                          return existing
-                      except Exception as e:
-                          print(f"Warning: Could not read SUMMARY.md: {e}")
-                          return set()
-
-                  def categorize_files(files):
-                      """파일들을 디렉토리별로 분류"""
-                      categories = {}
-                      
-                      for file_path in files:
-                          dir_name = os.path.dirname(file_path)
-                          
-                          if dir_name == '.' or dir_name == '':
-                              category = "메인 문서"
-                          else:
-                              first_dir = dir_name.split('/')[0]
-                              category = f"{first_dir.replace('-', ' ').replace('_', ' ').title()}"
-                          
-                          if category not in categories:
-                              categories[category] = []
-                          
-                          title = extract_title(file_path)
-                          categories[category].append((title, file_path))
-                      
-                      return categories
-
-                  def update_summary():
-                      """SUMMARY.md 업데이트"""
-                      print("Finding all markdown files...")
-                      all_files = find_markdown_files()
-                      existing_files = get_existing_files()
-                      new_files = [f for f in all_files if f not in existing_files]
-                      
-                      print(f"Found {len(all_files)} total files")
-                      print(f"Already in SUMMARY.md: {len(existing_files)} files")
-                      print(f"New files to add: {len(new_files)} files")
-                      
-                      if not new_files:
-                          print("No new files to add to SUMMARY.md")
-                          return False
-                      
-                      print("\n New files found:")
-                      for file_path in new_files:
-                          print(f"  + {file_path}")
-                      
-                      # 기존 SUMMARY.md 내용 읽기
-                      summary_lines = []
-                      if os.path.exists('SUMMARY.md'):
-                          try:
-                              with open('SUMMARY.md', 'r', encoding='utf-8') as f:
-                                  summary_lines = f.readlines()
-                          except Exception as e:
-                              print(f"Warning: Could not read existing SUMMARY.md: {e}")
-                      
-                      if not summary_lines:
-                          summary_lines = [
-                              "# Summary\n",
-                              "\n",
-                              "* [Introduction](README.md)\n",
-                              "\n"
-                          ]
-                      
-                      if summary_lines and not summary_lines[-1].endswith('\n'):
-                          summary_lines[-1] += '\n'
-                      
-                      # 새 파일들을 카테고리별로 추가
-                      categories = categorize_files(new_files)
-                      
-                      for category, files in sorted(categories.items()):
-                          summary_lines.append(f"\n## {category}\n")
-                          for title, file_path in files:
-                              summary_lines.append(f"* [{title}]({file_path})\n")
-                      
-                      try:
-                          with open('SUMMARY.md', 'w', encoding='utf-8') as f:
-                              f.writelines(summary_lines)
-                          print(f"\n SUMMARY.md updated with {len(new_files)} new files")
-                          return True
-                      except Exception as e:
-                          print(f" Error writing SUMMARY.md: {e}")
-                          return False
-
-                  if __name__ == "__main__":
-                      update_summary()
-                  EOF
+            - name: Update SUMMARY.md
+              run: npm run docs:update-summary
 
             - name: Commit updated SUMMARY.md
               run: |
