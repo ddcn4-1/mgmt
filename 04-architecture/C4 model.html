@@ -3,7 +3,7 @@
 <html lang="" >
     <head>
         <meta charset="UTF-8">
-        <title>인프라 배포 · 공연 티켓팅 서비스 GitBook</title>
+        <title>C4 Model · 공연 티켓팅 서비스 GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="HonKit 6.0.3">
@@ -68,10 +68,8 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="../12-operations/01-monitoring.html" />
     
-    
-    <link rel="prev" href="../10-testing/01-performance.html" />
+    <link rel="prev" href="../01-intro/permission-test.html" />
     
 
     </head>
@@ -166,9 +164,9 @@
         
         
     
-        <li class="chapter " data-level="3.1" data-path="../04-architecture/01-stack.html">
+        <li class="chapter " data-level="3.1" data-path="01-stack.html">
             
-                <a href="../04-architecture/01-stack.html">
+                <a href="01-stack.html">
             
                     
                     기술 스택
@@ -179,9 +177,9 @@
             
         </li>
     
-        <li class="chapter " data-level="3.2" data-path="../04-architecture/02-design.html">
+        <li class="chapter " data-level="3.2" data-path="02-design.html">
             
-                <a href="../04-architecture/02-design.html">
+                <a href="02-design.html">
             
                     
                     설계 다이어그램
@@ -291,9 +289,9 @@
         
         
     
-        <li class="chapter active" data-level="6.1" data-path="01-deployment.html">
+        <li class="chapter " data-level="6.1" data-path="../11-infra/01-deployment.html">
             
-                <a href="01-deployment.html">
+                <a href="../11-infra/01-deployment.html">
             
                     
                     인프라 배포
@@ -609,9 +607,9 @@
         
         
     
-        <li class="chapter " data-level="18.1" data-path="../04-architecture/C4 model.html">
+        <li class="chapter active" data-level="18.1" data-path="C4 model.html">
             
-                <a href="../04-architecture/C4 model.html">
+                <a href="C4 model.html">
             
                     
                     C4 Model
@@ -652,7 +650,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >인프라 배포</a>
+        <a href=".." >C4 Model</a>
     </h1>
 </div>
 
@@ -667,48 +665,147 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="인프라-배포">인프라 배포</h1>
-<h2 id="로컬docker-compose">로컬(Docker Compose)</h2>
-<pre><code class="lang-yaml"><span class="hljs-attr">version:</span> <span class="hljs-string">'3.9'</span>
-<span class="hljs-attr">services:</span>
-  <span class="hljs-attr">db:</span>
-    <span class="hljs-attr">image:</span> <span class="hljs-string">postgres:16</span>
-    <span class="hljs-attr">environment:</span>
-      <span class="hljs-attr">POSTGRES_PASSWORD:</span> <span class="hljs-string">postgres</span>
-    <span class="hljs-attr">ports:</span> [<span class="hljs-string">"5432:5432"</span>]
-  <span class="hljs-attr">redis:</span>
-    <span class="hljs-attr">image:</span> <span class="hljs-string">redis:7</span>
-    <span class="hljs-attr">ports:</span> [<span class="hljs-string">"6379:6379"</span>]
-  <span class="hljs-attr">api:</span>
-    <span class="hljs-attr">build:</span> <span class="hljs-string">./api</span>
-    <span class="hljs-attr">depends_on:</span> [<span class="hljs-string">db</span>, <span class="hljs-string">redis</span>]
-    <span class="hljs-attr">environment:</span>
-      <span class="hljs-attr">SPRING_PROFILES_ACTIVE:</span> <span class="hljs-string">local</span>
-    <span class="hljs-attr">ports:</span> [<span class="hljs-string">"8080:8080"</span>]
-</code></pre>
-<h2 id="클라우드aws">클라우드(AWS)</h2>
+                                <h2 id="1-아키텍쳐를-그리기-위해-결심한-이유">1. 아키텍쳐를 그리기 위해 결심한 이유</h2>
+<p>약 2주 간의 개발 과정 중 의사 소통에 있어서 크게 2가지 문제점이 있었다.
+온라인에서 구두로만 이야기를 하다보니 각자 다르게 이해를 한다는 점에서 커뮤니케이션 효율성이 떨어졌고, 특정 기술을 도입하기 위해 현 상황을 파악하기 위한 설명/ 도식이 없다보니 의사결정의 근거를 명확히 보여주기가 어려웠다. 따라서 로컬에서의 개발이 어느정도 마무리된 지금 시점에서, 클라우드로의 이관 전에 현 상황에 대한 확인이 필요하다고 느껴졌다.</p>
+<h3 id="커뮤니케이션-효율성">커뮤니케이션 효율성</h3>
+<p><img src="image/Pasted%20image%2020250915132334.png" alt="communication"></img>
+Booking(공연 예약)에 대한 유저 플로우와 관련 로직에서, DB 스키마의 이름이 비슷하다 보니 로직 변경을 위한 논의 중 어떤 스키마를 변경해야하는지 소통에서 오해가 자주 생겼다. 위 사진은 회의 중 이해를 쉽게 하기 위해 작성한 플로우다.</p>
+<h3 id="의사결정-근거에-대한-이해">의사결정 근거에 대한 이해</h3>
+<p><img src="image/Pasted%20image%2020250915132320.png" alt="의사결정"></img>
+OpenAPI Generator를 도입하자는 팀원의 주장이 있어서, 현재 우리의 레포지토리 상황과 변경 전/ 후 어떻게 문서를 관리하게 되는지 파악하기 위해 작성하였다. 위의 도식 없이 구두로만 이야기를 하다보니, 각자 현 상황에 대한 이해가 달라 도입 여부를 합의하기까지 시간이 오래 걸렸다.</p>
+<h2 id="클라우드로의-이관">클라우드로의 이관</h2>
+<p>앞으로 2~3일 내에 개발을 1차적으로 마무리하고 클라우드로 서비스를 옮길 예정이다. 따라서 이관 전 어떤 상황인지 확실히 파악하고, 어느 부분을 클라우드로 이관할지 결정하기 위해 아키텍쳐를 그려야 할 필요가 있다.</p>
+<h2 id="2-c4-모델의-선택-이유와-정의">2. C4 모델의 선택 이유와 정의</h2>
+<h3 id="선택-이유">선택 이유</h3>
+<p>아키텍쳐 모델링 방법에는 UML, Archimate 가 잘 알려져있다. 다만 우리 팀의 상황은 현재</p>
 <ul>
-<li>EC2 + Docker Compose로 단일/소규모 구성부터 시작</li>
-<li>필요 시 ALB 도입, 다중 EC2 스케일아웃, 오토스케일링 그룹</li>
-<li>SQS/Lambda/EventBridge로 비동기 파이프라인 구성</li>
-<li>CloudWatch로 로그/메트릭 수집, 경보 → Slack 연동</li>
+<li>복잡한 문서화 프로세스보다 신속한 의사소통을 위해 아키텍쳐를 그리는 점</li>
+<li>개발을 해본 팀원과, 해보지 않았던 팀원이 섞여있는 점</li>
+<li>소규모 개발팀이고, 문서 작성을 위해 학습을 따로 할 부담을 키울 수 없는 점</li>
 </ul>
-<h2 id="배포-파이프라인예시">배포 파이프라인(예시)</h2>
+<p>을 들어, 다이어그램의 유형이 많고 표기가 복잡한 UML이나 엔터프라이즈에 적합한 Archimate는 적합하지 않다고 생각했다.</p>
+<p>C4 모델(C4 Model <a href="https://c4model.com/)은" target="_blank">https://c4model.com/)은</a> 필요에 따라 다이어그램을 변경 / 그리는 도구에 구애받지 않는 점이 가장 특징적이었고, 특정 형식에 얽매일 필요가 없어 학습 부담이 적고 직관적으로 이해가 되는 것 같아 우리팀에 가장 적합해 보였다.</p>
+<h3 id="정의">정의</h3>
+<p>이 모델은 Simon Brown이 제안한 소프트웨어 아키텍처 시각화 방법론으로, 4가지 계층적 다이어그램을 통해 시스템을 표현한다.</p>
+<ol>
+<li><strong>Context (컨텍스트)</strong>: 시스템과 외부 사용자/시스템 간의 관계</li>
+<li><strong>Container (컨테이너)</strong>: 시스템 내부의 주요 실행 단위들</li>
+<li><strong>Component (컴포넌트)</strong>: 각 컨테이너 내부의 구성 요소들</li>
+<li><strong>Code (코드)</strong>: 구체적인 클래스나 인터페이스 수준의 상세 설계</li>
+</ol>
+<h3 id="우리-팀의-상황">우리 팀의 상황</h3>
+<p>로컬 환경은 다음과 같다.</p>
 <ul>
-<li>GitHub Actions: build → test → docker build/push → EC2 SSH 배포(or CodeDeploy)</li>
-<li>환경 구성: <code>.env</code>/SSM Parameter Store/Secrets Manager 활용</li>
+<li><strong>클라이언트</strong>: 로컬 환경에서 실행되는 프론트엔드 애플리케이션</li>
+<li><strong>백엔드</strong>: REST API 서버 (로컬 개발 서버)</li>
+<li><strong>데이터베이스</strong>: 로컬 데이터베이스를 도커 컴포즈로 띄우는 중 (Redis, PostgreSQL)</li>
 </ul>
-<h2 id="학습-포인트">학습 포인트</h2>
+<p>정의된 모든 다이어그램을 만들 필요는 없고, 적절한 수준에서 유지하면 된다.</p>
+<p>현재 컨테이너 다이어그램까지 작성하면 의사소통에는 크게 문제가 없을 듯 하여, 2번째 단계까지만 작성하기로 결정하였다.</p>
+<p>예외로, Booking 플로우는 컴포넌트 다이어그램까지 그리기로 결정했다. 거의 대부분의 스키마가 얽혀있고, 앞으로 최적화를 위한 리팩토링이 예정 되어있기 때문이다.</p>
+<h2 id="notation">Notation</h2>
+<p><a href="https://c4model.com/diagrams/notation" target="_blank">https://c4model.com/diagrams/notation</a>
+기본적으로 C4 모델은 표기법에 구애받지 않는다. 다만 표기법에 대한 범용적인 추천 정도는 있어서 몇가지를 메모해 보았다. 또한 아키텍쳐 작성 후, 아래 5번 수정에 대한 가이드에서 체크리스트의 도움을 받을 수 있다.</p>
+<p>나는 Excalidraw에서 유저가 만든 c4 model 라이브러리가 있어, 표기법은 해당 도식을 활용하기로 했다.</p>
+<h3 id="diagram">Diagram</h3>
 <ul>
-<li>점진적 확장 전략: 단일 → ALB → ASG/멀티AZ</li>
-<li>상태 저장/상태 비저장 컴포넌트 분리</li>
-<li>비용/가용성/운영 복잡도 균형 맞추기</li>
+<li><strong>제목</strong>: 다이어그램 상단에 명확한 제목 표시 (예: "System Context for 공연 예약 시스템")</li>
+<li><strong>다이어그램 키/범례</strong>: 우측 하단에 사용된 요소들의 의미를 설명하는 범례 포함</li>
+<li><strong>날짜와 버전</strong>: 작성일과 버전 정보를 기록하여 문서 이력 관리</li>
+<li><strong>간소화</strong>: 핵심 요소만 포함하고 불필요한 세부사항 제거</li>
 </ul>
-<h2 id="실습-과제">실습 과제</h2>
+<h3 id="elements">Elements</h3>
 <ul>
-<li>EC2 1대에 Compose로 API/DB/Redis 배포(테스트용)</li>
-<li>ALB 뒤에 API 인스턴스 2대로 수평 확장 실습(헬스체크)</li>
-<li>CloudWatch 대시보드/알람 생성 및 Slack Webhook 연동</li>
+<li><strong>Person (사람)</strong>:<ul>
+<li>표현: 원형 또는 인물 아이콘</li>
+<li>예시: 일반 사용자, 관리자, 공연 기획자</li>
+<li>라벨: "사용자" + 역할 설명</li>
+</ul>
+</li>
+<li><strong>Software System (소프트웨어 시스템)</strong>:<ul>
+<li>표현: 둥근 모서리 사각형</li>
+<li>예시: "공연 예약 시스템", "결제 시스템", "알림 시스템"</li>
+<li>라벨: 시스템명 + 주요 기능 요약</li>
+</ul>
+</li>
+<li><strong>Container (컨테이너)</strong>:<ul>
+<li>표현: 사각형 박스</li>
+<li>예시: "React Web App", "Spring Boot API", "PostgreSQL Database"</li>
+<li>라벨: 컨테이너명 + 기술 스택 + 포트 정보</li>
+</ul>
+</li>
+<li><strong>Component (컴포넌트)</strong>:<ul>
+<li>표현: 작은 사각형 박스</li>
+<li>예시: "BookingController", "PaymentService", "UserRepository"</li>
+<li>라벨: 컴포넌트명 + 주요 책임</li>
+</ul>
+</li>
+</ul>
+<h3 id="relationships">Relationships</h3>
+<ul>
+<li><strong>실선 화살표</strong>: 동기 호출 (HTTP Request, 직접 메소드 호출)</li>
+<li><strong>점선 화살표</strong>: 비동기 통신 (메시지 큐, 이벤트)</li>
+<li><strong>양방향 화살표</strong>: 상호 작용이 빈번한 관계</li>
+<li><strong>라벨 표기</strong>:<ul>
+<li>프로토콜 정보: "HTTPS", "WebSocket", "TCP"</li>
+<li>데이터 형식: "JSON", "GraphQL", "SQL"</li>
+<li>포트 번호: ":3000", ":8080", ":5432"</li>
+</ul>
+</li>
+</ul>
+<h3 id="colors">Colors</h3>
+<ul>
+<li><strong>파란색</strong>: 우리가 개발하는 시스템 (Internal System)</li>
+<li><strong>회색</strong>: 외부 시스템 또는 서드파티 (External System)</li>
+<li><strong>초록색</strong>: 사용자 또는 액터 (Person/Actor)</li>
+<li><strong>주황색</strong>: 데이터 저장소 (Database, Cache)</li>
+<li><strong>연한 색조</strong>: 배경이나 그룹핑에 사용</li>
+</ul>
+<h2 id="4-실적용">4. 실적용</h2>
+<ul>
+<li>그리기 도구 : Excalidraw</li>
+</ul>
+<h3 id="system-context-diagram">System Context Diagram</h3>
+<p><img src="image/Pasted%20image%2020250917104757.png" alt="system"></img></p>
+<h3 id="container-diagram">Container Diagram</h3>
+<p><img src="image/Pasted%20image%2020250917104811.png" alt="container"></img></p>
+<h3 id="component-diagram">Component Diagram</h3>
+<ul>
+<li>booking 추가</li>
+<li>redis 관련 대기열 큐</li>
+</ul>
+<h2 id="5-앞으로-예정된-추가-및-수정에-대한-가이드">5. 앞으로 예정된 추가 및 수정에 대한 가이드</h2>
+<h3 id="추가--deployment-diagram">추가 : Deployment Diagram</h3>
+<p><a href="https://c4model.com/diagrams/deployment" target="_blank">https://c4model.com/diagrams/deployment</a></p>
+<p><strong>클라우드 이관 시 작성 예정 요소들</strong>:</p>
+<ol>
+<li>Production Environment<ul>
+<li><strong>Load Balancer</strong>: AWS ALB 또는 CloudFlare</li>
+<li><strong>Container Orchestration</strong>: AWS ECS 또는 Kubernetes</li>
+<li><strong>File Storage</strong>: AWS S3 (공연 이미지, 문서)</li>
+</ul>
+</li>
+<li>네트워크 및 보안<ul>
+<li>VPC, Security Groups 구성</li>
+<li>SSL/TLS 인증서 (Let's Encrypt 또는 AWS Certificate Manager)</li>
+<li>API Gateway 및 Rate Limiting</li>
+</ul>
+</li>
+<li>모니터링 및 로깅<ul>
+<li>AWS CloudWatch 또는 Prometheus + Grafana</li>
+<li>ELK Stack (Elasticsearch, Logstash, Kibana)</li>
+</ul>
+</li>
+</ol>
+<h3 id="수정-후-확인-체크-리스트">수정 후 확인 체크 리스트</h3>
+<p><a href="https://c4model.com/diagrams/checklist" target="_blank">https://c4model.com/diagrams/checklist</a></p>
+<h3 id="정기-업데이트-가이드">정기 업데이트 가이드</h3>
+<ul>
+<li>새로운 기능 추가 시: 관련 컴포넌트 및 관계 업데이트</li>
+<li>기술 스택 변경 시: Container Diagram의 기술 정보 수정</li>
+<li>외부 서비스 연동 시: Context Diagram에 새로운 외부 시스템 추가</li>
+<li>클라우드 이관 시: Deployment Diagram 신규 작성 및 Container 정보 업데이트</li>
 </ul>
 
                                 
@@ -737,14 +834,10 @@
 
             
                 
-                <a href="../10-testing/01-performance.html" class="navigation navigation-prev " aria-label="Previous page: 테스트와 성능">
+                <a href="../01-intro/permission-test.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Permission Test">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
-                
-                <a href="../12-operations/01-monitoring.html" class="navigation navigation-next " aria-label="Next page: 운영/모니터링">
-                    <i class="fa fa-angle-right"></i>
-                </a>
                 
             
         
@@ -753,7 +846,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"인프라 배포","level":"6.1","depth":1,"next":{"title":"운영/모니터링","level":"7.1","depth":1,"path":"12-operations/01-monitoring.md","ref":"12-operations/01-monitoring.md","articles":[]},"previous":{"title":"테스트와 성능","level":"5.1","depth":1,"path":"10-testing/01-performance.md","ref":"10-testing/01-performance.md","articles":[]},"dir":"ltr"},"config":{"plugins":["mermaid-gb3"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"mermaid-gb3":{"theme":"default"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"공연 티켓팅 서비스 GitBook","gitbook":"*"},"file":{"path":"11-infra/01-deployment.md","mtime":"2025-09-17T02:12:49.016Z","type":"markdown"},"gitbook":{"version":"6.0.3","time":"2025-09-17T02:12:56.981Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"C4 Model","level":"18.1","depth":1,"previous":{"title":"Permission Test","level":"17.1","depth":1,"path":"01-intro/permission-test.md","ref":"01-intro/permission-test.md","articles":[]},"dir":"ltr"},"config":{"plugins":["mermaid-gb3"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"mermaid-gb3":{"theme":"default"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"공연 티켓팅 서비스 GitBook","gitbook":"*"},"file":{"path":"04-architecture/C4 model.md","mtime":"2025-09-17T02:12:48.992Z","type":"markdown"},"gitbook":{"version":"6.0.3","time":"2025-09-17T02:12:56.981Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
