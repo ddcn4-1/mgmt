@@ -67,3 +67,7 @@
 ## 01 Intro
 
 * [Permission Test](01-intro/permission-test.md)
+
+## 04 Architecture
+
+* [C4 Model](04-architecture/C4 model.md)
