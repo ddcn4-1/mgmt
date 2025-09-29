@@ -1,121 +1,25 @@
 # Summary
 
--   [소개](README.md)
-
-## 개요
-
--   [주제 및 기대 효과](01-intro/01-overview.md)
--   [목표 및 구현 계획](02-goals/01-mvp.md)
--   [공통 규칙(컨벤션)](03-conventions/01-standards.md)
-
-## 아키텍처
-
-## 도메인/구현
-
-## 테스트와 성능
-
-## 인프라
-
-## 운영/모니터링
-
-## 프로젝트 관리
-
-## 부록
+- [소개](README.md)
 
 ## Intro
-
--   [주제 선정 이유 및 기대 효과](01-intro/01-overview.md)
-
-## Goals
-
--   [프로젝트 목표 및 구현 계획](02-goals/01-mvp.md)
-
-## Conventions
-
--   [공통 규칙(컨벤션)](03-conventions/01-standards.md)
--   [GitHub Issue Template 생성 및 활용 가이드](03-conventions/02-issue-template.md)
--   [GitHub 프로젝트 관리 가이드 (v1)](03-conventions/github-project-v1.md)
-
-## Architecture
-
--   [C4 Model](04-architecture/C4 model.md)
-
-## Frontend
-
--   [Frontend Migration](06-frontend/frontend-migration.md)
-
-## Backend
-
--   [Spring Boot 세팅](07-backend/02-springboot-setting.md)
--   [[실습] test CRUD controller 만들기](07-backend/03-test CRUD controller.md)
--   [Folder Structure in SpringBoot](07-backend/04-springboot-folder-structure.md)
--   [Error 처리 공통 클래스 in Spring Boot](07-backend/05-springboot-utils-error.md)
--   [Spring Boot Actuator](07-backend/06-springboot-actuator.md)
--   [좌석 락 시스템 구현 가이드](07-backend/seat-lock-structure.md)
-
-## Infra
-
--   [CICD](11-infra/CICD.md)
-
-## Intro
-
--   [주제 선정 이유 및 기대 효과](01-intro/01-overview.md)
-
-## Goals
-
--   [프로젝트 목표 및 구현 계획](02-goals/01-mvp.md)
-
-## Conventions
-
--   [공통 규칙(컨벤션)](03-conventions/01-standards.md)
--   [GitHub Issue Template 생성 및 활용 가이드](03-conventions/02-issue-template.md)
--   [GitHub 프로젝트 관리 가이드 (v1)](03-conventions/github-project-v1.md)
-
-## Architecture
-
--   [C4 Model](04-architecture/C4 model.md)
-
-## Frontend
-
--   [Frontend Migration](06-frontend/frontend-migration.md)
-
-## Backend
-
--   [Spring Boot 세팅](07-backend/02-springboot-setting.md)
--   [[실습] test CRUD controller 만들기](07-backend/03-test CRUD controller.md)
--   [Folder Structure in SpringBoot](07-backend/04-springboot-folder-structure.md)
--   [Error 처리 공통 클래스 in Spring Boot](07-backend/05-springboot-utils-error.md)
--   [Spring Boot Actuator](07-backend/06-springboot-actuator.md)
--   [좌석 락 시스템 구현 가이드](07-backend/seat-lock-structure.md)
-
-## Infra
-
--   [CICD](11-infra/CICD.md)
-
-## Intro
-
 * [주제 선정 이유 및 기대 효과](01-intro/01-overview.md)
 
 ## Goals
-
 * [프로젝트 목표 및 구현 계획](02-goals/01-mvp.md)
 
 ## Conventions
-
 * [공통 규칙(컨벤션)](03-conventions/01-standards.md)
 * [GitHub Issue Template 생성 및 활용 가이드](03-conventions/02-issue-template.md)
 * [GitHub 프로젝트 관리 가이드 (v1)](03-conventions/github-project-v1.md)
 
 ## Architecture
-
-* [C4 Model](04-architecture/C4 model.md)
+* [C4 Model](04-architecture/C4-model.md)
 
 ## Frontend
-
 * [Frontend Migration](06-frontend/frontend-migration.md)
 
 ## Backend
-
 * [Spring Boot 세팅](07-backend/02-springboot-setting.md)
 * [[실습] test CRUD controller 만들기](07-backend/03-test CRUD controller.md)
 * [Folder Structure in SpringBoot](07-backend/04-springboot-folder-structure.md)
@@ -124,40 +28,4 @@
 * [좌석 락 시스템 구현 가이드](07-backend/seat-lock-structure.md)
 
 ## Infra
-
-* [CICD](11-infra/CICD.md)
-
-## Intro
-
-* [주제 선정 이유 및 기대 효과](01-intro/01-overview.md)
-
-## Goals
-
-* [프로젝트 목표 및 구현 계획](02-goals/01-mvp.md)
-
-## Conventions
-
-* [공통 규칙(컨벤션)](03-conventions/01-standards.md)
-* [GitHub Issue Template 생성 및 활용 가이드](03-conventions/02-issue-template.md)
-* [GitHub 프로젝트 관리 가이드 (v1)](03-conventions/github-project-v1.md)
-
-## Architecture
-
-* [C4 Model](04-architecture/C4 model.md)
-
-## Frontend
-
-* [Frontend Migration](06-frontend/frontend-migration.md)
-
-## Backend
-
-* [Spring Boot 세팅](07-backend/02-springboot-setting.md)
-* [[실습] test CRUD controller 만들기](07-backend/03-test CRUD controller.md)
-* [Folder Structure in SpringBoot](07-backend/04-springboot-folder-structure.md)
-* [Error 처리 공통 클래스 in Spring Boot](07-backend/05-springboot-utils-error.md)
-* [Spring Boot Actuator](07-backend/06-springboot-actuator.md)
-* [좌석 락 시스템 구현 가이드](07-backend/seat-lock-structure.md)
-
-## Infra
-
 * [CICD](11-infra/CICD.md)
