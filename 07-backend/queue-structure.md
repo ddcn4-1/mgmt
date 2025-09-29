@@ -24,7 +24,16 @@
 4. 대기열 대기 → 5. 순서 도달 → 6. 예매 진행 → 7. 토큰 사용 완료
 
 ```
-![img.png](img.png)
+### 대기열 확인 플로우
+```mermaid
+flowchart TD
+    A[사용자] --> B[QueueCheckRequest]
+    B --> C[QueueService]
+    C --> D["1. Redis 확인 ← 빠른 조회<br/>2. DB 토큰 생성 ← 영속성<br/>3. Redis 업데이트 ← 실시간/정확도"]
+    D --> E[토큰반환]
+    
+    style D fill:#FFF8DC,stroke:#DAA520,stroke-width:2px
+```
 ### 전체 예매 플로우
 
 ```
@@ -167,11 +176,17 @@ public void cleanupInactiveSessions() {
 }
 
 ```
+## Trouble Shooting
 
+티케팅 시스템에서 인기 공연의 예매 오픈 시점에 수만 명의 사용자가 동시 접속하면서 서버 과부하와 응답 지연이 발생. 기존 단순한 동시성 제어로는 서버 안정성을 보장할 수 없었고, 사용자들이 무한 로딩에 빠지거나 예매 기회를 놓치는 문제가 반복되는 상황.
+
+## 해결 방안
+
+Redis 기반 분산 락과 대기열 시스템을 구축하여 동시 접속자 수를 제어하고, 오버부킹 전략으로 서버 리소스 활용,  Spring Boot와 Redis를 활용해 실시간 세션 관리와 Heartbeat 시스템로 구현함.
 
 ---
 
-## 프론트엔드 구현 가이드
+## 프론트엔드 구현
 
 ### 1. **대기열 진입 플로우**
 
