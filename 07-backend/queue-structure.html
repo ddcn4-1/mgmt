@@ -1,0 +1,1010 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <title>티켓팅 시스템 대기열(Queue) · 공연 티켓팅 서비스 GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="HonKit 6.0.3">
+        
+        
+        
+    
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-mermaid-gb3/mermaid/mermaid.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/@honkit/honkit-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/@honkit/honkit-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+
+    
+        
+        
+        <link rel="stylesheet" href="../gitbook/gitbook-plugin-mermaid-gb3/mermaid/mermaid.default.css" />
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="seat-lock-structure.html" />
+    
+    
+    <link rel="prev" href="06-springboot-actuator.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book honkit-cloak">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    소개
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Intro</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../01-intro/01-overview.html">
+            
+                <a href="../01-intro/01-overview.html">
+            
+                    
+                    주제 선정 이유 및 기대 효과
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Goals</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="../02-goals/01-mvp.html">
+            
+                <a href="../02-goals/01-mvp.html">
+            
+                    
+                    프로젝트 목표 및 구현 계획
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Conventions</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="../03-conventions/01-standards.html">
+            
+                <a href="../03-conventions/01-standards.html">
+            
+                    
+                    공통 규칙(컨벤션)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="../03-conventions/02-issue-template.html">
+            
+                <a href="../03-conventions/02-issue-template.html">
+            
+                    
+                    GitHub Issue Template 생성 및 활용 가이드
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="../03-conventions/github-project-v1.html">
+            
+                <a href="../03-conventions/github-project-v1.html">
+            
+                    
+                    GitHub 프로젝트 관리 가이드 (v1)
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Architecture</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="../04-architecture/C4-model.html">
+            
+                <a href="../04-architecture/C4-model.html">
+            
+                    
+                    C4 Model
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Frontend</li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" data-path="../06-frontend/frontend-migration.html">
+            
+                <a href="../06-frontend/frontend-migration.html">
+            
+                    
+                    Frontend Migration
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Backend</li>
+        
+        
+    
+        <li class="chapter " data-level="7.1" data-path="02-springboot-setting.html">
+            
+                <a href="02-springboot-setting.html">
+            
+                    
+                    Spring Boot 세팅
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.2" data-path="03-test-CRUD-controller.html">
+            
+                <a href="03-test-CRUD-controller.html">
+            
+                    
+                    [실습] test CRUD controller 만들기
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.3" data-path="04-springboot-folder-structure.html">
+            
+                <a href="04-springboot-folder-structure.html">
+            
+                    
+                    Folder Structure in SpringBoot
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.4" data-path="05-springboot-utils-error.html">
+            
+                <a href="05-springboot-utils-error.html">
+            
+                    
+                    Error 처리 공통 클래스 in Spring Boot
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.5" data-path="06-springboot-actuator.html">
+            
+                <a href="06-springboot-actuator.html">
+            
+                    
+                    Spring Boot Actuator
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="7.6" data-path="queue-structure.html">
+            
+                <a href="queue-structure.html">
+            
+                    
+                    티켓팅 시스템 대기열(Queue)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.7" data-path="seat-lock-structure.html">
+            
+                <a href="seat-lock-structure.html">
+            
+                    
+                    좌석 락 시스템 가이드
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Infra</li>
+        
+        
+    
+        <li class="chapter " data-level="8.1" data-path="../11-infra/CICD.html">
+            
+                <a href="../11-infra/CICD.html">
+            
+                    
+                    CICD
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
+            Published with HonKit
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >티켓팅 시스템 대기열(Queue)</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="티켓팅-시스템-대기열queue">티켓팅 시스템 대기열(Queue)</h1>
+<h2 id="개요">개요</h2>
+<p>티켓팅 시스템에서 <strong>동시 접속 제어</strong>와 <strong>서버 안정성</strong>을 위해 구현된 대기열 시스템</p>
+<ul>
+<li>동시 접속하는 상황에서도 안정적인 작동과 서버 과부하를 방지하는 것을 목표</li>
+<li><strong>오버부킹 + Redis 세션 관리 + Heartbeat 시스템</strong>의 조합으로 최적의 사용자 경험을 제공.</li>
+</ul>
+<hr></hr>
+<h2 id="전체-아키텍처">전체 아키텍처</h2>
+<h3 id="기술-스택">기술 스택</h3>
+<ul>
+<li><strong>Backend</strong>: Spring Boot + Redis + PostgreSQL</li>
+<li><strong>Session Management</strong>: Redis (분산 세션 관리)</li>
+<li><strong>Queue Management</strong>: Database + Redis 하이브리드</li>
+<li><strong>Real-time Communication</strong>: REST API + Heartbeat</li>
+</ul>
+<h3 id="시스템-플로우">시스템 플로우</h3>
+<pre><code>
+1. 사용자 접속 → 2. 대기열 필요성 확인 → 3. 토큰 발급/바로 진입
+4. 대기열 대기 → 5. 순서 도달 → 6. 예매 진행 → 7. 토큰 사용 완료
+</code></pre><h3 id="대기열-확인-플로우">대기열 확인 플로우</h3>
+<div class="mermaid">
+flowchart TD
+    A[사용자] --&gt; B[QueueCheckRequest]
+    B --&gt; C[QueueService]
+    C --&gt; D["1. Redis 확인 ← 빠른 조회<br></br>2. DB 토큰 생성 ← 영속성<br></br>3. Redis 업데이트 ← 실시간/정확도"]
+    D --&gt; E[토큰반환]
+
+    style D fill:#FFF8DC,stroke:#DAA520,stroke-width:2px
+</div>
+### 전체 예매 플로우
+
+```
+1. 사용자 접속
+   ↓
+2. 대기열 진입 API 호출
+   ↓
+3-A. 바로 활성화 (동시 접속자 &lt; 임계값)
+   ↓
+   예매 진행
+
+3-B. 대기열 대기 (동시 접속자 ≥ 임계값)
+   ↓
+4. 주기적으로 상태 체크 (폴링)
+   ↓
+5. 활성화 알림 수신
+   ↓
+6. 예매 진행 (제한 시간 내)
+   ↓
+7. 예매 완료 or 시간 초과
+```
+
+
+<div class="mermaid">
+%%stateDiagram{'theme': 'base', 'themeVariables': { 'fontFamily': 'Nanum Gothic, Apple SD Gothic Neo, Arial' }}}%%
+stateDiagram-v2
+direction LR
+[*] --&gt; 접속대기
+접속대기 --&gt; 대기열진입 : 예매 오픈 전
+대기열진입 --&gt; 대기중 : 순번 할당
+대기중 --&gt; 예매가능 : 순서 도착
+대기중 --&gt; 만료 : 타임아웃
+예매가능 --&gt; 예매완료 : 성공
+예매가능 --&gt; 대기중 : 세션 연장
+예매가능 --&gt; 만료 : 시간 초과
+만료 --&gt; [*]
+예매완료 --&gt; [*]
+</div>
+
+
+<hr></hr>
+<h2 id="핵심-기술-구현">핵심 기술 구현</h2>
+<h3 id="1-오버부킹overbooking">1. <strong>오버부킹(Overbooking)</strong></h3>
+<p>실제 처리 가능량보다 더 많은 사용자를 동시에 받아들임</p>
+<pre><code class="lang-yaml"><span class="hljs-comment"># application.yml</span>
+<span class="hljs-attr">queue:</span>
+  <span class="hljs-attr">max-active-tokens:</span> <span class="hljs-number">20</span>        <span class="hljs-comment"># 기본 동시 처리량</span>
+  <span class="hljs-attr">overbooking-ratio:</span> <span class="hljs-number">1.5</span>       <span class="hljs-comment"># 50% 오버부킹 (30명까지 동시 처리)</span>
+</code></pre>
+<p><strong>백엔드 로직</strong>:</p>
+<pre><code class="lang-java"><span class="hljs-keyword">private</span> <span class="hljs-type">int</span> <span class="hljs-title function_">getMaxConcurrentSessions</span><span class="hljs-params">()</span> {
+    <span class="hljs-keyword">return</span> (<span class="hljs-type">int</span>) (maxActiveTokens * overbookingRatio);  <span class="hljs-comment">// 20 * 1.5 = 30</span>
+}
+</code></pre>
+<ul>
+<li>일부 사용자가 중도 이탈해도 서버 리소스를 최대한 활용</li>
+<li>대기시간 단축 효과</li>
+</ul>
+<h3 id="2-redis-기반-실시간-세션-관리">2. <strong>Redis 기반 실시간 세션 관리</strong></h3>
+<p><strong>세션 추적</strong>:</p>
+<pre><code class="lang-java"><span class="hljs-comment">// 활성 세션 수 체크</span>
+<span class="hljs-type">String</span> <span class="hljs-variable">sessionKey</span> <span class="hljs-operator">=</span> <span class="hljs-string">"active_sessions:"</span> + performanceId + <span class="hljs-string">":"</span> + scheduleId;
+<span class="hljs-type">int</span> <span class="hljs-variable">activeSessions</span> <span class="hljs-operator">=</span> redisTemplate.opsForValue().get(sessionKey);
+
+<span class="hljs-keyword">if</span> (activeSessions &lt; maxConcurrentSessions) {
+    <span class="hljs-comment">// 바로 진입 허용</span>
+    redisTemplate.opsForValue().increment(sessionKey);
+    <span class="hljs-keyword">return</span> <span class="hljs-string">"바로 예매 가능"</span>;
+} <span class="hljs-keyword">else</span> {
+    <span class="hljs-comment">// 대기열 필요</span>
+    <span class="hljs-keyword">return</span> <span class="hljs-string">"대기열 진입"</span>;
+}
+</code></pre>
+<h3 id="3-heartbeat-시스템">3. <strong>Heartbeat 시스템</strong></h3>
+<pre><code class="lang-markdown">[클라이언트] ────────────── [서버]
+
+<span class="hljs-bullet">1.</span> 페이지 접속
+   │
+   ├─ checkQueueRequirement()
+   └─ startHeartbeat() ──────► Redis: heartbeat:123:1:1 = "2024-01-01T10:00:00"
+<span class="hljs-code">                              (TTL: 120초)
+</span>
+<span class="hljs-bullet">2.</span> 30초마다 heartbeat 전송
+   │
+   ├─ POST /api/v1/queue/heartbeat
+   │  { "performanceId": 1, "scheduleId": 1 }
+   │
+   └─ updateHeartbeat() ─────► Redis: heartbeat:123:1:1 = "2024-01-01T10:00:30"
+<span class="hljs-code">                              (TTL 갱신: 120초)
+</span>
+<span class="hljs-bullet">3.</span> 사용자가 2분간 비활성
+   │
+   ├─ Redis TTL 만료 또는
+   ├─ 스케줄러가 오래된 heartbeat 발견
+   │
+   └─ processTimeout() ──────► releaseSession()
+<span class="hljs-code">                              ├─ DB: 토큰 만료 처리
+                              ├─ Redis: 활성 토큰 수 감소
+                              └─ activateNextTokens(): 다음 대기자 활성화
+</span></code></pre>
+<p><strong>비활성 사용자 자동 정리</strong>:</p>
+<pre><code class="lang-java"><span class="hljs-comment">// 30초마다 heartbeat 전송</span>
+<span class="hljs-meta">@PostMapping("/heartbeat")</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">updateHeartbeat</span><span class="hljs-params">(Long userId, Long performanceId)</span> {
+    <span class="hljs-type">String</span> <span class="hljs-variable">heartbeatKey</span> <span class="hljs-operator">=</span> <span class="hljs-string">"heartbeat:"</span> + userId + <span class="hljs-string">":"</span> + performanceId;
+    redisTemplate.opsForValue().set(heartbeatKey,
+        LocalDateTime.now().toString(),
+        Duration.ofMinutes(<span class="hljs-number">2</span>)); <span class="hljs-comment">// 2분간 유효</span>
+}
+</code></pre>
+<p><strong>자동 정리 스케줄러</strong>:</p>
+<pre><code class="lang-java"><span class="hljs-meta">@Scheduled(fixedRate = 60000)</span> <span class="hljs-comment">// 1분마다 실행</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">cleanupInactiveSessions</span><span class="hljs-params">()</span> {
+    <span class="hljs-comment">// heartbeat가 없는 사용자의 세션 해제</span>
+    <span class="hljs-comment">// → 다음 대기자가 자동으로 진입</span>
+}
+</code></pre>
+<h2 id="trouble-shooting">Trouble Shooting</h2>
+<p>티케팅 시스템에서 인기 공연의 예매 오픈 시점에 수만 명의 사용자가 동시 접속하면서 서버 과부하와 응답 지연이 발생. 기존 단순한 동시성 제어로는 서버 안정성을 보장할 수 없었고, 사용자들이 무한 로딩에 빠지거나 예매 기회를 놓치는 문제가 반복되는 상황.</p>
+<h2 id="해결-방안">해결 방안</h2>
+<p>Redis 기반 분산 락과 대기열 시스템을 구축하여 동시 접속자 수를 제어하고, 오버부킹 전략으로 서버 리소스 활용,  Spring Boot와 Redis를 활용해 실시간 세션 관리와 Heartbeat 시스템로 구현함.</p>
+<hr></hr>
+<h2 id="프론트엔드-구현">프론트엔드 구현</h2>
+<h3 id="1-대기열-진입-플로우">1. <strong>대기열 진입 플로우</strong></h3>
+<h3 id="step-1-대기열-필요성-확인">Step 1: 대기열 필요성 확인</h3>
+<pre><code class="lang-jsx"><span class="hljs-comment">// 예매 버튼 클릭 시</span>
+<span class="hljs-keyword">const</span> <span class="hljs-title function_">checkQueue</span> = <span class="hljs-keyword">async</span> (<span class="hljs-params">performanceId, scheduleId</span>) =&gt; {
+    <span class="hljs-keyword">const</span> response = <span class="hljs-keyword">await</span> <span class="hljs-title function_">fetch</span>(<span class="hljs-string">'/api/v1/queue/check'</span>, {
+        <span class="hljs-attr">method</span>: <span class="hljs-string">'POST'</span>,
+        <span class="hljs-attr">headers</span>: {
+            <span class="hljs-string">'Authorization'</span>: <span class="hljs-string">`Bearer <span class="hljs-subst">${token}</span>`</span>,
+            <span class="hljs-string">'Content-Type'</span>: <span class="hljs-string">'application/json'</span>
+        },
+        <span class="hljs-attr">body</span>: <span class="hljs-title class_">JSON</span>.<span class="hljs-title function_">stringify</span>({ performanceId, scheduleId })
+    });
+
+    <span class="hljs-keyword">const</span> result = <span class="hljs-keyword">await</span> response.<span class="hljs-title function_">json</span>();
+
+    <span class="hljs-keyword">if</span> (result.<span class="hljs-property">data</span>.<span class="hljs-property">canProceedDirectly</span>) {
+        <span class="hljs-comment">// 바로 좌석 선택 페이지로 이동</span>
+        <span class="hljs-variable language_">window</span>.<span class="hljs-property">location</span>.<span class="hljs-property">href</span> = <span class="hljs-string">`/seats/<span class="hljs-subst">${scheduleId}</span>`</span>;
+    } <span class="hljs-keyword">else</span> {
+        <span class="hljs-comment">// 대기열 토큰 발급</span>
+        <span class="hljs-keyword">await</span> <span class="hljs-title function_">issueQueueToken</span>(performanceId);
+    }
+};
+</code></pre>
+<h3 id="step-2-토큰-발급-및-대기">Step 2: 토큰 발급 및 대기</h3>
+<pre><code class="lang-jsx"><span class="hljs-keyword">const</span> <span class="hljs-title function_">issueQueueToken</span> = <span class="hljs-keyword">async</span> (<span class="hljs-params">performanceId</span>) =&gt; {
+    <span class="hljs-keyword">const</span> response = <span class="hljs-keyword">await</span> <span class="hljs-title function_">fetch</span>(<span class="hljs-string">'/api/v1/queue/token'</span>, {
+        <span class="hljs-attr">method</span>: <span class="hljs-string">'POST'</span>,
+        <span class="hljs-attr">headers</span>: {
+            <span class="hljs-string">'Authorization'</span>: <span class="hljs-string">`Bearer <span class="hljs-subst">${token}</span>`</span>,
+            <span class="hljs-string">'Content-Type'</span>: <span class="hljs-string">'application/json'</span>
+        },
+        <span class="hljs-attr">body</span>: <span class="hljs-title class_">JSON</span>.<span class="hljs-title function_">stringify</span>({ performanceId })
+    });
+
+    <span class="hljs-keyword">const</span> result = <span class="hljs-keyword">await</span> response.<span class="hljs-title function_">json</span>();
+    <span class="hljs-keyword">const</span> queueToken = result.<span class="hljs-property">data</span>.<span class="hljs-property">token</span>;
+
+    <span class="hljs-comment">// 대기열 페이지로 이동</span>
+    <span class="hljs-title function_">showQueueWaitingPage</span>(queueToken);
+};
+</code></pre>
+<h3 id="2-대기열-대기-페이지-구현">2. <strong>대기열 대기 페이지 구현</strong></h3>
+<h3 id="실시간-상태-업데이트">실시간 상태 업데이트</h3>
+<pre><code class="lang-jsx"><span class="hljs-keyword">const</span> <span class="hljs-title function_">startQueuePolling</span> = (<span class="hljs-params">token</span>) =&gt; {
+    <span class="hljs-keyword">const</span> pollInterval = <span class="hljs-built_in">setInterval</span>(<span class="hljs-title function_">async</span> () =&gt; {
+        <span class="hljs-keyword">try</span> {
+            <span class="hljs-keyword">const</span> response = <span class="hljs-keyword">await</span> <span class="hljs-title function_">fetch</span>(<span class="hljs-string">`/api/v1/queue/status/<span class="hljs-subst">${token}</span>`</span>);
+            <span class="hljs-keyword">const</span> result = <span class="hljs-keyword">await</span> response.<span class="hljs-title function_">json</span>();
+            <span class="hljs-keyword">const</span> status = result.<span class="hljs-property">data</span>;
+
+            <span class="hljs-comment">// UI 업데이트</span>
+            <span class="hljs-title function_">updateQueueUI</span>(status);
+
+            <span class="hljs-comment">// 예매 가능 상태가 되면</span>
+            <span class="hljs-keyword">if</span> (status.<span class="hljs-property">isActiveForBooking</span>) {
+                <span class="hljs-built_in">clearInterval</span>(pollInterval);
+                <span class="hljs-title function_">stopHeartbeat</span>();
+                <span class="hljs-title function_">proceedToBooking</span>();
+            }
+        } <span class="hljs-keyword">catch</span> (error) {
+            <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">error</span>(<span class="hljs-string">'Queue status check failed:'</span>, error);
+        }
+    }, <span class="hljs-number">3000</span>); <span class="hljs-comment">// 3초마다 상태 확인</span>
+
+    <span class="hljs-keyword">return</span> pollInterval;
+};
+
+<span class="hljs-keyword">const</span> <span class="hljs-title function_">updateQueueUI</span> = (<span class="hljs-params">status</span>) =&gt; {
+    <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">'queue-position'</span>).<span class="hljs-property">textContent</span> = status.<span class="hljs-property">positionInQueue</span>;
+    <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">'estimated-wait'</span>).<span class="hljs-property">textContent</span> =
+        <span class="hljs-string">`약 <span class="hljs-subst">${status.estimatedWaitTime}</span>분`</span>;
+
+    <span class="hljs-comment">// 진행률 바 업데이트</span>
+    <span class="hljs-keyword">const</span> progress = <span class="hljs-title class_">Math</span>.<span class="hljs-title function_">max</span>(<span class="hljs-number">0</span>, <span class="hljs-number">100</span> - (status.<span class="hljs-property">positionInQueue</span> * <span class="hljs-number">2</span>));
+    <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">'progress-bar'</span>).<span class="hljs-property">style</span>.<span class="hljs-property">width</span> = <span class="hljs-string">`<span class="hljs-subst">${progress}</span>%`</span>;
+};
+</code></pre>
+<h3 id="3-heartbeat-구현">3. <strong>Heartbeat 구현</strong></h3>
+<pre><code class="lang-jsx"><span class="hljs-keyword">let</span> heartbeatInterval;
+
+<span class="hljs-keyword">const</span> <span class="hljs-title function_">startHeartbeat</span> = (<span class="hljs-params">performanceId, scheduleId</span>) =&gt; {
+    heartbeatInterval = <span class="hljs-built_in">setInterval</span>(<span class="hljs-title function_">async</span> () =&gt; {
+        <span class="hljs-keyword">try</span> {
+            <span class="hljs-keyword">await</span> <span class="hljs-title function_">fetch</span>(<span class="hljs-string">'/api/v1/queue/heartbeat'</span>, {
+                <span class="hljs-attr">method</span>: <span class="hljs-string">'POST'</span>,
+                <span class="hljs-attr">headers</span>: {
+                    <span class="hljs-string">'Authorization'</span>: <span class="hljs-string">`Bearer <span class="hljs-subst">${token}</span>`</span>,
+                    <span class="hljs-string">'Content-Type'</span>: <span class="hljs-string">'application/json'</span>
+                },
+                <span class="hljs-attr">body</span>: <span class="hljs-title class_">JSON</span>.<span class="hljs-title function_">stringify</span>({ performanceId, scheduleId })
+            });
+        } <span class="hljs-keyword">catch</span> (error) {
+            <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">error</span>(<span class="hljs-string">'Heartbeat failed:'</span>, error);
+        }
+    }, <span class="hljs-number">30000</span>); <span class="hljs-comment">// 30초마다 전송</span>
+};
+
+<span class="hljs-keyword">const</span> <span class="hljs-title function_">stopHeartbeat</span> = (<span class="hljs-params"></span>) =&gt; {
+    <span class="hljs-keyword">if</span> (heartbeatInterval) {
+        <span class="hljs-built_in">clearInterval</span>(heartbeatInterval);
+    }
+};
+</code></pre>
+<h3 id="4-페이지-이탈-시-세션-정리">4. <strong>페이지 이탈 시 세션 정리</strong></h3>
+<p>beforeunload가 감지하는 경우</p>
+<ol>
+<li>브라우저/탭 닫기 (X 버튼)</li>
+<li>뒤로 가기 (← 버튼)</li>
+<li>앞으로가기(→ 버튼)</li>
+<li>새로 고침 (F5, Ctrl+R)</li>
+<li>주소창에 다른 URL 입력 후 이동 (엔터)</li>
+<li>링크 클릭으로 다른 페이지 이동</li>
+</ol>
+<pre><code class="lang-jsx"><span class="hljs-comment">// 페이지 떠날 때 세션 해제</span>
+<span class="hljs-variable language_">window</span>.<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">'beforeunload'</span>, <span class="hljs-function">(<span class="hljs-params">event</span>) =&gt;</span> {
+    <span class="hljs-comment">// Beacon API 사용 (페이지 종료 시에도 확실히 전송)</span>
+    <span class="hljs-keyword">if</span> (navigator.<span class="hljs-property">sendBeacon</span>) {
+        <span class="hljs-keyword">const</span> data = <span class="hljs-title class_">JSON</span>.<span class="hljs-title function_">stringify</span>({
+            performanceId,
+            scheduleId,
+            <span class="hljs-attr">reason</span>: <span class="hljs-string">'page_unload'</span>
+        });
+
+        navigator.<span class="hljs-title function_">sendBeacon</span>(<span class="hljs-string">'/api/v1/queue/release-session'</span>, data);
+    }
+});
+
+<span class="hljs-comment">// 뒤로가기 버튼 처리</span>
+<span class="hljs-keyword">const</span> <span class="hljs-title function_">handleBackButton</span> = <span class="hljs-keyword">async</span> (<span class="hljs-params"></span>) =&gt; {
+    <span class="hljs-keyword">await</span> <span class="hljs-title function_">fetch</span>(<span class="hljs-string">'/api/v1/queue/release-session'</span>, {
+        <span class="hljs-attr">method</span>: <span class="hljs-string">'POST'</span>,
+        <span class="hljs-attr">headers</span>: {
+            <span class="hljs-string">'Authorization'</span>: <span class="hljs-string">`Bearer <span class="hljs-subst">${token}</span>`</span>,
+            <span class="hljs-string">'Content-Type'</span>: <span class="hljs-string">'application/json'</span>
+        },
+        <span class="hljs-attr">body</span>: <span class="hljs-title class_">JSON</span>.<span class="hljs-title function_">stringify</span>({ performanceId, scheduleId })
+    });
+
+    history.<span class="hljs-title function_">back</span>();
+};
+</code></pre>
+<hr></hr>
+<h2 id="백엔드-핵심-로직">백엔드 핵심 로직</h2>
+<h3 id="1-대기열-상태-관리">1. <strong>대기열 상태 관리</strong></h3>
+<pre><code class="lang-java"><span class="hljs-meta">@Service</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">QueueService</span> {
+
+    <span class="hljs-comment">// 대기열 필요성 판단</span>
+    <span class="hljs-keyword">public</span> QueueCheckResponse <span class="hljs-title function_">checkQueueRequirement</span><span class="hljs-params">(Long performanceId, Long scheduleId, Long userId)</span> {
+        <span class="hljs-type">String</span> <span class="hljs-variable">sessionKey</span> <span class="hljs-operator">=</span> <span class="hljs-string">"active_sessions:"</span> + performanceId + <span class="hljs-string">":"</span> + scheduleId;
+        <span class="hljs-type">int</span> <span class="hljs-variable">activeSessions</span> <span class="hljs-operator">=</span> getCurrentActiveSessions(sessionKey);
+        <span class="hljs-type">int</span> <span class="hljs-variable">maxSessions</span> <span class="hljs-operator">=</span> getMaxConcurrentSessions();
+
+        <span class="hljs-keyword">if</span> (activeSessions &lt; maxSessions) {
+            <span class="hljs-comment">// 오버부킹 범위 내에서 바로 진입 허용</span>
+            incrementActiveSession(sessionKey);
+            startHeartbeatTracking(userId, performanceId, scheduleId);
+
+            <span class="hljs-keyword">return</span> QueueCheckResponse.builder()
+                .canProceedDirectly(<span class="hljs-literal">true</span>)
+                .sessionId(UUID.randomUUID().toString())
+                .build();
+        } <span class="hljs-keyword">else</span> {
+            <span class="hljs-comment">// 대기열 필요</span>
+            <span class="hljs-type">int</span> <span class="hljs-variable">waitingCount</span> <span class="hljs-operator">=</span> getCurrentWaitingCount(performanceId);
+
+            <span class="hljs-keyword">return</span> QueueCheckResponse.builder()
+                .requiresQueue(<span class="hljs-literal">true</span>)
+                .currentWaitingCount(waitingCount)
+                .estimatedWaitTime(waitingCount * <span class="hljs-number">30</span>) <span class="hljs-comment">// 1인당 30초 예상</span>
+                .build();
+        }
+    }
+}
+</code></pre>
+<h3 id="2-자동-대기열-진행">2. <strong>자동 대기열 진행</strong></h3>
+<pre><code class="lang-java"><span class="hljs-meta">@Scheduled(fixedRate = 30000)</span> <span class="hljs-comment">// 30초마다 실행</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">processQueue</span><span class="hljs-params">()</span> {
+    List&lt;Performance&gt; performances = performanceRepository.findAll();
+
+    <span class="hljs-keyword">for</span> (Performance performance : performances) {
+        <span class="hljs-comment">// 만료된 토큰 정리</span>
+        cleanupExpiredTokens(performance);
+
+        <span class="hljs-comment">// 다음 대기자들 활성화</span>
+        activateNextTokens(performance);
+
+        <span class="hljs-comment">// 대기열 순서 업데이트</span>
+        updateWaitingQueuePositions(performance);
+    }
+}
+
+<span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">activateNextTokens</span><span class="hljs-params">(Performance performance)</span> {
+    <span class="hljs-type">Long</span> <span class="hljs-variable">activeCount</span> <span class="hljs-operator">=</span> queueTokenRepository.countActiveTokensByPerformance(performance);
+    <span class="hljs-type">int</span> <span class="hljs-variable">maxSessions</span> <span class="hljs-operator">=</span> getMaxConcurrentSessions();
+
+    <span class="hljs-keyword">if</span> (activeCount &lt; maxSessions) {
+        <span class="hljs-type">int</span> <span class="hljs-variable">tokensToActivate</span> <span class="hljs-operator">=</span> maxSessions - activeCount.intValue();
+
+        List&lt;QueueToken&gt; waitingTokens = queueTokenRepository
+            .findTokensToActivate(performance);
+
+        waitingTokens.stream()
+            .limit(tokensToActivate)
+            .forEach(token -&gt; {
+                token.activate(); <span class="hljs-comment">// 토큰 활성화</span>
+                log.info(<span class="hljs-string">"토큰 활성화: {} (오버부킹 적용)"</span>, token.getToken());
+            });
+    }
+}
+</code></pre>
+<h3 id="3-비활성-세션-자동-정리">3. <strong>비활성 세션 자동 정리</strong></h3>
+<pre><code class="lang-java"><span class="hljs-meta">@Scheduled(fixedRate = 60000)</span> <span class="hljs-comment">// 1분마다</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">cleanupInactiveSessions</span><span class="hljs-params">()</span> {
+    <span class="hljs-keyword">try</span> {
+        <span class="hljs-comment">// heartbeat가 2분 이상 없는 세션들 찾기</span>
+        <span class="hljs-type">LocalDateTime</span> <span class="hljs-variable">cutoff</span> <span class="hljs-operator">=</span> LocalDateTime.now().minusMinutes(<span class="hljs-number">2</span>);
+
+        <span class="hljs-comment">// Redis에서 만료된 heartbeat 키들 확인</span>
+        Set&lt;String&gt; expiredSessions = findExpiredHeartbeats();
+
+        <span class="hljs-keyword">for</span> (String sessionKey : expiredSessions) {
+            <span class="hljs-comment">// 해당 사용자의 세션 강제 해제</span>
+            releaseInactiveSession(sessionKey);
+
+            <span class="hljs-comment">// 다음 대기자 자동 진입</span>
+            activateNextWaitingUser();
+        }
+    } <span class="hljs-keyword">catch</span> (Exception e) {
+        log.error(<span class="hljs-string">"비활성 세션 정리 중 오류 발생"</span>, e);
+    }
+}
+</code></pre>
+<hr></hr>
+<h2 id="모니터링-및-관리">모니터링 및 관리</h2>
+<h3 id="관리자용-대시보드-api">관리자용 대시보드 API</h3>
+<pre><code class="lang-java"><span class="hljs-meta">@GetMapping("/admin/queue/stats")</span>
+<span class="hljs-keyword">public</span> List&lt;QueueStatsResponse&gt; <span class="hljs-title function_">getQueueStats</span><span class="hljs-params">()</span> {
+    <span class="hljs-keyword">return</span> queueService.getQueueStatsByPerformance();
+}
+
+<span class="hljs-comment">// 응답 예시</span>
+[
+    {
+        <span class="hljs-string">"performanceId"</span>: <span class="hljs-number">1</span>,
+        <span class="hljs-string">"performanceTitle"</span>: <span class="hljs-string">"BTS 월드투어"</span>,
+        <span class="hljs-string">"waitingCount"</span>: <span class="hljs-number">1250</span>,
+        <span class="hljs-string">"activeCount"</span>: <span class="hljs-number">30</span>,
+        <span class="hljs-string">"usedCount"</span>: <span class="hljs-number">180</span>,
+        <span class="hljs-string">"averageWaitTimeMinutes"</span>: <span class="hljs-number">42</span>
+    }
+]
+</code></pre>
+<h3 id="실시간-대기열-현황">실시간 대기열 현황</h3>
+<pre><code class="lang-jsx"><span class="hljs-keyword">const</span> <span class="hljs-title function_">fetchQueueStats</span> = <span class="hljs-keyword">async</span> (<span class="hljs-params"></span>) =&gt; {
+    <span class="hljs-keyword">const</span> response = <span class="hljs-keyword">await</span> <span class="hljs-title function_">fetch</span>(<span class="hljs-string">'/admin/api/queue/stats'</span>);
+    <span class="hljs-keyword">const</span> stats = <span class="hljs-keyword">await</span> response.<span class="hljs-title function_">json</span>();
+
+    stats.<span class="hljs-title function_">forEach</span>(<span class="hljs-function"><span class="hljs-params">stat</span> =&gt;</span> {
+        <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">`<span class="hljs-subst">${stat.performanceTitle}</span>: 대기 <span class="hljs-subst">${stat.waitingCount}</span>명, 활성 <span class="hljs-subst">${stat.activeCount}</span>명`</span>);
+    });
+};
+</code></pre>
+<hr></hr>
+<h2 id="핵심-장점">핵심 장점</h2>
+<h3 id="1-서버-안정성">1. <strong>서버 안정성</strong></h3>
+<ul>
+<li>동시 접속자 수를 제어하여 서버 과부하 방지</li>
+<li>오버부킹으로 리소스 활용도 극대화</li>
+</ul>
+<h3 id="2-사용자-경험">2. <strong>사용자 경험</strong></h3>
+<ul>
+<li>명확한 대기 순서와 예상 시간 제공</li>
+<li>실시간 상태 업데이트로 투명성 확보</li>
+</ul>
+<h3 id="3-확장성">3. <strong>확장성</strong></h3>
+<ul>
+<li>Redis 클러스터링으로 수평 확장 가능</li>
+<li>마이크로서비스 아키텍처 대응</li>
+</ul>
+<h3 id="4-신뢰성">4. <strong>신뢰성</strong></h3>
+<ul>
+<li>자동 세션 정리로 무한 대기 방지</li>
+<li>Heartbeat 시스템으로 정확한 활성 사용자 추적</li>
+</ul>
+<hr></hr>
+<h2 id="테스트-시나리오">테스트 시나리오</h2>
+<h3 id="기본-플로우-테스트">기본 플로우 테스트</h3>
+<pre><code class="lang-bash"><span class="hljs-comment"># 1. 로그인</span>
+POST /auth/login
+{
+    <span class="hljs-string">"usernameOrEmail"</span>: <span class="hljs-string">"testuser"</span>,
+    <span class="hljs-string">"password"</span>: <span class="hljs-string">"password123"</span>
+}
+
+<span class="hljs-comment"># 2. 대기열 확인</span>
+POST /api/v1/queue/check
+{
+    <span class="hljs-string">"performanceId"</span>: 1,
+    <span class="hljs-string">"scheduleId"</span>: 1
+}
+
+<span class="hljs-comment"># 3. 토큰 발급 (대기열 필요 시)</span>
+POST /api/v1/queue/token
+{
+    <span class="hljs-string">"performanceId"</span>: 1
+}
+
+<span class="hljs-comment"># 4. 상태 확인 (반복)</span>
+GET /api/v1/queue/status/{token}
+
+<span class="hljs-comment"># 5. 예매 진행 (활성화 시)</span>
+POST /v1/bookings
+{
+    <span class="hljs-string">"scheduleId"</span>: 1,
+    <span class="hljs-string">"seatIds"</span>: [1, 2],
+    <span class="hljs-string">"queueToken"</span>: <span class="hljs-string">"{token}"</span>
+}
+</code></pre>
+<hr></hr>
+<h2 id="이후-개선-사항">이후 개선 사항</h2>
+<ul>
+<li><strong>WebSocket 도입</strong>: 실시간 알림 및 상태 업데이트 개선</li>
+<li><strong>장애 복구 시나리오</strong>: 시스템 장애 시 대기열 상태 복구 방안 마련</li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="06-springboot-actuator.html" class="navigation navigation-prev " aria-label="Previous page: Spring Boot Actuator">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="seat-lock-structure.html" class="navigation navigation-next " aria-label="Next page: 좌석 락 시스템 가이드">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"티켓팅 시스템 대기열(Queue)","level":"7.6","depth":1,"next":{"title":"좌석 락 시스템 가이드","level":"7.7","depth":1,"path":"07-backend/seat-lock-structure.md","ref":"07-backend/seat-lock-structure.md","articles":[]},"previous":{"title":"Spring Boot Actuator","level":"7.5","depth":1,"path":"07-backend/06-springboot-actuator.md","ref":"07-backend/06-springboot-actuator.md","articles":[]},"dir":"ltr"},"config":{"plugins":["mermaid-gb3"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"mermaid-gb3":{"theme":"default"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"공연 티켓팅 서비스 GitBook","gitbook":"*"},"file":{"path":"07-backend/queue-structure.md","mtime":"2025-09-30T06:00:11.669Z","type":"markdown"},"gitbook":{"version":"6.0.3","time":"2025-09-30T06:00:24.880Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    
+    <noscript>
+        <style>
+            .honkit-cloak {
+                display: block !important;
+            }
+        </style>
+    </noscript>
+    <script>
+        // Restore sidebar state as critical path for prevent layout shift
+        function __init__getSidebarState(defaultValue){
+            var baseKey = "";
+            var key = baseKey + ":sidebar";
+            try {
+                var value = localStorage[key];
+                if (value === undefined) {
+                    return defaultValue;
+                }
+                var parsed = JSON.parse(value);
+                return parsed == null ? defaultValue : parsed;
+            } catch (e) {
+                return defaultValue;
+            }
+        }
+        function __init__restoreLastSidebarState() {
+            var isMobile = window.matchMedia("(max-width: 600px)").matches;
+            if (isMobile) {
+                // Init last state if not mobile
+                return;
+            }
+            var sidebarState = __init__getSidebarState(true);
+            var book = document.querySelector(".book");
+            // Show sidebar if it enabled
+            if (sidebarState && book) {
+                book.classList.add("without-animation", "with-summary");
+            }
+        }
+
+        try {
+            __init__restoreLastSidebarState();
+        } finally {
+            var book = document.querySelector(".book");
+            book.classList.remove("honkit-cloak");
+        }
+    </script>
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-mermaid-gb3/book/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/@honkit/honkit-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    <script src="../gitbook/gitbook-plugin-mermaid-gb3/mermaid/mermaid.min.js"></script>
+
+    </body>
+</html>
+
