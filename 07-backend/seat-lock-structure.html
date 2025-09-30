@@ -1,0 +1,773 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <title>좌석 락 시스템 구현 가이드 · 공연 티켓팅 서비스 GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="HonKit 6.0.3">
+        
+        
+        
+    
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-mermaid-gb3/mermaid/mermaid.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/@honkit/honkit-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/@honkit/honkit-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+
+    
+        
+        
+        <link rel="stylesheet" href="../gitbook/gitbook-plugin-mermaid-gb3/mermaid/mermaid.default.css" />
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../11-infra/CICD.html" />
+    
+    
+    <link rel="prev" href="06-springboot-actuator.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book honkit-cloak">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    소개
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Intro</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../01-intro/01-overview.html">
+            
+                <a href="../01-intro/01-overview.html">
+            
+                    
+                    주제 선정 이유 및 기대 효과
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Goals</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="../02-goals/01-mvp.html">
+            
+                <a href="../02-goals/01-mvp.html">
+            
+                    
+                    프로젝트 목표 및 구현 계획
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Conventions</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="../03-conventions/01-standards.html">
+            
+                <a href="../03-conventions/01-standards.html">
+            
+                    
+                    공통 규칙(컨벤션)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="../03-conventions/02-issue-template.html">
+            
+                <a href="../03-conventions/02-issue-template.html">
+            
+                    
+                    GitHub Issue Template 생성 및 활용 가이드
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="../03-conventions/github-project-v1.html">
+            
+                <a href="../03-conventions/github-project-v1.html">
+            
+                    
+                    GitHub 프로젝트 관리 가이드 (v1)
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Architecture</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="../04-architecture/C4-model.html">
+            
+                <a href="../04-architecture/C4-model.html">
+            
+                    
+                    C4 Model
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Frontend</li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" data-path="../06-frontend/frontend-migration.html">
+            
+                <a href="../06-frontend/frontend-migration.html">
+            
+                    
+                    Frontend Migration
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Backend</li>
+        
+        
+    
+        <li class="chapter " data-level="7.1" data-path="02-springboot-setting.html">
+            
+                <a href="02-springboot-setting.html">
+            
+                    
+                    Spring Boot 세팅
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.2" data-path="03-test CRUD controller.md">
+            
+                <span>
+            
+                    
+                    [실습] test CRUD controller 만들기
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.3" data-path="04-springboot-folder-structure.html">
+            
+                <a href="04-springboot-folder-structure.html">
+            
+                    
+                    Folder Structure in SpringBoot
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.4" data-path="05-springboot-utils-error.html">
+            
+                <a href="05-springboot-utils-error.html">
+            
+                    
+                    Error 처리 공통 클래스 in Spring Boot
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.5" data-path="06-springboot-actuator.html">
+            
+                <a href="06-springboot-actuator.html">
+            
+                    
+                    Spring Boot Actuator
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="7.6" data-path="seat-lock-structure.html">
+            
+                <a href="seat-lock-structure.html">
+            
+                    
+                    좌석 락 시스템 구현 가이드
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Infra</li>
+        
+        
+    
+        <li class="chapter " data-level="8.1" data-path="../11-infra/CICD.html">
+            
+                <a href="../11-infra/CICD.html">
+            
+                    
+                    CICD
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
+            Published with HonKit
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >좌석 락 시스템 구현 가이드</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="좌석-락-시스템-구현-가이드">좌석 락 시스템 구현 가이드</h1>
+<h2 id="시스템-개요">시스템 개요</h2>
+<h3 id="배경">배경</h3>
+<p>티켓팅 시스템에서 좌석 선택 시 발생하는 동시성 문제를 해결하고, 사용자 간의 좌석 경합을 효율적으로 관리하기 위한 좌석 락 시스템을 구현했습니다.</p>
+<h3 id="기능">기능</h3>
+<ul>
+<li><strong>실시간 좌석 가용성 조회</strong>: 현재 사용 가능한 좌석 정보 제공</li>
+<li><strong>좌석 임시 잠금</strong>: 사용자가 선택한 좌석을 일정 시간 동안 잠금</li>
+<li><strong>자동 만료 처리</strong>: 설정된 시간이 지나면 자동으로 잠금 해제</li>
+<li><strong>동시성 제어</strong>: 여러 사용자가 같은 좌석을 선택할 때 충돌 방지</li>
+<li><strong>보안 강화</strong>: 인증된 사용자만 자신의 좌석을 제어할 수 있도록 제한</li>
+</ul>
+<hr></hr>
+<h2 id="아키텍처-설계">아키텍처 설계</h2>
+<h3 id="이중화-락-시스템">이중화 락 시스템</h3>
+<pre><code>┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
+│     Client      │    │   Spring App    │    │     Redis       │
+│                 │    │                 │    │   (Distributed  │
+│   좌석 선택 요청   ├───▶│   SeatService   ├───▶│     Lock)       │
+│                 │    │                 │    │                 │
+└─────────────────┘    └─────────────────┘    └─────────────────┘
+                                │
+                                ▼
+                       ┌─────────────────┐
+                       │   PostgreSQL    │
+                       │   (Persistent   │
+                       │     State)      │
+                       └─────────────────┘
+</code></pre><h3 id="데이터-플로우">데이터 플로우</h3>
+<ol>
+<li><strong>사용자 요청</strong>: 특정 좌석들에 대한 잠금 요청</li>
+<li><strong>Redis 락</strong>: 분산 락으로 동시성 제어</li>
+<li><strong>DB 상태 확인</strong>: 실제 좌석 상태 검증</li>
+<li><strong>상태 업데이트</strong>: 좌석 상태를 LOCKED로 변경</li>
+<li><strong>락 정보 저장</strong>: SeatLock 엔티티에 잠금 정보 저장</li>
+</ol>
+<hr></hr>
+<h2 id="핵심-구현-내용">핵심 구현 내용</h2>
+<h3 id="1-좌석-잠금-메커니즘">1. 좌석 잠금 메커니즘</h3>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> SeatLockResponse <span class="hljs-title function_">lockSeats</span><span class="hljs-params">(List&lt;Long&gt; seatIds, Long userId, String sessionId)</span> {
+    <span class="hljs-comment">// 1. 만료된 락 정리</span>
+    cleanupExpiredLocks();
+
+    <span class="hljs-comment">// 2. 좌석 가용성 확인</span>
+    <span class="hljs-keyword">for</span> (ScheduleSeat seat : seats) {
+        <span class="hljs-keyword">if</span> (seat.getStatus() == ScheduleSeat.SeatStatus.BOOKED) {
+            <span class="hljs-keyword">return</span> SeatLockResponse.failure(<span class="hljs-string">"이미 예약된 좌석이 포함되어 있습니다"</span>);
+        }
+
+        <span class="hljs-keyword">if</span> (seat.getStatus() == ScheduleSeat.SeatStatus.LOCKED) {
+            <span class="hljs-comment">// 같은 사용자/세션이면 연장, 아니면 실패</span>
+            Optional&lt;SeatLock&gt; existingLock = seatLockRepository
+                .findBySeatAndStatusAndExpiresAtAfter(seat, SeatLock.LockStatus.ACTIVE, LocalDateTime.now());
+
+            <span class="hljs-keyword">if</span> (existingLock.isPresent() &amp;&amp; !isSameUserOrSession(existingLock.get(), user, sessionId)) {
+                <span class="hljs-keyword">return</span> SeatLockResponse.failure(<span class="hljs-string">"다른 사용자가 선택 중인 좌석입니다"</span>);
+            }
+        }
+    }
+
+    <span class="hljs-comment">// 3. Redis 분산 락으로 동시성 제어</span>
+    <span class="hljs-keyword">for</span> (String lockKey : lockKeys) {
+        <span class="hljs-type">Boolean</span> <span class="hljs-variable">acquired</span> <span class="hljs-operator">=</span> redisTemplate.opsForValue().setIfAbsent(
+            lockKey, lockValue, LOCK_DURATION_MINUTES, TimeUnit.MINUTES
+        );
+
+        <span class="hljs-keyword">if</span> (Boolean.FALSE.equals(acquired)) {
+            rollbackRedisLocks(lockKeys, lockValue);
+            <span class="hljs-keyword">return</span> SeatLockResponse.failure(<span class="hljs-string">"좌석 락 획득 실패"</span>);
+        }
+    }
+
+    <span class="hljs-comment">// 4. DB 상태 업데이트</span>
+    <span class="hljs-comment">// ... 좌석 상태 변경 및 SeatLock 엔티티 저장</span>
+}
+</code></pre>
+<h3 id="2-만료-처리-시스템">2. 만료 처리 시스템</h3>
+<p><strong>스케줄러 기반 자동 정리</strong></p>
+<pre><code class="lang-java"><span class="hljs-meta">@Scheduled(fixedRate = 60000)</span> <span class="hljs-comment">// 1분마다 실행</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">cleanupExpiredLocks</span><span class="hljs-params">()</span> {
+    List&lt;SeatLock&gt; expiredLocks = seatLockRepository
+        .findByStatusAndExpiresAtBefore(SeatLock.LockStatus.ACTIVE, LocalDateTime.now());
+
+    <span class="hljs-keyword">for</span> (SeatLock lock : expiredLocks) {
+        releaseSingleSeat(lock);
+    }
+}
+</code></pre>
+<h3 id="3-데이터-일관성-보장">3. 데이터 일관성 보장</h3>
+<p><strong>트랜잭션 롤백 처리</strong></p>
+<pre><code class="lang-java"><span class="hljs-keyword">try</span> {
+    <span class="hljs-comment">// Redis 락 획득</span>
+    <span class="hljs-comment">// DB 상태 변경</span>
+} <span class="hljs-keyword">catch</span> (Exception e) {
+    <span class="hljs-comment">// 실패 시 Redis 락 정리</span>
+    rollbackRedisLocks(lockKeys, lockValue);
+    <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">RuntimeException</span>(<span class="hljs-string">"좌석 락 처리 중 오류 발생"</span>, e);
+}
+</code></pre>
+<hr></hr>
+<h2 id="동시성-제어">동시성 제어</h2>
+<h3 id="redis-분산-락-패턴">Redis 분산 락 패턴</h3>
+<pre><code class="lang-java"><span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-type">String</span> <span class="hljs-variable">REDIS_LOCK_PREFIX</span> <span class="hljs-operator">=</span> <span class="hljs-string">"seat_lock:"</span>;
+
+<span class="hljs-comment">// 락 획득</span>
+<span class="hljs-type">Boolean</span> <span class="hljs-variable">acquired</span> <span class="hljs-operator">=</span> redisTemplate.opsForValue().setIfAbsent(
+    lockKey,
+    lockValue,  <span class="hljs-comment">// userId:sessionId 형태</span>
+    LOCK_DURATION_MINUTES,
+    TimeUnit.MINUTES
+);
+
+<span class="hljs-comment">// 롤백 시 안전한 락 해제</span>
+<span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">rollbackRedisLocks</span><span class="hljs-params">(List&lt;String&gt; lockKeys, String lockValue)</span> {
+    <span class="hljs-keyword">for</span> (String lockKey : lockKeys) {
+        <span class="hljs-keyword">try</span> {
+            <span class="hljs-type">String</span> <span class="hljs-variable">currentValue</span> <span class="hljs-operator">=</span> redisTemplate.opsForValue().get(lockKey);
+            <span class="hljs-keyword">if</span> (lockValue.equals(currentValue)) {
+                redisTemplate.delete(lockKey);  <span class="hljs-comment">// 본인이 설정한 락만 삭제</span>
+            }
+        } <span class="hljs-keyword">catch</span> (Exception e) {
+            <span class="hljs-comment">// 롤백 중 오류는 로깅만 하고 계속 진행</span>
+        }
+    }
+}
+</code></pre>
+<h3 id="경합-상황-처리">경합 상황 처리</h3>
+<ol>
+<li><strong>같은 좌석을 여러 사용자가 선택</strong>: 첫 번째 사용자만 성공, 나머지는 실패 응답</li>
+<li><strong>기존 락 연장</strong>: 같은 사용자/세션이면 만료 시간 연장</li>
+<li><strong>부분 실패 처리</strong>: 일부 좌석만 락 실패 시 전체 롤백</li>
+</ol>
+<hr></hr>
+<h2 id="트러블슈팅">트러블슈팅</h2>
+<h3 id="1-redis-연결-실패">1. Redis 연결 실패</h3>
+<p><strong>증상</strong>: 좌석 락 기능 전체 장애
+<strong>해결</strong>:</p>
+<pre><code class="lang-yaml"><span class="hljs-comment"># application.yml에서 타임아웃 설정</span>
+<span class="hljs-attr">spring:</span>
+  <span class="hljs-attr">data:</span>
+    <span class="hljs-attr">redis:</span>
+      <span class="hljs-attr">timeout:</span> <span class="hljs-string">2000ms</span>
+      <span class="hljs-comment"># 연결 실패 시 fallback 로직 구현 필요</span>
+</code></pre>
+<h3 id="2-락-만료-시간-부족">2. 락 만료 시간 부족</h3>
+<p><strong>증상</strong>: 사용자가 결제 중 좌석이 해제됨
+<strong>해결</strong>:</p>
+<ul>
+<li>기본 락 시간을 10분으로 설정</li>
+<li>필요 시 연장 API 구현</li>
+</ul>
+<h3 id="3-대량-동시-접속-시-성능-저하">3. 대량 동시 접속 시 성능 저하</h3>
+<p><strong>증상</strong>: 좌석 선택 응답 시간 증가
+<strong>해결</strong>:</p>
+<ul>
+<li>Redis 커넥션 풀 크기 조정</li>
+<li>DB 쿼리 최적화 (배치 처리)</li>
+</ul>
+<h3 id="성능-최적화-방안">성능 최적화 방안</h3>
+<h3 id="1-배치-처리">1. 배치 처리</h3>
+<pre><code class="lang-java"><span class="hljs-comment">// 여러 좌석을 한 번에 처리</span>
+List&lt;ScheduleSeat&gt; seats = scheduleSeatRepository.findAllById(seatIds);
+<span class="hljs-comment">// 개별 조회 대신 배치 조회 사용</span>
+</code></pre>
+<h3 id="2-캐싱-전략">2. 캐싱 전략</h3>
+<pre><code class="lang-java"><span class="hljs-comment">// 자주 조회되는 스케줄 정보 캐싱</span>
+<span class="hljs-meta">@Cacheable("schedules")</span>
+<span class="hljs-keyword">public</span> PerformanceSchedule <span class="hljs-title function_">getSchedule</span><span class="hljs-params">(Long scheduleId)</span> {
+    <span class="hljs-keyword">return</span> scheduleRepository.findById(scheduleId).orElse(<span class="hljs-literal">null</span>);
+}
+</code></pre>
+<hr></hr>
+<h2 id="api-사용법">API 사용법</h2>
+<h3 id="1-좌석-가용성-조회">1. 좌석 가용성 조회</h3>
+<pre><code>GET /api/v1/schedules/{scheduleId}/seats
+Authorization: Bearer {token}
+</code></pre><p><strong>응답 예시</strong></p>
+<pre><code class="lang-json">{
+  <span class="hljs-string">"status"</span>: <span class="hljs-string">"success"</span>,
+  <span class="hljs-string">"message"</span>: <span class="hljs-string">"좌석 조회 성공"</span>,
+  <span class="hljs-string">"data"</span>: {
+    <span class="hljs-string">"scheduleId"</span>: <span class="hljs-number">1</span>,
+    <span class="hljs-string">"totalSeats"</span>: <span class="hljs-number">10</span>,
+    <span class="hljs-string">"availableSeats"</span>: <span class="hljs-number">8</span>,
+    <span class="hljs-string">"seats"</span>: [
+      {
+        <span class="hljs-string">"seatId"</span>: <span class="hljs-number">1</span>,
+        <span class="hljs-string">"seatRow"</span>: <span class="hljs-string">"A"</span>,
+        <span class="hljs-string">"seatNumber"</span>: <span class="hljs-string">"1"</span>,
+        <span class="hljs-string">"price"</span>: <span class="hljs-number">200000</span>,
+        <span class="hljs-string">"status"</span>: <span class="hljs-string">"AVAILABLE"</span>
+      }
+    ]
+  }
+}
+</code></pre>
+<h3 id="2-좌석-잠금">2. 좌석 잠금</h3>
+<pre><code>POST /api/v1/schedules/{scheduleId}/seats/lock
+Authorization: Bearer {token}
+Content-Type: application/json
+
+{
+  "seatIds": [1, 2, 3],
+  "userId": 123,
+  "sessionId": "session-abc-123"
+}
+</code></pre><p><strong>응답 예시</strong></p>
+<pre><code class="lang-json">{
+  <span class="hljs-string">"status"</span>: <span class="hljs-string">"success"</span>,
+  <span class="hljs-string">"message"</span>: <span class="hljs-string">"좌석 락 성공"</span>,
+  <span class="hljs-string">"data"</span>: {
+    <span class="hljs-string">"success"</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-string">"message"</span>: <span class="hljs-string">"좌석 락 성공"</span>,
+    <span class="hljs-string">"expiresAt"</span>: <span class="hljs-string">"2024-12-01T10:10:00Z"</span>
+  }
+}
+</code></pre>
+<h3 id="3-예약-생성">3. 예약 생성</h3>
+<pre><code>POST /api/v1/bookings
+Authorization: Bearer {token}
+Content-Type: application/json
+
+{
+  "scheduleId": 1,
+  "seatIds": [1, 2, 3],
+  "queueToken": "queue-token-xyz"
+}
+</code></pre><h3 id="테스트-시나리오">테스트 시나리오</h3>
+<h3 id="정상-케이스">정상 케이스</h3>
+<ol>
+<li>로그인 → 좌석 조회 → 좌석 선택 → 예약 생성 → 결제 → 예약 확정</li>
+</ol>
+<h3 id="예외-케이스">예외 케이스</h3>
+<ol>
+<li><p><strong>다른 사용자 좌석 조작 시도</strong></p>
+<pre><code class="lang-bash"> <span class="hljs-comment"># 403 Forbidden 응답 확인</span>
+ curl -X POST /api/v1/schedules/1/seats/lock \\
+      -H <span class="hljs-string">"Authorization: Bearer user1-token"</span> \\
+      -d <span class="hljs-string">'{"seatIds":[1],"userId":999,"sessionId":"test"}'</span>
+</code></pre>
+</li>
+<li><p><strong>Cross-schedule 공격 시도</strong></p>
+<pre><code class="lang-bash"> <span class="hljs-comment"># 400 Bad Request 응답 확인</span>
+ curl -X POST /api/v1/bookings \\
+      -H <span class="hljs-string">"Authorization: Bearer user1-token"</span> \\
+      -d <span class="hljs-string">'{"scheduleId":1,"seatIds":[11,12,13]}'</span>  <span class="hljs-comment"># 스케줄 3의 좌석들</span>
+</code></pre>
+</li>
+</ol>
+<hr></hr>
+<h2 id="이후-개선-사항">이후 개선 사항</h2>
+<ol>
+<li><strong>대기열 시스템</strong>: 인기 공연의 동시 접속 제어</li>
+<li><strong>분산 캐시</strong>: 다중 인스턴스 환경에서의 성능 개선</li>
+</ol>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="06-springboot-actuator.html" class="navigation navigation-prev " aria-label="Previous page: Spring Boot Actuator">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../11-infra/CICD.html" class="navigation navigation-next " aria-label="Next page: CICD">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"좌석 락 시스템 구현 가이드","level":"7.6","depth":1,"next":{"title":"CICD","level":"8.1","depth":1,"path":"11-infra/CICD.md","ref":"11-infra/CICD.md","articles":[]},"previous":{"title":"Spring Boot Actuator","level":"7.5","depth":1,"path":"07-backend/06-springboot-actuator.md","ref":"07-backend/06-springboot-actuator.md","articles":[]},"dir":"ltr"},"config":{"plugins":["mermaid-gb3"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"mermaid-gb3":{"theme":"default"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"공연 티켓팅 서비스 GitBook","gitbook":"*"},"file":{"path":"07-backend/seat-lock-structure.md","mtime":"2025-09-30T04:34:29.884Z","type":"markdown"},"gitbook":{"version":"6.0.3","time":"2025-09-30T04:34:42.319Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    
+    <noscript>
+        <style>
+            .honkit-cloak {
+                display: block !important;
+            }
+        </style>
+    </noscript>
+    <script>
+        // Restore sidebar state as critical path for prevent layout shift
+        function __init__getSidebarState(defaultValue){
+            var baseKey = "";
+            var key = baseKey + ":sidebar";
+            try {
+                var value = localStorage[key];
+                if (value === undefined) {
+                    return defaultValue;
+                }
+                var parsed = JSON.parse(value);
+                return parsed == null ? defaultValue : parsed;
+            } catch (e) {
+                return defaultValue;
+            }
+        }
+        function __init__restoreLastSidebarState() {
+            var isMobile = window.matchMedia("(max-width: 600px)").matches;
+            if (isMobile) {
+                // Init last state if not mobile
+                return;
+            }
+            var sidebarState = __init__getSidebarState(true);
+            var book = document.querySelector(".book");
+            // Show sidebar if it enabled
+            if (sidebarState && book) {
+                book.classList.add("without-animation", "with-summary");
+            }
+        }
+
+        try {
+            __init__restoreLastSidebarState();
+        } finally {
+            var book = document.querySelector(".book");
+            book.classList.remove("honkit-cloak");
+        }
+    </script>
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-mermaid-gb3/book/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/@honkit/honkit-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    <script src="../gitbook/gitbook-plugin-mermaid-gb3/mermaid/mermaid.min.js"></script>
+
+    </body>
+</html>
+

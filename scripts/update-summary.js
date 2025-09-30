@@ -71,110 +71,71 @@ class SummaryUpdater {
             .replace(/\b\w/g, (l) => l.toUpperCase());
     }
 
-    async getExistingFiles() {
-        try {
-            const summaryExists = await fs
-                .access('SUMMARY.md')
-                .then(() => true)
-                .catch(() => false);
-            if (!summaryExists) {
-                return new Set();
-            }
-
-            const content = await fs.readFile('SUMMARY.md', 'utf8');
-            const existing = new Set();
-            const linkPattern = /\[.*?\]\(([^)]+\.md)\)/g;
-
-            let match;
-            while ((match = linkPattern.exec(content)) !== null) {
-                existing.add(match[1]);
-            }
-
-            return existing;
-        } catch (error) {
-            console.warn(
-                `Warning: Could not read SUMMARY.md: ${error.message}`
-            );
-            return new Set();
-        }
-    }
-
-    categorizeFiles(files) {
+    categorizeFilesByFolder(files) {
         const categories = new Map();
 
         for (const filePath of files) {
             const dirName = path.dirname(filePath);
-            let categoryName;
 
             if (dirName === '.' || dirName === '') {
-                categoryName = 'Main Documents';
-            } else {
-                const firstDir = dirName.split('/')[0];
-                categoryName = firstDir
-                    .replace(/[-_]/g, ' ')
-                    .replace(/\b\w/g, (l) => l.toUpperCase());
+                // 루트 레벨 파일은 제외
+                continue;
             }
 
-            if (!categories.has(categoryName)) {
-                categories.set(categoryName, []);
+            const firstDir = dirName.split('/')[0];
+
+            if (!categories.has(firstDir)) {
+                categories.set(firstDir, []);
             }
-            categories.get(categoryName).push(filePath);
+            categories.get(firstDir).push(filePath);
+        }
+
+        // 각 카테고리 내에서 파일 정렬
+        for (const [category, fileList] of categories) {
+            fileList.sort();
         }
 
         return categories;
     }
 
+    formatCategoryName(folderName) {
+        // 폴더명을 보기 좋은 제목으로 변환
+        return folderName
+            .replace(/^\d{2}-/, '') // 앞의 숫자- 제거
+            .replace(/[-_]/g, ' ')
+            .replace(/\b\w/g, (l) => l.toUpperCase());
+    }
+
     async updateSummary() {
         try {
+            console.log('Rebuilding SUMMARY.md from scratch...');
+
             const allFiles = await this.findMarkdownFiles();
-            const existingFiles = await this.getExistingFiles();
-            const newFiles = allFiles.filter(
-                (file) => !existingFiles.has(file)
+            console.log(`Found ${allFiles.length} markdown files`);
+
+            // SUMMARY.md를 처음부터 새로 구성
+            const summaryLines = ['# Summary', '', '- [소개](README.md)', ''];
+
+            // 파일들을 폴더별로 분류
+            const categories = this.categorizeFilesByFolder(allFiles);
+
+            // 폴더 순서대로 정렬 (숫자 접두사 고려)
+            const sortedCategories = Array.from(categories.entries()).sort(
+                ([a], [b]) => {
+                    const aNum = a.match(/^(\d+)/);
+                    const bNum = b.match(/^(\d+)/);
+
+                    if (aNum && bNum) {
+                        return parseInt(aNum[1]) - parseInt(bNum[1]);
+                    }
+                    return a.localeCompare(b);
+                }
             );
 
-            console.log(`Found ${allFiles.length} total files`);
-            console.log(`Already in SUMMARY.md: ${existingFiles.size} files`);
-            console.log(`New files to add: ${newFiles.length} files`);
-
-            if (newFiles.length === 0) {
-                console.log('No new files to add to SUMMARY.md');
-                return false;
-            }
-
-            console.log('\nNew files found:');
-            newFiles.forEach((file) => console.log(`  + ${file}`));
-
-            // 기존 SUMMARY.md 읽기
-            let summaryLines = [];
-            try {
-                const summaryContent = await fs.readFile('SUMMARY.md', 'utf8');
-                summaryLines = summaryContent.split('\n');
-            } catch (error) {
-                // SUMMARY.md가 없으면 기본 구조 생성
-                summaryLines = [
-                    '# Summary',
-                    '',
-                    '* [Introduction](README.md)',
-                    '',
-                ];
-            }
-
-            // 마지막 줄이 빈 줄이 아니면 추가
-            if (
-                summaryLines.length > 0 &&
-                summaryLines[summaryLines.length - 1] !== ''
-            ) {
-                summaryLines.push('');
-            }
-
-            // 새 파일들을 카테고리별로 추가
-            const categories = this.categorizeFiles(newFiles);
-
-            for (const [categoryName, files] of Array.from(
-                categories.entries()
-            ).sort()) {
-                summaryLines.push(`## ${categoryName}`);
-                summaryLines.push('');
+            // 각 폴더별로 섹션 생성
+            for (const [folderName, files] of sortedCategories) {
+                const categoryTitle = this.formatCategoryName(folderName);
+                summaryLines.push(`## ${categoryTitle}`);
 
                 for (const filePath of files) {
                     const title = await this.extractTitle(filePath);
@@ -183,9 +144,21 @@ class SummaryUpdater {
                 summaryLines.push('');
             }
 
+            // 마지막 빈 줄 제거
+            while (
+                summaryLines.length > 0 &&
+                summaryLines[summaryLines.length - 1] === ''
+            ) {
+                summaryLines.pop();
+            }
+
             // SUMMARY.md 쓰기
-            await fs.writeFile('SUMMARY.md', summaryLines.join('\n'), 'utf8');
-            console.log(`SUMMARY.md updated with ${newFiles.length} new files`);
+            await fs.writeFile(
+                'SUMMARY.md',
+                summaryLines.join('\n') + '\n',
+                'utf8'
+            );
+            console.log('SUMMARY.md has been completely rebuilt');
             return true;
         } catch (error) {
             console.error(`Error updating SUMMARY.md: ${error.message}`);
