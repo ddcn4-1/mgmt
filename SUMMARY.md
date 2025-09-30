@@ -25,7 +25,8 @@
 * [Folder Structure in SpringBoot](07-backend/04-springboot-folder-structure.md)
 * [Error 처리 공통 클래스 in Spring Boot](07-backend/05-springboot-utils-error.md)
 * [Spring Boot Actuator](07-backend/06-springboot-actuator.md)
-* [좌석 락 시스템 구현 가이드](07-backend/seat-lock-structure.md)
+* [티켓팅 시스템 대기열(Queue)](07-backend/queue-structure.md)
+* [좌석 락 시스템 가이드](07-backend/seat-lock-structure.md)
 
 ## Infra
 * [CICD](11-infra/CICD.md)
