@@ -1,0 +1,847 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <title>[실습] test CRUD controller 만들기 · 공연 티켓팅 서비스 GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="HonKit 6.0.3">
+        
+        
+        
+    
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-mermaid-gb3/mermaid/mermaid.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/@honkit/honkit-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/@honkit/honkit-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+
+    
+        
+        
+        <link rel="stylesheet" href="../gitbook/gitbook-plugin-mermaid-gb3/mermaid/mermaid.default.css" />
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="04-springboot-folder-structure.html" />
+    
+    
+    <link rel="prev" href="02-springboot-setting.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book honkit-cloak">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    소개
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Intro</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../01-intro/01-overview.html">
+            
+                <a href="../01-intro/01-overview.html">
+            
+                    
+                    주제 선정 이유 및 기대 효과
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Goals</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="../02-goals/01-mvp.html">
+            
+                <a href="../02-goals/01-mvp.html">
+            
+                    
+                    프로젝트 목표 및 구현 계획
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Conventions</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="../03-conventions/01-standards.html">
+            
+                <a href="../03-conventions/01-standards.html">
+            
+                    
+                    공통 규칙(컨벤션)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="../03-conventions/02-issue-template.html">
+            
+                <a href="../03-conventions/02-issue-template.html">
+            
+                    
+                    GitHub Issue Template 생성 및 활용 가이드
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="../03-conventions/github-project-v1.html">
+            
+                <a href="../03-conventions/github-project-v1.html">
+            
+                    
+                    GitHub 프로젝트 관리 가이드 (v1)
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Architecture</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="../04-architecture/C4-model.html">
+            
+                <a href="../04-architecture/C4-model.html">
+            
+                    
+                    C4 Model
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Frontend</li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" data-path="../06-frontend/frontend-migration.html">
+            
+                <a href="../06-frontend/frontend-migration.html">
+            
+                    
+                    Frontend Migration
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Backend</li>
+        
+        
+    
+        <li class="chapter " data-level="7.1" data-path="02-springboot-setting.html">
+            
+                <a href="02-springboot-setting.html">
+            
+                    
+                    Spring Boot 세팅
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="7.2" data-path="03-test-CRUD-controller.html">
+            
+                <a href="03-test-CRUD-controller.html">
+            
+                    
+                    [실습] test CRUD controller 만들기
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.3" data-path="04-springboot-folder-structure.html">
+            
+                <a href="04-springboot-folder-structure.html">
+            
+                    
+                    Folder Structure in SpringBoot
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.4" data-path="05-springboot-utils-error.html">
+            
+                <a href="05-springboot-utils-error.html">
+            
+                    
+                    Error 처리 공통 클래스 in Spring Boot
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.5" data-path="06-springboot-actuator.html">
+            
+                <a href="06-springboot-actuator.html">
+            
+                    
+                    Spring Boot Actuator
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.6" data-path="seat-lock-structure.html">
+            
+                <a href="seat-lock-structure.html">
+            
+                    
+                    좌석 락 시스템 구현 가이드
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Infra</li>
+        
+        
+    
+        <li class="chapter " data-level="8.1" data-path="../11-infra/CICD.html">
+            
+                <a href="../11-infra/CICD.html">
+            
+                    
+                    CICD
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
+            Published with HonKit
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >[실습] test CRUD controller 만들기</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="실습-test-crud-controller-만들기">[실습] test CRUD controller 만들기</h1>
+<h2 id="목적">목적</h2>
+<p>Spring Boot와 JPA를 활용한 CRUD(Create, Read, Update, Delete) RESTful API 개발 과정을 실습을 통해 익힐 수 있습니다.</p>
+<ul>
+<li>Spring Boot 아키텍처 이해 (Entity, repository, service, controller 계층)</li>
+<li>RESTful API 설계 원칙 습득 (Http 메서드, 상태코드)</li>
+<li>H2 인메모리 데이터베이스를 활용한 개발 환경 최적화</li>
+</ul>
+<h2 id="prerequisite">Prerequisite</h2>
+<ul>
+<li>02-springboot에서 진행한 세팅 완료</li>
+</ul>
+<h3 id="folder-structure">folder structure</h3>
+<pre><code>.
+├── build.gradle
+├── compose.yaml
+├── gradlew
+├── gradlew.bat
+├── settings.gradle
+└── src
+    ├── main
+    │   ├── java
+    │   │   └── org
+    │   │       └── ddcn41
+    │   │           └── ticketing_system
+    │   │               ├── config
+    │   │               │   └── SecurityConfig.java
+    │   │               ├── controller
+    │   │               │   └── VenueController.java
+    │   │               ├── dto
+    │   │               │   └── VenueDto.java
+    │   │               ├── entity
+    │   │               │   ├── Booking.java
+    │   │               │   ├── BookingSeat.java
+    │   │               │   ├── Payment.java
+    │   │               │   ├── Performance.java
+    │   │               │   ├── PerformanceSchedule.java
+    │   │               │   ├── Refund.java
+    │   │               │   ├── ScheduleSeat.java
+    │   │               │   ├── SeatLock.java
+    │   │               │   ├── SystemMetric.java
+    │   │               │   ├── User.java
+    │   │               │   ├── Venue.java
+    │   │               │   └── VenueSeat.java
+    │   │               ├── repository
+    │   │               │   └── VenueRepository.java
+    │   │               ├── service
+    │   │               │   └── VenueService.java
+    │   │               └── TicketingSystemApplication.java
+    │   └── resources
+    │       ├── application.yml
+    │       ├── data.sql
+</code></pre><h2 id="api-작성">API 작성</h2>
+<h3 id="entity-작성">Entity 작성</h3>
+<ul>
+<li>@Entity: JPA 엔티티임을 명시</li>
+<li>@Table(name = "venues"): 테이블 명을 실세 데이터베이스와 동일하게 명시적으로 지정</li>
+<li>Lombok 어노테이션: 보일러플레이트 코드를 자동 생성</li>
+<li>@CreationTimestamp/@UpdateTimestamp: 생성/수정 시간을 자동으로 관리</li>
+<li>제약조건: nullable, length 등으로 데이터 무결성을 보장</li>
+</ul>
+<pre><code class="lang-java"><span class="hljs-keyword">package</span> org.ddcn41.ticketing_system.entity;
+
+<span class="hljs-meta">@Entity</span>
+<span class="hljs-meta">@Table(name = "venues")</span>
+<span class="hljs-meta">@Data</span>
+<span class="hljs-meta">@NoArgsConstructor</span>
+<span class="hljs-meta">@AllArgsConstructor</span>
+<span class="hljs-meta">@Builder</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Venue</span> {
+
+    <span class="hljs-meta">@Id</span>
+    <span class="hljs-meta">@GeneratedValue(strategy = GenerationType.IDENTITY)</span>
+    <span class="hljs-meta">@Column(name = "venue_id")</span>
+    <span class="hljs-keyword">private</span> Long venueId;
+
+    <span class="hljs-meta">@Column(name = "venue_name", nullable = false)</span>
+    <span class="hljs-keyword">private</span> String venueName;
+
+    <span class="hljs-meta">@Column(columnDefinition = "TEXT")</span>
+    <span class="hljs-keyword">private</span> String address;
+
+    <span class="hljs-meta">@Column(columnDefinition = "TEXT")</span>
+    <span class="hljs-keyword">private</span> String description;
+
+    <span class="hljs-meta">@Column(name = "total_capacity", nullable = false)</span>
+    <span class="hljs-meta">@Builder</span>.Default
+    <span class="hljs-keyword">private</span> <span class="hljs-type">Integer</span> <span class="hljs-variable">totalCapacity</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;
+
+    <span class="hljs-meta">@Column(length = 100)</span>
+    <span class="hljs-keyword">private</span> String contact;
+
+    <span class="hljs-meta">@CreationTimestamp</span>
+    <span class="hljs-meta">@Column(name = "created_at")</span>
+    <span class="hljs-keyword">private</span> LocalDateTime createdAt;
+
+    <span class="hljs-meta">@UpdateTimestamp</span>
+    <span class="hljs-meta">@Column(name = "updated_at")</span>
+    <span class="hljs-keyword">private</span> LocalDateTime updatedAt;
+
+    <span class="hljs-meta">@OneToMany(mappedBy = "venue", cascade = CascadeType.ALL)</span>
+    <span class="hljs-keyword">private</span> List&lt;Performance&gt; performances;
+
+    <span class="hljs-meta">@OneToMany(mappedBy = "venue", cascade = CascadeType.ALL)</span>
+    <span class="hljs-keyword">private</span> List&lt;VenueSeat&gt; venueSeats;
+}
+</code></pre>
+<h3 id="repository--dto-작성">Repository &amp; DTO 작성</h3>
+<ul>
+<li>VenueRepository.java<ul>
+<li>Spring Data JPA의 기능을 활용하여 데이터 접근 계층을 구현</li>
+<li>@Repository: Spring Framework에서 제공하는 데이터 접근 계층(DAO - Data Access Object)을 나타냄</li>
+</ul>
+</li>
+</ul>
+<pre><code class="lang-java"><span class="hljs-keyword">package</span> org.ddcn41.ticketing_system.repository;
+
+<span class="hljs-meta">@Repository</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">interface</span> <span class="hljs-title class_">VenueRepository</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">JpaRepository</span>&lt;Venue, Long&gt; {
+    <span class="hljs-comment">// 추가적인 쿼리 메소드들이 필요하면 여기에 추가</span>
+}
+</code></pre>
+<ul>
+<li>VenueDto.java<ul>
+<li>클라이언트와 서버 간 데이터 전송을 위한 DTO 클래스를 정의</li>
+</ul>
+</li>
+</ul>
+<pre><code class="lang-java"><span class="hljs-keyword">package</span> org.ddcn41.ticketing_system.dto;
+
+<span class="hljs-meta">@Data</span>
+<span class="hljs-meta">@NoArgsConstructor</span>
+<span class="hljs-meta">@AllArgsConstructor</span>
+<span class="hljs-meta">@Builder</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">VenueDto</span> {
+    <span class="hljs-keyword">private</span> Long venueId;
+    <span class="hljs-keyword">private</span> String venueName;
+    <span class="hljs-keyword">private</span> String address;
+    <span class="hljs-keyword">private</span> String description;
+    <span class="hljs-keyword">private</span> Integer totalCapacity;
+    <span class="hljs-keyword">private</span> String contact;
+}
+</code></pre>
+<h3 id="service-작성">Service 작성</h3>
+<p>비즈니스 로직을 담당하는 Service 계층</p>
+<pre><code class="lang-java"><span class="hljs-keyword">package</span> org.ddcn41.ticketing_system.service;
+
+<span class="hljs-meta">@Service</span>
+<span class="hljs-meta">@RequiredArgsConstructor</span>
+<span class="hljs-meta">@Transactional(readOnly = true)</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">VenueService</span> {
+
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> VenueRepository venueRepository;
+
+    <span class="hljs-comment">// 모든 공연장 조회</span>
+    <span class="hljs-keyword">public</span> List&lt;VenueDto&gt; <span class="hljs-title function_">getAllVenues</span><span class="hljs-params">()</span> {
+        <span class="hljs-keyword">return</span> venueRepository.findAll().stream()
+                .map(<span class="hljs-built_in">this</span>::convertToDto)
+                .collect(Collectors.toList());
+    }
+
+    <span class="hljs-comment">// 공연장 ID로 조회</span>
+    <span class="hljs-keyword">public</span> VenueDto <span class="hljs-title function_">getVenueById</span><span class="hljs-params">(Long venueId)</span> {
+        <span class="hljs-type">Venue</span> <span class="hljs-variable">venue</span> <span class="hljs-operator">=</span> venueRepository.findById(venueId)
+                .orElseThrow(() -&gt; <span class="hljs-keyword">new</span> <span class="hljs-title class_">RuntimeException</span>(<span class="hljs-string">"Venue not found with id: "</span> + venueId));
+        <span class="hljs-keyword">return</span> convertToDto(venue);
+    }
+
+    <span class="hljs-comment">// 공연장 생성</span>
+    <span class="hljs-meta">@Transactional</span>
+    <span class="hljs-keyword">public</span> VenueDto <span class="hljs-title function_">createVenue</span><span class="hljs-params">(VenueDto venueDto)</span> {
+        <span class="hljs-type">Venue</span> <span class="hljs-variable">venue</span> <span class="hljs-operator">=</span> Venue.builder()
+                .venueName(venueDto.getVenueName())
+                .address(venueDto.getAddress())
+                .description(venueDto.getDescription())
+                .totalCapacity(venueDto.getTotalCapacity())
+                .contact(venueDto.getContact())
+                .build();
+
+        <span class="hljs-type">Venue</span> <span class="hljs-variable">savedVenue</span> <span class="hljs-operator">=</span> venueRepository.save(venue);
+        <span class="hljs-keyword">return</span> convertToDto(savedVenue);
+    }
+
+    <span class="hljs-comment">// 공연장 수정</span>
+    <span class="hljs-meta">@Transactional</span>
+    <span class="hljs-keyword">public</span> VenueDto <span class="hljs-title function_">updateVenue</span><span class="hljs-params">(Long venueId, VenueDto venueDto)</span> {
+        <span class="hljs-type">Venue</span> <span class="hljs-variable">venue</span> <span class="hljs-operator">=</span> venueRepository.findById(venueId)
+                .orElseThrow(() -&gt; <span class="hljs-keyword">new</span> <span class="hljs-title class_">RuntimeException</span>(<span class="hljs-string">"Venue not found with id: "</span> + venueId));
+
+        venue.setVenueName(venueDto.getVenueName());
+        venue.setAddress(venueDto.getAddress());
+        venue.setDescription(venueDto.getDescription());
+        venue.setTotalCapacity(venueDto.getTotalCapacity());
+        venue.setContact(venueDto.getContact());
+
+        <span class="hljs-type">Venue</span> <span class="hljs-variable">updatedVenue</span> <span class="hljs-operator">=</span> venueRepository.save(venue);
+        <span class="hljs-keyword">return</span> convertToDto(updatedVenue);
+    }
+
+    <span class="hljs-comment">// 공연장 삭제</span>
+    <span class="hljs-meta">@Transactional</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">deleteVenue</span><span class="hljs-params">(Long venueId)</span> {
+        <span class="hljs-keyword">if</span> (!venueRepository.existsById(venueId)) {
+            <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">RuntimeException</span>(<span class="hljs-string">"Venue not found with id: "</span> + venueId);
+        }
+        venueRepository.deleteById(venueId);
+    }
+
+    <span class="hljs-comment">// Entity를 DTO로 변환</span>
+    <span class="hljs-keyword">private</span> VenueDto <span class="hljs-title function_">convertToDto</span><span class="hljs-params">(Venue venue)</span> {
+        <span class="hljs-keyword">return</span> VenueDto.builder()
+                .venueId(venue.getVenueId())
+                .venueName(venue.getVenueName())
+                .address(venue.getAddress())
+                .description(venue.getDescription())
+                .totalCapacity(venue.getTotalCapacity())
+                .contact(venue.getContact())
+                .build();
+    }
+}
+</code></pre>
+<h3 id="controller-작성">Controller 작성</h3>
+<p>RESTful API 엔드포인트를 제공하는 Controller 계층</p>
+<pre><code class="lang-java"><span class="hljs-keyword">package</span> org.ddcn41.ticketing_system.controller;
+
+<span class="hljs-meta">@RestController</span>
+<span class="hljs-meta">@RequestMapping("/api/venues")</span>
+<span class="hljs-meta">@RequiredArgsConstructor</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">VenueController</span> {
+
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> VenueService venueService;
+
+    <span class="hljs-comment">// 모든 공연장 조회</span>
+    <span class="hljs-meta">@GetMapping</span>
+    <span class="hljs-keyword">public</span> ResponseEntity&lt;List&lt;VenueDto&gt;&gt; <span class="hljs-title function_">getAllVenues</span><span class="hljs-params">()</span> {
+        List&lt;VenueDto&gt; venues = venueService.getAllVenues();
+        <span class="hljs-keyword">return</span> ResponseEntity.ok(venues);
+    }
+
+    <span class="hljs-comment">// 특정 공연장 조회</span>
+    <span class="hljs-meta">@GetMapping("/{venueId}")</span>
+    <span class="hljs-keyword">public</span> ResponseEntity&lt;VenueDto&gt; <span class="hljs-title function_">getVenueById</span><span class="hljs-params">(<span class="hljs-meta">@PathVariable</span> Long venueId)</span> {
+        <span class="hljs-type">VenueDto</span> <span class="hljs-variable">venue</span> <span class="hljs-operator">=</span> venueService.getVenueById(venueId);
+        <span class="hljs-keyword">return</span> ResponseEntity.ok(venue);
+    }
+
+    <span class="hljs-comment">// 공연장 생성</span>
+    <span class="hljs-meta">@PostMapping</span>
+    <span class="hljs-keyword">public</span> ResponseEntity&lt;VenueDto&gt; <span class="hljs-title function_">createVenue</span><span class="hljs-params">(<span class="hljs-meta">@RequestBody</span> VenueDto venueDto)</span> {
+        <span class="hljs-type">VenueDto</span> <span class="hljs-variable">createdVenue</span> <span class="hljs-operator">=</span> venueService.createVenue(venueDto);
+        <span class="hljs-keyword">return</span> ResponseEntity.status(HttpStatus.CREATED).body(createdVenue);
+    }
+
+    <span class="hljs-comment">// 공연장 수정</span>
+    <span class="hljs-meta">@PutMapping("/{venueId}")</span>
+    <span class="hljs-keyword">public</span> ResponseEntity&lt;VenueDto&gt; <span class="hljs-title function_">updateVenue</span><span class="hljs-params">(<span class="hljs-meta">@PathVariable</span> Long venueId, <span class="hljs-meta">@RequestBody</span> VenueDto venueDto)</span> {
+        <span class="hljs-type">VenueDto</span> <span class="hljs-variable">updatedVenue</span> <span class="hljs-operator">=</span> venueService.updateVenue(venueId, venueDto);
+        <span class="hljs-keyword">return</span> ResponseEntity.ok(updatedVenue);
+    }
+
+    <span class="hljs-comment">// 공연장 삭제</span>
+    <span class="hljs-meta">@DeleteMapping("/{venueId}")</span>
+    <span class="hljs-keyword">public</span> ResponseEntity&lt;Void&gt; <span class="hljs-title function_">deleteVenue</span><span class="hljs-params">(<span class="hljs-meta">@PathVariable</span> Long venueId)</span> {
+        venueService.deleteVenue(venueId);
+        <span class="hljs-keyword">return</span> ResponseEntity.noContent().build();
+    }
+}
+</code></pre>
+<h2 id="api-호출">API 호출</h2>
+<pre><code class="lang-bash">curl -X POST http://localhost:8080/api/venues \
+  -H <span class="hljs-string">"Content-Type: application/json"</span> \
+  -d <span class="hljs-string">'{
+    "venueName": "서울 예술의 전당",
+    "address": "서울특별시 서초구 남부순환로 2406",
+    "description": "대한민국 최고의 공연장",
+    "totalCapacity": 2000,
+    "contact": "02-580-1300"
+  }'</span>
+</code></pre>
+<pre><code class="lang-bash">curl -X GET http://localhost:8080/api/venues
+</code></pre>
+<pre><code class="lang-bash">curl -X PUT http://localhost:8080/api/venues/1 \
+  -H <span class="hljs-string">"Content-Type: application/json"</span> \
+  -d <span class="hljs-string">'{
+    "venueName": "서울 예술의 전당 (수정됨)",
+    "address": "서울특별시 서초구 남부순환로 2406",
+    "description": "대한민국 최고의 공연장 (업데이트)",
+    "totalCapacity": 2100,
+    "contact": "02-580-1300"
+  }'</span>
+</code></pre>
+<pre><code class="lang-java">curl -X DELETE http:<span class="hljs-comment">//localhost:8080/api/venues/1</span>
+</code></pre>
+<h3 id="실행-화면">실행 화면</h3>
+<p><img src="image/test1.png" alt="test1"></img>
+<img src="image/test2.png" alt="test2"></img></p>
+<h2 id="trouble-shooting">Trouble Shooting</h2>
+<h3 id="h2-데이터베이스에서-테이블이-자동-생성되지-않아-빌드마다-입력이-필요함">H2 데이터베이스에서 테이블이 자동 생성되지 않아 빌드마다 입력이 필요함</h3>
+<ul>
+<li>애플리케이션 재시작 시마다 H2 인메모리 데이터베이스의 테이블이 사라짐</li>
+<li>JPA의 ddl-auto 설정만으로는 복잡한 테이블 구조와 인덱스가 제대로 생성되지 않음</li>
+<li>매번 수동으로 테이블을 생성해야 하는 번거로움 발생</li>
+</ul>
+<p><strong>해결</strong><br></br>
+application.yaml에 h2 설정을 수정하고, resources에 sql 문을 미리 정의하여 둔다. 이렇게 하면 로컬에서 개발을 빠르게 진행하고, 추후 클라우드로 옮겨 같은 코드를 그대로 유지/개발할 수 있다.</p>
+<h2 id="references">References</h2>
+<p><strong>Restful API guide</strong></p>
+<ul>
+<li><a href="https://restfulapi.net/http-status-codes/" target="_blank">https://restfulapi.net/http-status-codes/</a></li>
+<li>Building a RESTful Web Service <a href="https://spring.io/guides/gs/rest-service" target="_blank">https://spring.io/guides/gs/rest-service</a></li>
+</ul>
+<p><strong>Spring Data JPA</strong></p>
+<ul>
+<li>spring data JPA <a href="https://docs.spring.io/spring-data/jpa/reference/index.html" target="_blank">https://docs.spring.io/spring-data/jpa/reference/index.html</a></li>
+</ul>
+<p><strong>Spring Web MVC</strong></p>
+<ul>
+<li>Annotated Controllers <a href="https://docs.spring.io/spring-framework/reference/web/webmvc/mvc-controller.html" target="_blank">https://docs.spring.io/spring-framework/reference/web/webmvc/mvc-controller.html</a></li>
+<li>Mapping Request <a href="https://docs.spring.io/spring-framework/reference/web/webmvc/mvc-controller/ann-requestmapping.html" target="_blank">https://docs.spring.io/spring-framework/reference/web/webmvc/mvc-controller/ann-requestmapping.html</a></li>
+</ul>
+<p><strong>Lombok</strong></p>
+<ul>
+<li>@Data annotation: <a href="https://projectlombok.org/features/Data" target="_blank">https://projectlombok.org/features/Data</a></li>
+<li>@Builder annotation: <a href="https://projectlombok.org/features/Builder" target="_blank">https://projectlombok.org/features/Builder</a></li>
+</ul>
+<p><strong>HTTP Status Codes</strong></p>
+<ul>
+<li>HTTP Status Code Reference <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status" target="_blank">https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status</a></li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="02-springboot-setting.html" class="navigation navigation-prev " aria-label="Previous page: Spring Boot 세팅">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="04-springboot-folder-structure.html" class="navigation navigation-next " aria-label="Next page: Folder Structure in SpringBoot">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"[실습] test CRUD controller 만들기","level":"7.2","depth":1,"next":{"title":"Folder Structure in SpringBoot","level":"7.3","depth":1,"path":"07-backend/04-springboot-folder-structure.md","ref":"07-backend/04-springboot-folder-structure.md","articles":[]},"previous":{"title":"Spring Boot 세팅","level":"7.1","depth":1,"path":"07-backend/02-springboot-setting.md","ref":"07-backend/02-springboot-setting.md","articles":[]},"dir":"ltr"},"config":{"plugins":["mermaid-gb3"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"mermaid-gb3":{"theme":"default"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"공연 티켓팅 서비스 GitBook","gitbook":"*"},"file":{"path":"07-backend/03-test-CRUD-controller.md","mtime":"2025-09-30T04:34:40.778Z","type":"markdown"},"gitbook":{"version":"6.0.3","time":"2025-09-30T04:34:45.581Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    
+    <noscript>
+        <style>
+            .honkit-cloak {
+                display: block !important;
+            }
+        </style>
+    </noscript>
+    <script>
+        // Restore sidebar state as critical path for prevent layout shift
+        function __init__getSidebarState(defaultValue){
+            var baseKey = "";
+            var key = baseKey + ":sidebar";
+            try {
+                var value = localStorage[key];
+                if (value === undefined) {
+                    return defaultValue;
+                }
+                var parsed = JSON.parse(value);
+                return parsed == null ? defaultValue : parsed;
+            } catch (e) {
+                return defaultValue;
+            }
+        }
+        function __init__restoreLastSidebarState() {
+            var isMobile = window.matchMedia("(max-width: 600px)").matches;
+            if (isMobile) {
+                // Init last state if not mobile
+                return;
+            }
+            var sidebarState = __init__getSidebarState(true);
+            var book = document.querySelector(".book");
+            // Show sidebar if it enabled
+            if (sidebarState && book) {
+                book.classList.add("without-animation", "with-summary");
+            }
+        }
+
+        try {
+            __init__restoreLastSidebarState();
+        } finally {
+            var book = document.querySelector(".book");
+            book.classList.remove("honkit-cloak");
+        }
+    </script>
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-mermaid-gb3/book/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/@honkit/honkit-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    <script src="../gitbook/gitbook-plugin-mermaid-gb3/mermaid/mermaid.min.js"></script>
+
+    </body>
+</html>
+
