@@ -4,6 +4,8 @@
 
 ## Intro
 * [주제 선정 이유 및 기대 효과](01-intro/01-overview.md)
+* [template 가이드](01-intro/template-example.md)
+* [template](01-intro/template.md)
 
 ## Goals
 * [프로젝트 목표 및 구현 계획](02-goals/01-mvp.md)
