@@ -3,7 +3,7 @@
 <html lang="" >
     <head>
         <meta charset="UTF-8">
-        <title>공통 규칙(컨벤션) · 공연 티켓팅 서비스 GitBook</title>
+        <title>template 가이드 · 공연 티켓팅 서비스 GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="HonKit 6.0.3">
@@ -68,10 +68,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="02-issue-template.html" />
+    <link rel="next" href="template.html" />
     
     
-    <link rel="prev" href="../02-goals/01-mvp.html" />
+    <link rel="prev" href="01-overview.html" />
     
 
     </head>
@@ -120,9 +120,9 @@
         
         
     
-        <li class="chapter " data-level="2.1" data-path="../01-intro/01-overview.html">
+        <li class="chapter " data-level="2.1" data-path="01-overview.html">
             
-                <a href="../01-intro/01-overview.html">
+                <a href="01-overview.html">
             
                     
                     주제 선정 이유 및 기대 효과
@@ -133,9 +133,9 @@
             
         </li>
     
-        <li class="chapter " data-level="2.2" data-path="../01-intro/template-example.html">
+        <li class="chapter active" data-level="2.2" data-path="template-example.html">
             
-                <a href="../01-intro/template-example.html">
+                <a href="template-example.html">
             
                     
                     template 가이드
@@ -146,9 +146,9 @@
             
         </li>
     
-        <li class="chapter " data-level="2.3" data-path="../01-intro/template.html">
+        <li class="chapter " data-level="2.3" data-path="template.html">
             
-                <a href="../01-intro/template.html">
+                <a href="template.html">
             
                     
                     template
@@ -186,9 +186,9 @@
         
         
     
-        <li class="chapter active" data-level="4.1" data-path="01-standards.html">
+        <li class="chapter " data-level="4.1" data-path="../03-conventions/01-standards.html">
             
-                <a href="01-standards.html">
+                <a href="../03-conventions/01-standards.html">
             
                     
                     공통 규칙(컨벤션)
@@ -199,9 +199,9 @@
             
         </li>
     
-        <li class="chapter " data-level="4.2" data-path="02-issue-template.html">
+        <li class="chapter " data-level="4.2" data-path="../03-conventions/02-issue-template.html">
             
-                <a href="02-issue-template.html">
+                <a href="../03-conventions/02-issue-template.html">
             
                     
                     GitHub Issue Template 생성 및 활용 가이드
@@ -212,9 +212,9 @@
             
         </li>
     
-        <li class="chapter " data-level="4.3" data-path="github-project-v1.html">
+        <li class="chapter " data-level="4.3" data-path="../03-conventions/github-project-v1.html">
             
-                <a href="github-project-v1.html">
+                <a href="../03-conventions/github-project-v1.html">
             
                     
                     GitHub 프로젝트 관리 가이드 (v1)
@@ -413,7 +413,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >공통 규칙(컨벤션)</a>
+        <a href=".." >template 가이드</a>
     </h1>
 </div>
 
@@ -428,34 +428,39 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="공통-규칙컨벤션">공통 규칙(컨벤션)</h1>
-<h2 id="브랜치릴리스">브랜치/릴리스</h2>
+                                <h1 id="template-가이드">template 가이드</h1>
 <ul>
-<li>브랜치: <code>main</code>(보호), <code>feature/*</code>, <code>hotfix/*</code></li>
-<li>커밋 메시지: Conventional Commits(예: feat:, fix:, docs:)</li>
-<li>PR 규칙: 템플릿 사용, 리뷰어 1+ 승인</li>
+<li>h1 레벨이 (#제목) 깃북에서 나타나는 문서 제목이 됩니다.</li>
+<li>아래 가이드를 읽은 후 template.md를 복사해서 사용해주세요.</li>
+<li>가이드는 참고용이며, 필요시 얼마든지 변경해서 사용하시면 됩니다.</li>
 </ul>
-<h2 id="네이밍구조">네이밍/구조</h2>
-<ul>
-<li>백엔드: 패키지 by-layer, DTO 명확 구분, JPA 엔티티 접미사 금지</li>
-<li>프론트: 폴더 by-feature, 컴포넌트 PascalCase, 훅 camelCase</li>
-</ul>
-<h2 id="코드-스타일">코드 스타일</h2>
-<ul>
-<li>백엔드: Checkstyle/SpotBugs, 포맷팅 고정</li>
-<li>프론트: ESLint + Prettier, strict TS 옵션</li>
-</ul>
-<h2 id="문서">문서</h2>
-<ul>
-<li>다이어그램은 Mermaid 기본, 파일명은 섹션 내 2자리 번호 접두사</li>
-<li>새 페이지 추가 시 SUMMARY 업데이트 필수</li>
-</ul>
-<h2 id="리뷰-체크리스트">리뷰 체크리스트</h2>
-<ul>
-<li>[ ] 테스트 포함/갱신 여부</li>
-<li>[ ] 보안/권한 영향 검토</li>
-<li>[ ] 성능/쿼리 계획 검토</li>
-</ul>
+<h2 id="1-구현-목적">1. 구현 목적</h2>
+<ol>
+<li>어떤 것을 구현하려고 하는지 간략하개 작성해주시면 됩니다.</li>
+</ol>
+<h2 id="2-도입-전-기술-비교--기존-플로우">2. 도입 전 기술 비교 / 기존 플로우</h2>
+<p>기술을 새로 도입하는 경우 전자를, 리팩토링을 하는 경우 후자를 남기고 나머지는 삭제하시면 됩니다.</p>
+<ol>
+<li>새로 기술을 도입하는 경우 비슷한 후보군에 어떤 것이 있었는지, 어떻게 비교를 했는지 근거를 작성하시면 됩니다. 결론적으로 선택한 기술도 작성해주세요.</li>
+<li>리팩토링을 하는 경우, 기존 플로우를 먼저 설명하시면 됩니다.</li>
+</ol>
+<h2 id="3-구현-방법">3. 구현 방법</h2>
+<ol>
+<li>어떻게 구현했는지, 구현 시 미리 설정해야하는 것이 있는지</li>
+<li>구현 시 주의점이 있는지 등을 자유롭게 작성해주세요</li>
+<li>필요 시 이미지를 첨부해주세요</li>
+</ol>
+<h2 id="4-구현-중-트러블-슈팅">4. 구현 중 트러블 슈팅</h2>
+<p>트러블 슈팅에는 가능한 아래 사항을 포함해 주세요</p>
+<ol>
+<li>상세한 버그 로그, 버그 발생 상황(재현이 가능한 경우 재현 과정)</li>
+<li>버그 원인</li>
+<li>버그 해결 방법</li>
+</ol>
+<h2 id="5-최종-결과-플로우">5. 최종 결과 플로우</h2>
+<ol>
+<li>결과 이미지, 결과 흐름도 등 어떻게 변화했는지, 목적을 달성한 자료를 작성해주시면 됩니다</li>
+</ol>
 
                                 
                                 </section>
@@ -483,12 +488,12 @@
 
             
                 
-                <a href="../02-goals/01-mvp.html" class="navigation navigation-prev " aria-label="Previous page: 프로젝트 목표 및 구현 계획">
+                <a href="01-overview.html" class="navigation navigation-prev " aria-label="Previous page: 주제 선정 이유 및 기대 효과">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="02-issue-template.html" class="navigation navigation-next " aria-label="Next page: GitHub Issue Template 생성 및 활용 가이드">
+                <a href="template.html" class="navigation navigation-next " aria-label="Next page: template">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -499,7 +504,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"공통 규칙(컨벤션)","level":"4.1","depth":1,"next":{"title":"GitHub Issue Template 생성 및 활용 가이드","level":"4.2","depth":1,"path":"03-conventions/02-issue-template.md","ref":"03-conventions/02-issue-template.md","articles":[]},"previous":{"title":"프로젝트 목표 및 구현 계획","level":"3.1","depth":1,"path":"02-goals/01-mvp.md","ref":"02-goals/01-mvp.md","articles":[]},"dir":"ltr"},"config":{"plugins":["mermaid-gb3"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"mermaid-gb3":{"theme":"default"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"공연 티켓팅 서비스 GitBook","gitbook":"*"},"file":{"path":"03-conventions/01-standards.md","mtime":"2025-10-02T13:48:55.839Z","type":"markdown"},"gitbook":{"version":"6.0.3","time":"2025-10-02T13:49:13.000Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"template 가이드","level":"2.2","depth":1,"next":{"title":"template","level":"2.3","depth":1,"path":"01-intro/template.md","ref":"01-intro/template.md","articles":[]},"previous":{"title":"주제 선정 이유 및 기대 효과","level":"2.1","depth":1,"path":"01-intro/01-overview.md","ref":"01-intro/01-overview.md","articles":[]},"dir":"ltr"},"config":{"plugins":["mermaid-gb3"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"mermaid-gb3":{"theme":"default"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"공연 티켓팅 서비스 GitBook","gitbook":"*"},"file":{"path":"01-intro/template-example.md","mtime":"2025-10-02T13:48:55.839Z","type":"markdown"},"gitbook":{"version":"6.0.3","time":"2025-10-02T13:49:13.000Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
