@@ -1,0 +1,1228 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <title>AWS Cognito 인증 시스템 구축 가이드 · 공연 티켓팅 서비스 GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="HonKit 6.0.3">
+        
+        
+        
+    
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-mermaid-gb3/mermaid/mermaid.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/@honkit/honkit-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/@honkit/honkit-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+
+    
+        
+        
+        <link rel="stylesheet" href="../gitbook/gitbook-plugin-mermaid-gb3/mermaid/mermaid.default.css" />
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="CICD.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book honkit-cloak">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    소개
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Intro</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../01-intro/01-overview.html">
+            
+                <a href="../01-intro/01-overview.html">
+            
+                    
+                    주제 선정 이유 및 기대 효과
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../01-intro/template-example.html">
+            
+                <a href="../01-intro/template-example.html">
+            
+                    
+                    template 가이드
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="../01-intro/template.html">
+            
+                <a href="../01-intro/template.html">
+            
+                    
+                    template
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Goals</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="../02-goals/01-mvp.html">
+            
+                <a href="../02-goals/01-mvp.html">
+            
+                    
+                    프로젝트 목표 및 구현 계획
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Conventions</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="../03-conventions/01-standards.html">
+            
+                <a href="../03-conventions/01-standards.html">
+            
+                    
+                    공통 규칙(컨벤션)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="../03-conventions/02-issue-template.html">
+            
+                <a href="../03-conventions/02-issue-template.html">
+            
+                    
+                    GitHub Issue Template 생성 및 활용 가이드
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="../03-conventions/github-project-v1.html">
+            
+                <a href="../03-conventions/github-project-v1.html">
+            
+                    
+                    GitHub 프로젝트 관리 가이드 (v1)
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Architecture</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="../04-architecture/C4-model.html">
+            
+                <a href="../04-architecture/C4-model.html">
+            
+                    
+                    C4 Model
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Frontend</li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" data-path="../06-frontend/frontend-migration.html">
+            
+                <a href="../06-frontend/frontend-migration.html">
+            
+                    
+                    Frontend Migration
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Backend</li>
+        
+        
+    
+        <li class="chapter " data-level="7.1" data-path="../07-backend/02-springboot-setting.html">
+            
+                <a href="../07-backend/02-springboot-setting.html">
+            
+                    
+                    Spring Boot 세팅
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.2" data-path="../07-backend/03-test-CRUD-controller.html">
+            
+                <a href="../07-backend/03-test-CRUD-controller.html">
+            
+                    
+                    [실습] test CRUD controller 만들기
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.3" data-path="../07-backend/04-springboot-folder-structure.html">
+            
+                <a href="../07-backend/04-springboot-folder-structure.html">
+            
+                    
+                    Folder Structure in SpringBoot
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.4" data-path="../07-backend/05-springboot-utils-error.html">
+            
+                <a href="../07-backend/05-springboot-utils-error.html">
+            
+                    
+                    Error 처리 공통 클래스 in Spring Boot
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.5" data-path="../07-backend/06-springboot-actuator.html">
+            
+                <a href="../07-backend/06-springboot-actuator.html">
+            
+                    
+                    Spring Boot Actuator
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.6" data-path="../07-backend/queue-structure.html">
+            
+                <a href="../07-backend/queue-structure.html">
+            
+                    
+                    티켓팅 시스템 대기열(Queue)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.7" data-path="../07-backend/seat-lock-structure.html">
+            
+                <a href="../07-backend/seat-lock-structure.html">
+            
+                    
+                    좌석 락 시스템 가이드
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.8" data-path="../07-backend/why-cookie-based-auth.html">
+            
+                <a href="../07-backend/why-cookie-based-auth.html">
+            
+                    
+                    MSA 환경에서 쿠키 기반 인증을 선택한 이유
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Infra</li>
+        
+        
+    
+        <li class="chapter " data-level="8.1" data-path="CICD.html">
+            
+                <a href="CICD.html">
+            
+                    
+                    CICD
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="8.2" data-path="cognito-infra-setup.html">
+            
+                <a href="cognito-infra-setup.html">
+            
+                    
+                    AWS Cognito 인증 시스템 구축 가이드
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
+            Published with HonKit
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >AWS Cognito 인증 시스템 구축 가이드</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="aws-cognito-인증-시스템-구축-가이드">AWS Cognito 인증 시스템 구축 가이드</h1>
+<h2 id="목차">목차</h2>
+<ul>
+<li><a href="#왜-aws-cognito인가">왜 AWS Cognito인가?</a></li>
+<li><a href="#cognito-user-pool-구성">Cognito User Pool 구성</a></li>
+<li><a href="#app-client-설정">App Client 설정</a></li>
+<li><a href="#lambda와-api-gateway-통합">Lambda와 API Gateway 통합</a></li>
+<li><a href="#custom-domain-및-dns-설정">Custom Domain 및 DNS 설정</a></li>
+<li><a href="#보안-고려사항">보안 고려사항</a></li>
+<li><a href="#운영-best-practices">운영 Best Practices</a></li>
+</ul>
+<hr></hr>
+<h2 id="왜-aws-cognito인가">왜 AWS Cognito인가?</h2>
+<h3 id="관리형-인증-서비스의-장점">관리형 인증 서비스의 장점</h3>
+<p><strong>직접 구현 vs Cognito 비교</strong>:</p>
+<pre><code class="lang-yaml"><span class="hljs-string">직접</span> <span class="hljs-string">구현</span> <span class="hljs-string">시</span> <span class="hljs-string">필요한</span> <span class="hljs-string">요소:</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-string">사용자</span> <span class="hljs-string">데이터베이스</span> <span class="hljs-string">설계</span> <span class="hljs-string">및</span> <span class="hljs-string">관리</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-string">비밀번호</span> <span class="hljs-string">해싱</span> <span class="hljs-string">및</span> <span class="hljs-string">보안</span> <span class="hljs-string">저장</span> <span class="hljs-string">(bcrypt,</span> <span class="hljs-string">Argon2)</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-string">이메일/SMS</span> <span class="hljs-string">인증</span> <span class="hljs-string">인프라</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-string">토큰</span> <span class="hljs-string">생성</span> <span class="hljs-string">및</span> <span class="hljs-string">검증</span> <span class="hljs-string">로직</span> <span class="hljs-string">(JWT)</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-string">토큰</span> <span class="hljs-string">갱신</span> <span class="hljs-string">메커니즘</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-string">세션</span> <span class="hljs-string">관리</span> <span class="hljs-string">및</span> <span class="hljs-string">만료</span> <span class="hljs-string">처리</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-string">보안</span> <span class="hljs-string">취약점</span> <span class="hljs-string">지속</span> <span class="hljs-string">모니터링</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-string">규정</span> <span class="hljs-string">준수</span> <span class="hljs-string">(GDPR,</span> <span class="hljs-string">CCPA</span> <span class="hljs-string">등)</span>
+
+<span class="hljs-string">Cognito</span> <span class="hljs-string">사용</span> <span class="hljs-string">시:</span>
+  <span class="hljs-string">✅</span> <span class="hljs-string">완전</span> <span class="hljs-string">관리형</span> <span class="hljs-string">사용자</span> <span class="hljs-string">풀</span>
+  <span class="hljs-string">✅</span> <span class="hljs-string">자동</span> <span class="hljs-string">확장</span> <span class="hljs-string">및</span> <span class="hljs-string">고가용성</span>
+  <span class="hljs-string">✅</span> <span class="hljs-string">내장</span> <span class="hljs-string">보안</span> <span class="hljs-string">기능</span> <span class="hljs-string">(MFA,</span> <span class="hljs-string">비밀번호</span> <span class="hljs-string">정책)</span>
+  <span class="hljs-string">✅</span> <span class="hljs-string">OAuth</span> <span class="hljs-number">2.0</span> <span class="hljs-string">/</span> <span class="hljs-string">OIDC</span> <span class="hljs-string">표준</span> <span class="hljs-string">준수</span>
+  <span class="hljs-string">✅</span> <span class="hljs-string">소셜</span> <span class="hljs-string">로그인</span> <span class="hljs-string">통합</span> <span class="hljs-string">지원</span>
+  <span class="hljs-string">✅</span> <span class="hljs-string">AWS</span> <span class="hljs-string">서비스와</span> <span class="hljs-string">네이티브</span> <span class="hljs-string">통합</span>
+  <span class="hljs-string">✅</span> <span class="hljs-string">규정</span> <span class="hljs-string">준수</span> <span class="hljs-string">인증</span> <span class="hljs-string">(SOC,</span> <span class="hljs-string">ISO,</span> <span class="hljs-string">PCI</span> <span class="hljs-string">DSS)</span>
+</code></pre>
+<h3 id="프로젝트-적용-배경">프로젝트 적용 배경</h3>
+<p>우리 프로젝트는 <strong>MSA 전환과 함께 인증 서비스를 분리</strong>하는 과정에서 Cognito를 도입했습니다:</p>
+<pre><code class="lang-yaml"><span class="hljs-string">인증</span> <span class="hljs-string">아키텍처</span> <span class="hljs-string">요구사항:</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-string">서브도메인</span> <span class="hljs-string">간</span> <span class="hljs-string">인증</span> <span class="hljs-string">상태</span> <span class="hljs-string">공유</span> <span class="hljs-string">(ddcn41.com,</span> <span class="hljs-string">admin.ddcn41.com)</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-string">쿠키</span> <span class="hljs-string">기반</span> <span class="hljs-string">세션</span> <span class="hljs-string">관리</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-string">서버리스</span> <span class="hljs-string">인증</span> <span class="hljs-string">처리</span> <span class="hljs-string">(Lambda)</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-string">빠른</span> <span class="hljs-string">구현</span> <span class="hljs-string">및</span> <span class="hljs-string">안정적인</span> <span class="hljs-string">운영</span>
+
+<span class="hljs-string">Cognito</span> <span class="hljs-string">선택</span> <span class="hljs-string">이유:</span>
+  <span class="hljs-number">1</span><span class="hljs-string">.</span> <span class="hljs-string">완전</span> <span class="hljs-string">관리형으로</span> <span class="hljs-string">개발</span> <span class="hljs-string">시간</span> <span class="hljs-string">단축</span>
+  <span class="hljs-number">2</span><span class="hljs-string">.</span> <span class="hljs-string">AWS</span> <span class="hljs-string">Lambda와</span> <span class="hljs-string">API</span> <span class="hljs-string">Gateway</span> <span class="hljs-string">네이티브</span> <span class="hljs-string">통합</span>
+  <span class="hljs-number">3</span><span class="hljs-string">.</span> <span class="hljs-string">쿠키</span> <span class="hljs-string">기반</span> <span class="hljs-string">인증</span> <span class="hljs-string">구현</span> <span class="hljs-string">용이</span>
+  <span class="hljs-number">4</span><span class="hljs-string">.</span> <span class="hljs-string">프로덕션</span> <span class="hljs-string">수준의</span> <span class="hljs-string">보안</span> <span class="hljs-string">및</span> <span class="hljs-string">확장성</span>
+</code></pre>
+<blockquote>
+<p>참조: <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/" target="_blank">AWS Cognito 개발자 가이드</a></p>
+</blockquote>
+<hr></hr>
+<h2 id="cognito-user-pool-구성">Cognito User Pool 구성</h2>
+<h3 id="user-pool-기본-설정">User Pool 기본 설정</h3>
+<p><strong>AWS Console</strong>: <code>Amazon Cognito → User Pools → Create user pool</code></p>
+<pre><code class="lang-yaml"><span class="hljs-string">기본</span> <span class="hljs-string">설정:</span>
+  <span class="hljs-attr">Pool name:</span> <span class="hljs-string">your-user-pool-name</span>
+  <span class="hljs-attr">Tier:</span> <span class="hljs-string">Essentials</span> <span class="hljs-string">(개발/소규모)</span> <span class="hljs-string">|</span> <span class="hljs-string">Plus</span> <span class="hljs-string">(프로덕션)</span>
+
+<span class="hljs-string">로그인</span> <span class="hljs-string">옵션:</span>
+  <span class="hljs-string">✅</span> <span class="hljs-string">Email</span> <span class="hljs-string">(필수)</span>
+  <span class="hljs-string">⬜</span> <span class="hljs-string">Phone</span> <span class="hljs-string">number</span> <span class="hljs-string">(선택)</span>
+  <span class="hljs-string">⬜</span> <span class="hljs-string">Username</span> <span class="hljs-string">(선택)</span>
+
+<span class="hljs-string">설정</span> <span class="hljs-string">가이드:</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-string">이메일</span> <span class="hljs-string">로그인:</span> <span class="hljs-string">가장</span> <span class="hljs-string">보편적이고</span> <span class="hljs-string">관리</span> <span class="hljs-string">용이</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-string">전화번호:</span> <span class="hljs-string">SMS</span> <span class="hljs-string">비용</span> <span class="hljs-string">발생,</span> <span class="hljs-string">MFA</span> <span class="hljs-string">구현</span> <span class="hljs-string">시</span> <span class="hljs-string">고려</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-attr">Username:</span> <span class="hljs-string">사용자가</span> <span class="hljs-string">기억해야</span> <span class="hljs-string">하는</span> <span class="hljs-string">추가</span> <span class="hljs-string">정보</span>
+</code></pre>
+<blockquote>
+<p>참조: <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-as-user-directory.html" target="_blank">User Pool 생성 가이드</a></p>
+</blockquote>
+<h3 id="비밀번호-정책">비밀번호 정책</h3>
+<p>보안과 사용자 경험의 균형을 고려한 정책 설정:</p>
+<pre><code class="lang-yaml"><span class="hljs-string">권장</span> <span class="hljs-string">비밀번호</span> <span class="hljs-string">정책:</span>
+  <span class="hljs-string">최소</span> <span class="hljs-string">길이:</span> <span class="hljs-number">8</span><span class="hljs-string">자</span>
+  <span class="hljs-string">필수</span> <span class="hljs-string">문자:</span>
+    <span class="hljs-string">✅</span> <span class="hljs-string">대문자</span>
+    <span class="hljs-string">✅</span> <span class="hljs-string">소문자</span>
+    <span class="hljs-string">✅</span> <span class="hljs-string">숫자</span>
+    <span class="hljs-string">✅</span> <span class="hljs-string">특수문자</span>
+
+  <span class="hljs-attr">Password history:</span> <span class="hljs-number">5</span><span class="hljs-string">개</span> <span class="hljs-string">(재사용</span> <span class="hljs-string">방지)</span>
+  <span class="hljs-string">임시</span> <span class="hljs-string">비밀번호</span> <span class="hljs-string">유효기간:</span> <span class="hljs-number">7</span><span class="hljs-string">일</span>
+
+<span class="hljs-string">보안</span> <span class="hljs-string">수준별</span> <span class="hljs-string">권장사항:</span>
+  <span class="hljs-string">기본</span> <span class="hljs-string">(소규모/내부):</span> <span class="hljs-number">8</span><span class="hljs-string">자,</span> <span class="hljs-number">3</span><span class="hljs-string">가지</span> <span class="hljs-string">문자</span> <span class="hljs-string">유형</span>
+  <span class="hljs-string">표준</span> <span class="hljs-string">(일반</span> <span class="hljs-string">서비스):</span> <span class="hljs-number">8</span><span class="hljs-string">자,</span> <span class="hljs-number">4</span><span class="hljs-string">가지</span> <span class="hljs-string">문자</span> <span class="hljs-string">유형</span> <span class="hljs-string">(위</span> <span class="hljs-string">설정)</span>
+  <span class="hljs-string">강화</span> <span class="hljs-string">(금융/의료):</span> <span class="hljs-number">12</span><span class="hljs-string">자</span> <span class="hljs-string">이상,</span> <span class="hljs-number">4</span><span class="hljs-string">가지</span> <span class="hljs-string">문자</span> <span class="hljs-string">유형</span> <span class="hljs-string">+</span> <span class="hljs-string">MFA</span> <span class="hljs-string">필수</span>
+</code></pre>
+<h3 id="사용자-속성-설정">사용자 속성 설정</h3>
+<pre><code class="lang-yaml"><span class="hljs-string">표준</span> <span class="hljs-string">속성</span> <span class="hljs-string">(필수/선택):</span>
+  <span class="hljs-string">✅</span> <span class="hljs-string">email</span> <span class="hljs-string">(필수,</span> <span class="hljs-string">고유</span> <span class="hljs-string">식별자)</span>
+  <span class="hljs-string">⬜</span> <span class="hljs-string">name</span> <span class="hljs-string">(선택)</span>
+  <span class="hljs-string">⬜</span> <span class="hljs-string">phone_number</span> <span class="hljs-string">(선택,</span> <span class="hljs-string">MFA</span> <span class="hljs-string">사용</span> <span class="hljs-string">시</span> <span class="hljs-string">권장)</span>
+  <span class="hljs-string">⬜</span> <span class="hljs-string">picture</span> <span class="hljs-string">(선택)</span>
+
+<span class="hljs-string">커스텀</span> <span class="hljs-string">속성</span> <span class="hljs-string">예시:</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-attr">custom:organization_id:</span> <span class="hljs-string">조직</span> <span class="hljs-string">식별</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-attr">custom:role:</span> <span class="hljs-string">사용자</span> <span class="hljs-string">역할</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-attr">custom:subscription_tier:</span> <span class="hljs-string">구독</span> <span class="hljs-string">등급</span>
+
+<span class="hljs-string">⚠️</span> <span class="hljs-string">주의사항:</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-string">커스텀</span> <span class="hljs-string">속성은</span> <span class="hljs-string">생성</span> <span class="hljs-string">후</span> <span class="hljs-string">삭제</span> <span class="hljs-string">불가</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-string">속성</span> <span class="hljs-string">타입</span> <span class="hljs-string">변경</span> <span class="hljs-string">불가</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-string">신중하게</span> <span class="hljs-string">설계</span> <span class="hljs-string">필요</span>
+</code></pre>
+<h3 id="이메일-설정">이메일 설정</h3>
+<pre><code class="lang-yaml"><span class="hljs-string">개발</span> <span class="hljs-string">환경:</span>
+  <span class="hljs-attr">Provider:</span> <span class="hljs-string">Cognito</span> <span class="hljs-string">default</span>
+  <span class="hljs-string">제한:</span> <span class="hljs-string">일일</span> <span class="hljs-number">50</span><span class="hljs-string">통</span>
+  <span class="hljs-string">용도:</span> <span class="hljs-string">개발</span> <span class="hljs-string">및</span> <span class="hljs-string">테스트</span>
+
+<span class="hljs-string">프로덕션</span> <span class="hljs-string">환경:</span>
+  <span class="hljs-attr">Provider:</span> <span class="hljs-string">Amazon</span> <span class="hljs-string">SES</span> <span class="hljs-string">(권장)</span>
+  <span class="hljs-string">FROM</span> <span class="hljs-string">주소:</span> <span class="hljs-string">noreply@yourdomain.com</span>
+  <span class="hljs-string">도메인</span> <span class="hljs-string">인증:</span> <span class="hljs-string">DKIM,</span> <span class="hljs-string">SPF</span> <span class="hljs-string">설정</span>
+  <span class="hljs-string">장점:</span>
+    <span class="hljs-bullet">-</span> <span class="hljs-string">무제한</span> <span class="hljs-string">발송</span> <span class="hljs-string">(요청</span> <span class="hljs-string">시)</span>
+    <span class="hljs-bullet">-</span> <span class="hljs-string">발송</span> <span class="hljs-string">통계</span> <span class="hljs-string">및</span> <span class="hljs-string">모니터링</span>
+    <span class="hljs-bullet">-</span> <span class="hljs-string">반송/불만</span> <span class="hljs-string">처리</span>
+    <span class="hljs-bullet">-</span> <span class="hljs-string">커스텀</span> <span class="hljs-string">이메일</span> <span class="hljs-string">템플릿</span>
+</code></pre>
+<blockquote>
+<p>참조: <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-email.html" target="_blank">Cognito 이메일 설정</a></p>
+</blockquote>
+<hr></hr>
+<h2 id="app-client-설정">App Client 설정</h2>
+<h3 id="app-client-생성-및-구성">App Client 생성 및 구성</h3>
+<p><strong>경로</strong>: <code>User Pool → App integration → App clients → Create app client</code></p>
+<pre><code class="lang-yaml"><span class="hljs-string">기본</span> <span class="hljs-string">설정:</span>
+  <span class="hljs-attr">App client name:</span> <span class="hljs-string">"My web app"</span>
+  <span class="hljs-attr">App type:</span> <span class="hljs-string">Public</span> <span class="hljs-string">client</span> <span class="hljs-string">(SPA)</span> <span class="hljs-string">|</span> <span class="hljs-string">Confidential</span> <span class="hljs-string">client</span> <span class="hljs-string">(Server-side)</span>
+
+<span class="hljs-string">인증</span> <span class="hljs-string">흐름</span> <span class="hljs-string">(Authentication</span> <span class="hljs-attr">flows):</span>
+  <span class="hljs-string">✅</span> <span class="hljs-attr">ALLOW_USER_AUTH:</span> <span class="hljs-string">선택</span> <span class="hljs-string">기반</span> <span class="hljs-string">로그인</span>
+  <span class="hljs-string">✅</span> <span class="hljs-attr">ALLOW_USER_SRP_AUTH:</span> <span class="hljs-string">Secure</span> <span class="hljs-string">Remote</span> <span class="hljs-string">Password</span> <span class="hljs-string">(권장)</span>
+  <span class="hljs-string">✅</span> <span class="hljs-attr">ALLOW_USER_PASSWORD_AUTH:</span> <span class="hljs-string">직접</span> <span class="hljs-string">비밀번호</span> <span class="hljs-string">인증</span>
+  <span class="hljs-string">✅</span> <span class="hljs-attr">ALLOW_REFRESH_TOKEN_AUTH:</span> <span class="hljs-string">토큰</span> <span class="hljs-string">갱신</span>
+  <span class="hljs-string">⬜</span> <span class="hljs-attr">ALLOW_CUSTOM_AUTH:</span> <span class="hljs-string">Lambda</span> <span class="hljs-string">트리거</span> <span class="hljs-string">사용</span> <span class="hljs-string">시</span>
+
+<span class="hljs-attr">Authentication flow session:</span> <span class="hljs-number">3</span><span class="hljs-string">분</span> <span class="hljs-string">(기본값)</span>
+</code></pre>
+<p><strong>인증 흐름 선택 가이드</strong>:</p>
+<table>
+<thead>
+<tr>
+<th>흐름</th>
+<th>설명</th>
+<th>보안 수준</th>
+<th>사용 사례</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>USER_SRP_AUTH</td>
+<td>SRP 프로토콜, 비밀번호 서버 전송 X</td>
+<td>높음</td>
+<td>프로덕션 권장</td>
+</tr>
+<tr>
+<td>USER_PASSWORD_AUTH</td>
+<td>직접 비밀번호 전송</td>
+<td>중간</td>
+<td>내부 도구, 빠른 구현</td>
+</tr>
+<tr>
+<td>USER_AUTH</td>
+<td>다중 인증 방법 지원</td>
+<td>높음</td>
+<td>최신 권장 방식</td>
+</tr>
+<tr>
+<td>CUSTOM_AUTH</td>
+<td>Lambda 커스텀 로직</td>
+<td>가변</td>
+<td>특수 요구사항</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>참조: <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-authentication-flow.html" target="_blank">Cognito 인증 흐름</a></p>
+</blockquote>
+<h3 id="토큰-설정">토큰 설정</h3>
+<pre><code class="lang-yaml"><span class="hljs-string">토큰</span> <span class="hljs-string">유효기간</span> <span class="hljs-string">권장</span> <span class="hljs-string">설정:</span>
+
+  <span class="hljs-attr">Access Token:</span>
+    <span class="hljs-string">설정:</span> <span class="hljs-number">60</span><span class="hljs-string">분</span>
+    <span class="hljs-string">용도:</span> <span class="hljs-string">API</span> <span class="hljs-string">요청</span> <span class="hljs-string">인증</span>
+    <span class="hljs-string">특징:</span> <span class="hljs-string">짧은</span> <span class="hljs-string">수명,</span> <span class="hljs-string">자주</span> <span class="hljs-string">갱신</span>
+
+  <span class="hljs-attr">ID Token:</span>
+    <span class="hljs-string">설정:</span> <span class="hljs-number">60</span><span class="hljs-string">분</span>
+    <span class="hljs-string">용도:</span> <span class="hljs-string">사용자</span> <span class="hljs-string">정보</span> <span class="hljs-string">포함</span>
+    <span class="hljs-string">특징:</span> <span class="hljs-string">Access</span> <span class="hljs-string">Token과</span> <span class="hljs-string">동일</span> <span class="hljs-string">수명</span> <span class="hljs-string">권장</span>
+
+  <span class="hljs-attr">Refresh Token:</span>
+    <span class="hljs-string">설정:</span> <span class="hljs-number">5</span><span class="hljs-string">일</span> <span class="hljs-string">(개발)</span> <span class="hljs-string">|</span> <span class="hljs-number">30</span><span class="hljs-string">일</span> <span class="hljs-string">(프로덕션)</span>
+    <span class="hljs-string">용도:</span> <span class="hljs-string">Access/ID</span> <span class="hljs-string">Token</span> <span class="hljs-string">재발급</span>
+    <span class="hljs-string">특징:</span> <span class="hljs-string">긴</span> <span class="hljs-string">수명,</span> <span class="hljs-string">보안</span> <span class="hljs-string">저장</span> <span class="hljs-string">필수</span>
+
+<span class="hljs-string">보안</span> <span class="hljs-string">수준별</span> <span class="hljs-string">권장:</span>
+  <span class="hljs-string">높음</span> <span class="hljs-string">(금융):</span> <span class="hljs-string">Access</span> <span class="hljs-number">15</span><span class="hljs-string">분,</span> <span class="hljs-string">Refresh</span> <span class="hljs-number">1</span><span class="hljs-string">일</span>
+  <span class="hljs-string">표준</span> <span class="hljs-string">(일반):</span> <span class="hljs-string">Access</span> <span class="hljs-number">60</span><span class="hljs-string">분,</span> <span class="hljs-string">Refresh</span> <span class="hljs-number">30</span><span class="hljs-string">일</span>
+  <span class="hljs-string">편의</span> <span class="hljs-string">(내부):</span> <span class="hljs-string">Access</span> <span class="hljs-number">4</span><span class="hljs-string">시간,</span> <span class="hljs-string">Refresh</span> <span class="hljs-number">90</span><span class="hljs-string">일</span>
+</code></pre>
+<h3 id="토큰-관리-기능">토큰 관리 기능</h3>
+<pre><code class="lang-yaml"><span class="hljs-string">필수</span> <span class="hljs-string">활성화</span> <span class="hljs-string">기능:</span>
+
+<span class="hljs-string">✅</span> <span class="hljs-attr">Enable token revocation:</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-string">로그아웃</span> <span class="hljs-string">시</span> <span class="hljs-string">토큰</span> <span class="hljs-string">즉시</span> <span class="hljs-string">무효화</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-string">보안</span> <span class="hljs-string">사고</span> <span class="hljs-string">시</span> <span class="hljs-string">토큰</span> <span class="hljs-string">강제</span> <span class="hljs-string">만료</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-string">약간의</span> <span class="hljs-string">성능</span> <span class="hljs-string">오버헤드</span> <span class="hljs-string">있음</span>
+
+<span class="hljs-string">✅</span> <span class="hljs-attr">Prevent user existence errors:</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-string">로그인</span> <span class="hljs-string">실패</span> <span class="hljs-string">시</span> <span class="hljs-string">일관된</span> <span class="hljs-string">오류</span> <span class="hljs-string">메시지</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-string">사용자</span> <span class="hljs-string">열거</span> <span class="hljs-string">공격</span> <span class="hljs-string">방어</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-string">보안</span> <span class="hljs-string">강화</span> <span class="hljs-string">필수</span> <span class="hljs-string">기능</span>
+
+<span class="hljs-string">선택</span> <span class="hljs-string">기능:</span>
+
+<span class="hljs-attr">Refresh token rotation:</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-string">Refresh</span> <span class="hljs-string">Token</span> <span class="hljs-string">사용</span> <span class="hljs-string">시</span> <span class="hljs-string">새</span> <span class="hljs-string">토큰</span> <span class="hljs-string">발급</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-string">토큰</span> <span class="hljs-string">도용</span> <span class="hljs-string">위험</span> <span class="hljs-string">감소</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-string">복잡도</span> <span class="hljs-string">증가,</span> <span class="hljs-string">신중히</span> <span class="hljs-string">고려</span>
+
+<span class="hljs-attr">Refresh token grace period:</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-string">기본:</span> <span class="hljs-number">0</span><span class="hljs-string">초</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-string">시계</span> <span class="hljs-string">불일치</span> <span class="hljs-string">허용</span> <span class="hljs-string">범위</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-string">특수</span> <span class="hljs-string">상황에만</span> <span class="hljs-string">설정</span>
+</code></pre>
+<blockquote>
+<p>참조: <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/token-revocation.html" target="_blank">Token revocation</a></p>
+</blockquote>
+<hr></hr>
+<h2 id="lambda와-api-gateway-통합">Lambda와 API Gateway 통합</h2>
+<h3 id="아키텍처-개요">아키텍처 개요</h3>
+<pre><code class="lang-yaml"><span class="hljs-string">인증</span> <span class="hljs-string">처리</span> <span class="hljs-string">흐름:</span>
+
+  <span class="hljs-string">클라이언트</span> <span class="hljs-string">(브라우저)</span>
+    <span class="hljs-string">↓</span> <span class="hljs-string">HTTPS</span>
+  <span class="hljs-string">API</span> <span class="hljs-string">Gateway</span> <span class="hljs-string">(accounts.ddcn41.com)</span>
+    <span class="hljs-string">↓</span> <span class="hljs-string">Lambda</span> <span class="hljs-string">Proxy</span> <span class="hljs-string">Integration</span>
+  <span class="hljs-string">Lambda</span> <span class="hljs-string">Function</span> <span class="hljs-string">(auth-handler)</span>
+    <span class="hljs-string">↓</span> <span class="hljs-string">AWS</span> <span class="hljs-string">SDK</span>
+  <span class="hljs-string">Cognito</span> <span class="hljs-string">User</span> <span class="hljs-string">Pool</span>
+    <span class="hljs-string">↓</span> <span class="hljs-string">토큰</span> <span class="hljs-string">발급</span>
+  <span class="hljs-string">Lambda</span> <span class="hljs-string">→</span> <span class="hljs-string">클라이언트</span> <span class="hljs-string">(쿠키</span> <span class="hljs-string">설정)</span>
+
+<span class="hljs-string">장점:</span>
+  <span class="hljs-string">✅</span> <span class="hljs-string">서버리스</span> <span class="hljs-string">자동</span> <span class="hljs-string">확장</span>
+  <span class="hljs-string">✅</span> <span class="hljs-string">쿠키</span> <span class="hljs-string">설정</span> <span class="hljs-string">등</span> <span class="hljs-string">커스텀</span> <span class="hljs-string">로직</span> <span class="hljs-string">추가</span> <span class="hljs-string">가능</span>
+  <span class="hljs-string">✅</span> <span class="hljs-string">비용</span> <span class="hljs-string">효율적</span> <span class="hljs-string">(사용량</span> <span class="hljs-string">기반)</span>
+  <span class="hljs-string">✅</span> <span class="hljs-string">관리</span> <span class="hljs-string">오버헤드</span> <span class="hljs-string">최소화</span>
+</code></pre>
+<h3 id="lambda-함수-구성">Lambda 함수 구성</h3>
+<p><strong>경로</strong>: <code>AWS Lambda → Create function</code></p>
+<pre><code class="lang-yaml"><span class="hljs-string">기본</span> <span class="hljs-string">설정:</span>
+  <span class="hljs-attr">Function name:</span> <span class="hljs-string">auth-handler</span>
+  <span class="hljs-attr">Runtime:</span> <span class="hljs-string">Node.js</span> <span class="hljs-number">20.</span><span class="hljs-string">x</span> <span class="hljs-string">(최신</span> <span class="hljs-string">LTS</span> <span class="hljs-string">권장)</span>
+  <span class="hljs-attr">Architecture:</span> <span class="hljs-string">arm64</span> <span class="hljs-string">(20%</span> <span class="hljs-string">비용</span> <span class="hljs-string">절감)</span> <span class="hljs-string">|</span> <span class="hljs-string">x86_64</span>
+  <span class="hljs-attr">Memory:</span> <span class="hljs-string">256MB</span> <span class="hljs-string">(기본값)</span>
+  <span class="hljs-attr">Timeout:</span> <span class="hljs-number">10</span><span class="hljs-string">초</span> <span class="hljs-string">(API</span> <span class="hljs-string">호출</span> <span class="hljs-string">고려)</span>
+
+<span class="hljs-string">환경</span> <span class="hljs-string">변수:</span>
+  <span class="hljs-attr">CLIENT_ID:</span> <span class="hljs-string">Cognito</span> <span class="hljs-string">App</span> <span class="hljs-string">Client</span> <span class="hljs-string">ID</span>
+  <span class="hljs-attr">USER_POOL_ID:</span> <span class="hljs-string">User</span> <span class="hljs-string">Pool</span> <span class="hljs-string">ID</span>
+  <span class="hljs-attr">COOKIE_DOMAIN:</span> <span class="hljs-string">.ddcn41.com</span> <span class="hljs-string">(점</span> <span class="hljs-string">포함!)</span>
+  <span class="hljs-attr">LOGOUT_REDIRECT_URI:</span> <span class="hljs-string">https://ddcn41.com</span>
+
+<span class="hljs-string">IAM</span> <span class="hljs-string">권한</span> <span class="hljs-string">(Lambda</span> <span class="hljs-attr">Execution Role):</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-string">cognito-idp:InitiateAuth</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-string">cognito-idp:GetUser</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-string">cognito-idp:GlobalSignOut</span>
+</code></pre>
+<p><strong>Lambda 함수 핵심 구조</strong>:</p>
+<pre><code class="lang-javascript"><span class="hljs-comment">// 필수 패키지</span>
+<span class="hljs-keyword">const</span> { <span class="hljs-title class_">CognitoIdentityProviderClient</span> } = <span class="hljs-built_in">require</span>(<span class="hljs-string">"@aws-sdk/client-cognito-identity-provider"</span>);
+
+<span class="hljs-comment">// 라우트 처리</span>
+<span class="hljs-built_in">exports</span>.<span class="hljs-property">handler</span> = <span class="hljs-title function_">async</span> (event) =&gt; {
+  <span class="hljs-keyword">const</span> path = event.<span class="hljs-property">rawPath</span>;
+  <span class="hljs-keyword">const</span> method = event.<span class="hljs-property">requestContext</span>.<span class="hljs-property">http</span>.<span class="hljs-property">method</span>;
+
+  <span class="hljs-comment">// 라우팅</span>
+  <span class="hljs-keyword">if</span> (path.<span class="hljs-title function_">includes</span>(<span class="hljs-string">"/login"</span>) &amp;&amp; method === <span class="hljs-string">"POST"</span>) {
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">await</span> <span class="hljs-title function_">handleLogin</span>(event);
+  }
+  <span class="hljs-keyword">if</span> (path.<span class="hljs-title function_">includes</span>(<span class="hljs-string">"/refresh"</span>) &amp;&amp; method === <span class="hljs-string">"POST"</span>) {
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">await</span> <span class="hljs-title function_">handleRefresh</span>(event);
+  }
+  <span class="hljs-keyword">if</span> (path.<span class="hljs-title function_">includes</span>(<span class="hljs-string">"/logout"</span>) &amp;&amp; method === <span class="hljs-string">"POST"</span>) {
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">await</span> <span class="hljs-title function_">handleLogout</span>(event);
+  }
+  <span class="hljs-keyword">if</span> (path.<span class="hljs-title function_">includes</span>(<span class="hljs-string">"/me"</span>) &amp;&amp; method === <span class="hljs-string">"GET"</span>) {
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">await</span> <span class="hljs-title function_">handleGetUser</span>(event);
+  }
+
+  <span class="hljs-keyword">return</span> { <span class="hljs-attr">statusCode</span>: <span class="hljs-number">404</span>, <span class="hljs-attr">body</span>: <span class="hljs-title class_">JSON</span>.<span class="hljs-title function_">stringify</span>({ <span class="hljs-attr">error</span>: <span class="hljs-string">"Not found"</span> }) };
+};
+</code></pre>
+<p><strong>주요 엔드포인트</strong>:</p>
+<table>
+<thead>
+<tr>
+<th>경로</th>
+<th>메서드</th>
+<th>기능</th>
+<th>Cognito API</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>/v2/auth/login</td>
+<td>POST</td>
+<td>로그인</td>
+<td>InitiateAuth (USER_PASSWORD_AUTH)</td>
+</tr>
+<tr>
+<td>/v2/auth/refresh</td>
+<td>POST</td>
+<td>토큰 갱신</td>
+<td>InitiateAuth (REFRESH_TOKEN_AUTH)</td>
+</tr>
+<tr>
+<td>/v2/auth/logout</td>
+<td>POST</td>
+<td>로그아웃</td>
+<td>GlobalSignOut</td>
+</tr>
+<tr>
+<td>/v2/auth/me</td>
+<td>GET</td>
+<td>사용자 정보</td>
+<td>GetUser</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>참조: <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_InitiateAuth.html" target="_blank">Cognito InitiateAuth API</a></p>
+</blockquote>
+<h3 id="api-gateway-설정">API Gateway 설정</h3>
+<p><strong>경로</strong>: <code>API Gateway → Create API → HTTP API</code></p>
+<pre><code class="lang-yaml"><span class="hljs-string">API</span> <span class="hljs-string">기본</span> <span class="hljs-string">설정:</span>
+  <span class="hljs-attr">API name:</span> <span class="hljs-string">api-ddcn41v2</span>
+  <span class="hljs-attr">API type:</span> <span class="hljs-string">HTTP</span> <span class="hljs-string">API</span> <span class="hljs-string">(권장,</span> <span class="hljs-string">저렴하고</span> <span class="hljs-string">빠름)</span>
+  <span class="hljs-attr">Integration:</span> <span class="hljs-string">Lambda</span> <span class="hljs-string">(auth-handler)</span>
+
+<span class="hljs-string">라우트</span> <span class="hljs-string">구성:</span>
+  <span class="hljs-string">/v2/auth/{proxy+}</span>
+    <span class="hljs-bullet">-</span> <span class="hljs-string">OPTIONS</span> <span class="hljs-string">(CORS</span> <span class="hljs-string">preflight)</span>
+    <span class="hljs-bullet">-</span> <span class="hljs-string">GET</span> <span class="hljs-string">(사용자</span> <span class="hljs-string">정보</span> <span class="hljs-string">조회)</span>
+    <span class="hljs-bullet">-</span> <span class="hljs-string">POST</span> <span class="hljs-string">(로그인,</span> <span class="hljs-string">갱신,</span> <span class="hljs-string">로그아웃)</span>
+
+<span class="hljs-string">Integration</span> <span class="hljs-string">설정:</span>
+  <span class="hljs-attr">Type:</span> <span class="hljs-string">Lambda</span> <span class="hljs-string">Proxy</span> <span class="hljs-string">Integration</span>
+  <span class="hljs-attr">Payload version:</span> <span class="hljs-number">2.0</span>
+  <span class="hljs-string">설명:</span> <span class="hljs-string">Lambda가</span> <span class="hljs-string">요청/응답</span> <span class="hljs-string">전체</span> <span class="hljs-string">제어</span>
+</code></pre>
+<h3 id="cors-설정">CORS 설정</h3>
+<p><strong>경로</strong>: <code>API Gateway → CORS</code></p>
+<pre><code class="lang-yaml"><span class="hljs-string">CORS</span> <span class="hljs-string">필수</span> <span class="hljs-string">설정:</span>
+
+<span class="hljs-attr">Access-Control-Allow-Origin:</span>
+  <span class="hljs-string">개발:</span> <span class="hljs-string">https://local.ddcn41.com,</span> <span class="hljs-string">https://local.admin.ddcn41.com</span>
+  <span class="hljs-string">프로덕션:</span> <span class="hljs-string">https://ddcn41.com,</span> <span class="hljs-string">https://admin.ddcn41.com</span>
+
+<span class="hljs-string">⚠️</span> <span class="hljs-string">중요:</span> <span class="hljs-string">쿠키</span> <span class="hljs-string">사용</span> <span class="hljs-string">시</span> <span class="hljs-string">와일드카드(*)</span> <span class="hljs-string">사용</span> <span class="hljs-string">불가!</span>
+
+<span class="hljs-attr">Access-Control-Allow-Headers:</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-string">content-type</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-string">authorization</span>
+
+<span class="hljs-attr">Access-Control-Allow-Methods:</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-string">GET,</span> <span class="hljs-string">POST,</span> <span class="hljs-string">OPTIONS,</span> <span class="hljs-string">HEAD</span>
+
+<span class="hljs-attr">Access-Control-Allow-Credentials:</span> <span class="hljs-literal">YES</span> <span class="hljs-string">(필수!)</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-string">쿠키</span> <span class="hljs-string">전송을</span> <span class="hljs-string">위해</span> <span class="hljs-string">반드시</span> <span class="hljs-string">활성화</span>
+
+<span class="hljs-attr">Access-Control-Max-Age:</span> <span class="hljs-number">3600</span> <span class="hljs-string">(1시간)</span>
+</code></pre>
+<blockquote>
+<p>참조: <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-cors.html" target="_blank">API Gateway CORS 설정</a></p>
+</blockquote>
+<hr></hr>
+<h2 id="custom-domain-및-dns-설정">Custom Domain 및 DNS 설정</h2>
+<h3 id="acm-인증서-준비">ACM 인증서 준비</h3>
+<p><strong>경로</strong>: <code>AWS Certificate Manager (us-east-1 리전)</code></p>
+<pre><code class="lang-yaml"><span class="hljs-string">⚠️</span> <span class="hljs-string">중요:</span> <span class="hljs-string">인증서는</span> <span class="hljs-string">반드시</span> <span class="hljs-string">us-east-1에서</span> <span class="hljs-string">생성!</span>
+
+<span class="hljs-string">인증서</span> <span class="hljs-string">설정:</span>
+  <span class="hljs-attr">Domain names:</span>
+    <span class="hljs-bullet">-</span> <span class="hljs-string">accounts.ddcn41.com</span>
+    <span class="hljs-string">또는</span>
+    <span class="hljs-bullet">-</span> <span class="hljs-string">*.ddcn41.com</span> <span class="hljs-string">(와일드카드,</span> <span class="hljs-string">권장)</span>
+
+  <span class="hljs-attr">Validation:</span> <span class="hljs-string">DNS</span> <span class="hljs-string">validation</span> <span class="hljs-string">(권장)</span>
+
+<span class="hljs-string">검증</span> <span class="hljs-string">프로세스:</span>
+  <span class="hljs-number">1</span><span class="hljs-string">.</span> <span class="hljs-string">ACM이</span> <span class="hljs-string">CNAME</span> <span class="hljs-string">레코드</span> <span class="hljs-string">제공</span>
+  <span class="hljs-number">2</span><span class="hljs-string">.</span> <span class="hljs-string">Route53에</span> <span class="hljs-string">CNAME</span> <span class="hljs-string">레코드</span> <span class="hljs-string">추가</span>
+  <span class="hljs-number">3</span><span class="hljs-string">.</span> <span class="hljs-string">검증</span> <span class="hljs-string">완료</span> <span class="hljs-string">대기</span> <span class="hljs-string">(5-30분)</span>
+  <span class="hljs-number">4</span><span class="hljs-string">.</span> <span class="hljs-string">상태:</span> <span class="hljs-string">Issued</span> <span class="hljs-string">확인</span>
+</code></pre>
+<h3 id="api-gateway-custom-domain">API Gateway Custom Domain</h3>
+<p><strong>경로</strong>: <code>API Gateway → Custom domain names → Create</code></p>
+<pre><code class="lang-yaml"><span class="hljs-string">도메인</span> <span class="hljs-string">설정:</span>
+  <span class="hljs-attr">Domain name:</span> <span class="hljs-string">accounts.ddcn41.com</span>
+  <span class="hljs-attr">Endpoint type:</span> <span class="hljs-string">Regional</span> <span class="hljs-string">(권장)</span>
+  <span class="hljs-attr">TLS version:</span> <span class="hljs-string">TLS</span> <span class="hljs-number">1.2</span> <span class="hljs-string">(기본값)</span>
+  <span class="hljs-attr">ACM certificate:</span> [<span class="hljs-string">위에서</span> <span class="hljs-string">생성한</span> <span class="hljs-string">인증서</span> <span class="hljs-string">선택</span>]
+
+<span class="hljs-attr">API Mapping:</span>
+  <span class="hljs-attr">API:</span> <span class="hljs-string">api-ddcn41v2</span>
+  <span class="hljs-attr">Stage:</span> <span class="hljs-string">$default</span>
+  <span class="hljs-attr">Path:</span> <span class="hljs-string">(비어있음)</span>
+
+<span class="hljs-string">결과</span> <span class="hljs-attr">URL:</span>
+  <span class="hljs-string">https://accounts.ddcn41.com/v2/auth/login</span>
+</code></pre>
+<h3 id="기본-도메인-노출-방지">기본 도메인 노출 방지</h3>
+<p>Custom Domain 사용 시에도 기본 API Gateway 엔드포인트가 노출됩니다:</p>
+<pre><code>https://abc123xyz.execute-api.ap-northeast-2.amazonaws.com
+</code></pre><p><strong>방어 방법</strong>:</p>
+<p><strong>1. Resource Policy (권장)</strong>:</p>
+<pre><code class="lang-json">{
+  <span class="hljs-string">"Version"</span>: <span class="hljs-string">"2012-10-17"</span>,
+  <span class="hljs-string">"Statement"</span>: [{
+    <span class="hljs-string">"Effect"</span>: <span class="hljs-string">"Deny"</span>,
+    <span class="hljs-string">"Principal"</span>: <span class="hljs-string">"*"</span>,
+    <span class="hljs-string">"Action"</span>: <span class="hljs-string">"execute-api:Invoke"</span>,
+    <span class="hljs-string">"Resource"</span>: <span class="hljs-string">"arn:aws:execute-api:region:account-id:api-id/*"</span>,
+    <span class="hljs-string">"Condition"</span>: {
+      <span class="hljs-string">"StringNotEquals"</span>: {
+        <span class="hljs-string">"aws:Referer"</span>: <span class="hljs-string">"accounts.ddcn41.com"</span>
+      }
+    }
+  }]
+}
+</code></pre>
+<p><strong>2. Lambda에서 Host 헤더 검증</strong>:</p>
+<pre><code class="lang-javascript"><span class="hljs-built_in">exports</span>.<span class="hljs-property">handler</span> = <span class="hljs-title function_">async</span> (event) =&gt; {
+  <span class="hljs-keyword">const</span> host = event.<span class="hljs-property">headers</span>.<span class="hljs-property">host</span> || event.<span class="hljs-property">headers</span>.<span class="hljs-property">Host</span>;
+  <span class="hljs-keyword">const</span> allowedHosts = [<span class="hljs-string">'accounts.ddcn41.com'</span>];
+
+  <span class="hljs-keyword">if</span> (!allowedHosts.<span class="hljs-title function_">includes</span>(host)) {
+    <span class="hljs-keyword">return</span> { <span class="hljs-attr">statusCode</span>: <span class="hljs-number">403</span>, <span class="hljs-attr">body</span>: <span class="hljs-title class_">JSON</span>.<span class="hljs-title function_">stringify</span>({ <span class="hljs-attr">error</span>: <span class="hljs-string">'Forbidden'</span> }) };
+  }
+
+  <span class="hljs-comment">// 정상 처리</span>
+};
+</code></pre>
+<blockquote>
+<p>참조: <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-resource-policies.html" target="_blank">API Gateway Resource Policies</a></p>
+</blockquote>
+<h3 id="route53-dns-설정">Route53 DNS 설정</h3>
+<p><strong>경로</strong>: <code>Route53 → Hosted zones → Create record</code></p>
+<pre><code class="lang-yaml"><span class="hljs-string">A</span> <span class="hljs-string">레코드</span> <span class="hljs-string">(Alias):</span>
+  <span class="hljs-attr">Record name:</span> <span class="hljs-string">accounts</span>
+  <span class="hljs-attr">Record type:</span> <span class="hljs-string">A</span>
+
+  <span class="hljs-attr">Alias:</span> <span class="hljs-literal">YES</span> <span class="hljs-string">(필수)</span>
+  <span class="hljs-attr">Route traffic to:</span> <span class="hljs-string">Alias</span> <span class="hljs-string">to</span> <span class="hljs-string">API</span> <span class="hljs-string">Gateway</span> <span class="hljs-string">API</span>
+  <span class="hljs-attr">Region:</span> <span class="hljs-string">ap-northeast-2</span>
+  <span class="hljs-attr">Endpoint:</span> [<span class="hljs-string">자동</span> <span class="hljs-string">검색되는</span> <span class="hljs-string">API</span> <span class="hljs-string">Gateway</span> <span class="hljs-string">도메인</span>]
+
+  <span class="hljs-attr">Routing policy:</span> <span class="hljs-string">Simple</span> <span class="hljs-string">routing</span>
+  <span class="hljs-attr">Evaluate target health:</span> <span class="hljs-literal">YES</span> <span class="hljs-string">(권장)</span>
+
+<span class="hljs-string">DNS</span> <span class="hljs-string">전파:</span>
+  <span class="hljs-string">Route53</span> <span class="hljs-string">→</span> <span class="hljs-attr">API Gateway:</span> <span class="hljs-string">즉시</span> <span class="hljs-string">(수</span> <span class="hljs-string">초)</span>
+  <span class="hljs-string">글로벌</span> <span class="hljs-string">전파:</span> <span class="hljs-number">1</span><span class="hljs-number">-2</span><span class="hljs-string">분</span>
+  <span class="hljs-string">최대:</span> <span class="hljs-number">5</span><span class="hljs-string">분</span>
+</code></pre>
+<blockquote>
+<p>참조: <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-to-api-gateway.html" target="_blank">Route53 API Gateway 라우팅</a></p>
+</blockquote>
+<hr></hr>
+<h2 id="보안-고려사항">보안 고려사항</h2>
+<h3 id="쿠키-보안-설정">쿠키 보안 설정</h3>
+<pre><code class="lang-yaml"><span class="hljs-string">필수</span> <span class="hljs-string">쿠키</span> <span class="hljs-string">속성:</span>
+
+<span class="hljs-attr">HttpOnly:</span> <span class="hljs-literal">true</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-string">JavaScript</span> <span class="hljs-string">접근</span> <span class="hljs-string">차단</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-string">XSS</span> <span class="hljs-string">공격</span> <span class="hljs-string">방어</span>
+
+<span class="hljs-attr">Secure:</span> <span class="hljs-literal">true</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-string">HTTPS</span> <span class="hljs-string">전송만</span> <span class="hljs-string">허용</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-string">중간자</span> <span class="hljs-string">공격</span> <span class="hljs-string">방어</span>
+
+<span class="hljs-attr">SameSite:</span> <span class="hljs-string">None</span> <span class="hljs-string">(서브도메인</span> <span class="hljs-string">간</span> <span class="hljs-string">공유)</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-attr">Strict:</span> <span class="hljs-string">동일</span> <span class="hljs-string">사이트만</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-attr">Lax:</span> <span class="hljs-string">GET</span> <span class="hljs-string">요청</span> <span class="hljs-string">허용</span> <span class="hljs-string">(기본값)</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-attr">None:</span> <span class="hljs-string">모든</span> <span class="hljs-string">요청</span> <span class="hljs-string">허용</span> <span class="hljs-string">(Secure</span> <span class="hljs-string">필수)</span>
+
+<span class="hljs-attr">Domain:</span> <span class="hljs-string">.ddcn41.com</span> <span class="hljs-string">(점</span> <span class="hljs-string">포함!)</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-string">서브도메인</span> <span class="hljs-string">간</span> <span class="hljs-string">공유</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-string">보안</span> <span class="hljs-string">범위</span> <span class="hljs-string">최소화</span> <span class="hljs-string">원칙</span>
+
+<span class="hljs-attr">Path:</span> <span class="hljs-string">/</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-string">전체</span> <span class="hljs-string">경로</span> <span class="hljs-string">접근</span>
+</code></pre>
+<h3 id="토큰-보안">토큰 보안</h3>
+<pre><code class="lang-yaml"><span class="hljs-string">보안</span> <span class="hljs-string">원칙:</span>
+
+<span class="hljs-string">✅</span> <span class="hljs-attr">DO:</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-string">Access</span> <span class="hljs-string">Token은</span> <span class="hljs-string">짧은</span> <span class="hljs-string">수명</span> <span class="hljs-string">유지</span> <span class="hljs-string">(≤60분)</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-string">Refresh</span> <span class="hljs-string">Token은</span> <span class="hljs-string">HttpOnly</span> <span class="hljs-string">쿠키에</span> <span class="hljs-string">저장</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-string">Token</span> <span class="hljs-string">revocation</span> <span class="hljs-string">활성화</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-string">HTTPS</span> <span class="hljs-string">필수</span> <span class="hljs-string">사용</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-string">토큰</span> <span class="hljs-string">만료</span> <span class="hljs-string">시</span> <span class="hljs-string">자동</span> <span class="hljs-string">갱신</span>
+
+<span class="hljs-string">❌</span> <span class="hljs-string">DON'T:</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-string">로컬스토리지에</span> <span class="hljs-string">토큰</span> <span class="hljs-string">저장</span> <span class="hljs-string">(XSS</span> <span class="hljs-string">위험)</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-string">URL</span> <span class="hljs-string">파라미터로</span> <span class="hljs-string">토큰</span> <span class="hljs-string">전달</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-string">토큰을</span> <span class="hljs-string">로그에</span> <span class="hljs-string">기록</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-string">만료된</span> <span class="hljs-string">토큰</span> <span class="hljs-string">재사용</span>
+</code></pre>
+<h3 id="인프라-보안">인프라 보안</h3>
+<pre><code class="lang-yaml"><span class="hljs-string">Lambda</span> <span class="hljs-string">보안:</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-string">최소</span> <span class="hljs-string">권한</span> <span class="hljs-string">원칙</span> <span class="hljs-string">(IAM)</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-string">환경</span> <span class="hljs-string">변수</span> <span class="hljs-string">암호화</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-string">VPC</span> <span class="hljs-string">격리</span> <span class="hljs-string">(필요</span> <span class="hljs-string">시)</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-string">CloudWatch</span> <span class="hljs-string">로그</span> <span class="hljs-string">모니터링</span>
+
+<span class="hljs-string">API</span> <span class="hljs-string">Gateway</span> <span class="hljs-string">보안:</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-string">WAF</span> <span class="hljs-string">연동</span> <span class="hljs-string">(DDoS</span> <span class="hljs-string">방어)</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-string">Rate</span> <span class="hljs-string">limiting</span> <span class="hljs-string">(429</span> <span class="hljs-string">응답)</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-string">API</span> <span class="hljs-string">Key</span> <span class="hljs-string">관리</span> <span class="hljs-string">(필요</span> <span class="hljs-string">시)</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-string">로깅</span> <span class="hljs-string">및</span> <span class="hljs-string">모니터링</span>
+
+<span class="hljs-string">Cognito</span> <span class="hljs-string">보안:</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-string">MFA</span> <span class="hljs-string">활성화</span> <span class="hljs-string">(프로덕션)</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-string">Advanced</span> <span class="hljs-string">security</span> <span class="hljs-string">features</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-string">로그인</span> <span class="hljs-string">시도</span> <span class="hljs-string">제한</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-string">의심스러운</span> <span class="hljs-string">활동</span> <span class="hljs-string">감지</span>
+</code></pre>
+<hr></hr>
+<h2 id="운영-best-practices">운영 Best Practices</h2>
+<h3 id="모니터링-및-로깅">모니터링 및 로깅</h3>
+<pre><code class="lang-yaml"><span class="hljs-string">필수</span> <span class="hljs-string">모니터링:</span>
+
+<span class="hljs-attr">CloudWatch Metrics:</span>
+  <span class="hljs-attr">Lambda:</span>
+    <span class="hljs-bullet">-</span> <span class="hljs-string">Invocation</span> <span class="hljs-string">count</span>
+    <span class="hljs-bullet">-</span> <span class="hljs-string">Error</span> <span class="hljs-string">count</span> <span class="hljs-string">&amp;</span> <span class="hljs-string">rate</span>
+    <span class="hljs-bullet">-</span> <span class="hljs-string">Duration</span> <span class="hljs-string">(cold</span> <span class="hljs-string">start</span> <span class="hljs-string">포함)</span>
+    <span class="hljs-bullet">-</span> <span class="hljs-string">Concurrent</span> <span class="hljs-string">executions</span>
+
+  <span class="hljs-attr">API Gateway:</span>
+    <span class="hljs-bullet">-</span> <span class="hljs-string">Request</span> <span class="hljs-string">count</span>
+    <span class="hljs-bullet">-</span> <span class="hljs-string">4XX/5XX</span> <span class="hljs-string">error</span> <span class="hljs-string">rate</span>
+    <span class="hljs-bullet">-</span> <span class="hljs-string">Latency</span> <span class="hljs-string">(p50,</span> <span class="hljs-string">p99)</span>
+    <span class="hljs-bullet">-</span> <span class="hljs-string">Integration</span> <span class="hljs-string">latency</span>
+
+  <span class="hljs-attr">Cognito:</span>
+    <span class="hljs-bullet">-</span> <span class="hljs-string">Sign-in</span> <span class="hljs-string">success/failure</span>
+    <span class="hljs-bullet">-</span> <span class="hljs-string">Token</span> <span class="hljs-string">generation</span>
+    <span class="hljs-bullet">-</span> <span class="hljs-string">User</span> <span class="hljs-string">pool</span> <span class="hljs-string">size</span>
+
+<span class="hljs-attr">CloudWatch Alarms:</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-string">5XX</span> <span class="hljs-string">에러율</span> <span class="hljs-string">&gt;</span> <span class="hljs-number">1</span><span class="hljs-string">%</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-string">Lambda</span> <span class="hljs-string">duration</span> <span class="hljs-string">&gt;</span> <span class="hljs-string">3000ms</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-string">API</span> <span class="hljs-string">Gateway</span> <span class="hljs-string">4XX</span> <span class="hljs-string">&gt;</span> <span class="hljs-number">10</span><span class="hljs-string">%</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-string">Cognito</span> <span class="hljs-string">로그인</span> <span class="hljs-string">실패율</span> <span class="hljs-string">&gt;</span> <span class="hljs-number">5</span><span class="hljs-string">%</span>
+</code></pre>
+<h3 id="성능-최적화">성능 최적화</h3>
+<pre><code class="lang-yaml"><span class="hljs-string">Lambda</span> <span class="hljs-string">최적화:</span>
+  <span class="hljs-string">✅</span> <span class="hljs-string">Cold</span> <span class="hljs-string">start</span> <span class="hljs-string">최소화:</span>
+    <span class="hljs-bullet">-</span> <span class="hljs-string">Provisioned</span> <span class="hljs-string">concurrency</span> <span class="hljs-string">(트래픽</span> <span class="hljs-string">예측</span> <span class="hljs-string">가능</span> <span class="hljs-string">시)</span>
+    <span class="hljs-bullet">-</span> <span class="hljs-string">최소</span> <span class="hljs-string">의존성</span> <span class="hljs-string">패키지</span>
+    <span class="hljs-bullet">-</span> <span class="hljs-string">연결</span> <span class="hljs-string">재사용</span> <span class="hljs-string">(Cognito</span> <span class="hljs-string">client)</span>
+
+  <span class="hljs-string">✅</span> <span class="hljs-string">메모리</span> <span class="hljs-string">튜닝:</span>
+    <span class="hljs-bullet">-</span> <span class="hljs-attr">128MB:</span> <span class="hljs-string">단순</span> <span class="hljs-string">인증</span> <span class="hljs-string">(저비용)</span>
+    <span class="hljs-bullet">-</span> <span class="hljs-attr">256MB:</span> <span class="hljs-string">표준</span> <span class="hljs-string">권장</span>
+    <span class="hljs-bullet">-</span> <span class="hljs-attr">512MB:</span> <span class="hljs-string">복잡한</span> <span class="hljs-string">로직</span>
+
+<span class="hljs-attr">API Gateway:</span>
+  <span class="hljs-string">✅</span> <span class="hljs-string">캐싱</span> <span class="hljs-string">(신중히):</span>
+    <span class="hljs-bullet">-</span> <span class="hljs-string">/me</span> <span class="hljs-string">엔드포인트:</span> <span class="hljs-string">짧은</span> <span class="hljs-string">TTL</span> <span class="hljs-string">(30초)</span>
+    <span class="hljs-bullet">-</span> <span class="hljs-string">/login,</span> <span class="hljs-string">/logout:</span> <span class="hljs-string">캐싱</span> <span class="hljs-string">비활성화</span>
+
+  <span class="hljs-string">✅</span> <span class="hljs-attr">Throttling:</span>
+    <span class="hljs-bullet">-</span> <span class="hljs-attr">Rate limit:</span> <span class="hljs-number">1000 </span><span class="hljs-string">req/sec</span>
+    <span class="hljs-bullet">-</span> <span class="hljs-attr">Burst limit:</span> <span class="hljs-number">2000 </span><span class="hljs-string">req</span>
+</code></pre>
+<h3 id="비용-최적화">비용 최적화</h3>
+<pre><code class="lang-yaml"><span class="hljs-string">서비스별</span> <span class="hljs-string">비용</span> <span class="hljs-string">구조:</span>
+
+<span class="hljs-attr">Cognito:</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-string">월</span> <span class="hljs-number">50</span><span class="hljs-string">,000</span> <span class="hljs-string">MAU까지</span> <span class="hljs-string">무료</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-string">이후:</span> <span class="hljs-string">$0.00550/MAU</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-attr">MFA SMS:</span> <span class="hljs-string">별도</span> <span class="hljs-string">과금</span>
+
+<span class="hljs-attr">Lambda:</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-string">월</span> <span class="hljs-number">100</span><span class="hljs-string">만</span> <span class="hljs-string">요청</span> <span class="hljs-string">무료</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-string">이후:</span> <span class="hljs-string">$0.20/100만</span> <span class="hljs-string">요청</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-attr">Duration:</span> <span class="hljs-string">$0.0000166667/GB-초</span>
+
+<span class="hljs-attr">API Gateway:</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-string">월</span> <span class="hljs-number">100</span><span class="hljs-string">만</span> <span class="hljs-string">요청</span> <span class="hljs-string">무료</span> <span class="hljs-string">(12개월)</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-string">이후:</span> <span class="hljs-string">$1.00/100만</span> <span class="hljs-string">요청</span>
+
+<span class="hljs-string">최적화</span> <span class="hljs-string">팁:</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-string">Lambda</span> <span class="hljs-string">arm64</span> <span class="hljs-string">사용</span> <span class="hljs-string">(20%</span> <span class="hljs-string">절감)</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-string">HTTP</span> <span class="hljs-string">API</span> <span class="hljs-string">사용</span> <span class="hljs-string">(REST</span> <span class="hljs-string">API</span> <span class="hljs-string">대비</span> <span class="hljs-number">70</span><span class="hljs-string">%</span> <span class="hljs-string">저렴)</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-string">CloudWatch</span> <span class="hljs-string">로그</span> <span class="hljs-string">보존</span> <span class="hljs-string">기간</span> <span class="hljs-string">설정</span>
+</code></pre>
+<h3 id="재해-복구-및-백업">재해 복구 및 백업</h3>
+<pre><code class="lang-yaml"><span class="hljs-string">백업</span> <span class="hljs-string">전략:</span>
+
+<span class="hljs-attr">Cognito User Pool:</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-string">CSV</span> <span class="hljs-string">내보내기</span> <span class="hljs-string">(정기</span> <span class="hljs-string">백업)</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-string">Lambda</span> <span class="hljs-string">트리거로</span> <span class="hljs-string">자동화</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-string">S3</span> <span class="hljs-string">암호화</span> <span class="hljs-string">저장</span>
+
+<span class="hljs-attr">Infrastructure as Code:</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-string">Terraform/CloudFormation</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-string">Git</span> <span class="hljs-string">버전</span> <span class="hljs-string">관리</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-string">다중</span> <span class="hljs-string">리전</span> <span class="hljs-string">배포</span> <span class="hljs-string">(DR)</span>
+
+<span class="hljs-string">복구</span> <span class="hljs-string">시나리오:</span>
+  <span class="hljs-number">1</span><span class="hljs-string">.</span> <span class="hljs-string">User</span> <span class="hljs-string">Pool</span> <span class="hljs-string">삭제:</span> <span class="hljs-string">백업에서</span> <span class="hljs-string">복원</span>
+  <span class="hljs-number">2</span><span class="hljs-string">.</span> <span class="hljs-string">Lambda</span> <span class="hljs-string">장애:</span> <span class="hljs-string">버전</span> <span class="hljs-string">롤백</span>
+  <span class="hljs-number">3</span><span class="hljs-string">.</span> <span class="hljs-string">API</span> <span class="hljs-string">Gateway</span> <span class="hljs-string">장애:</span> <span class="hljs-string">다른</span> <span class="hljs-string">리전</span> <span class="hljs-string">failover</span>
+  <span class="hljs-number">4</span><span class="hljs-string">.</span> <span class="hljs-string">리전</span> <span class="hljs-string">장애:</span> <span class="hljs-string">Cross-region</span> <span class="hljs-string">replication</span>
+</code></pre>
+<hr></hr>
+<h2 id="참고-문서">참고 문서</h2>
+<h3 id="aws-cognito">AWS Cognito</h3>
+<ul>
+<li><a href="https://docs.aws.amazon.com/cognito/latest/developerguide/" target="_blank">Amazon Cognito Developer Guide</a></li>
+<li><a href="https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-authentication-flow.html" target="_blank">User Pool Authentication Flow</a></li>
+<li><a href="https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-using-tokens-with-identity-providers.html" target="_blank">Using Tokens with User Pools</a></li>
+<li><a href="https://docs.aws.amazon.com/cognito/latest/developerguide/token-revocation.html" target="_blank">Token Revocation</a></li>
+</ul>
+<h3 id="api-gateway--lambda">API Gateway &amp; Lambda</h3>
+<ul>
+<li><a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api.html" target="_blank">HTTP API Developer Guide</a></li>
+<li><a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-cors.html" target="_blank">Working with CORS</a></li>
+<li><a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-custom-domains.html" target="_blank">Custom Domain Names</a></li>
+<li><a href="https://docs.aws.amazon.com/lambda/latest/dg/best-practices.html" target="_blank">Lambda Best Practices</a></li>
+</ul>
+<h3 id="route53--security">Route53 &amp; Security</h3>
+<ul>
+<li><a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-to-api-gateway.html" target="_blank">Routing Traffic to API Gateway</a></li>
+<li><a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-resource-policies.html" target="_blank">API Gateway Resource Policies</a></li>
+</ul>
+<hr></hr>
+<p><strong>작성일</strong>: 2025-10-13<br></br><strong>최종 업데이트</strong>: 2025-10-13</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="CICD.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: CICD">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"AWS Cognito 인증 시스템 구축 가이드","level":"8.2","depth":1,"previous":{"title":"CICD","level":"8.1","depth":1,"path":"11-infra/CICD.md","ref":"11-infra/CICD.md","articles":[]},"dir":"ltr"},"config":{"plugins":["mermaid-gb3"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"mermaid-gb3":{"theme":"default"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"공연 티켓팅 서비스 GitBook","gitbook":"*"},"file":{"path":"11-infra/cognito-infra-setup.md","mtime":"2025-10-14T05:09:03.453Z","type":"markdown"},"gitbook":{"version":"6.0.3","time":"2025-10-14T05:09:15.772Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    
+    <noscript>
+        <style>
+            .honkit-cloak {
+                display: block !important;
+            }
+        </style>
+    </noscript>
+    <script>
+        // Restore sidebar state as critical path for prevent layout shift
+        function __init__getSidebarState(defaultValue){
+            var baseKey = "";
+            var key = baseKey + ":sidebar";
+            try {
+                var value = localStorage[key];
+                if (value === undefined) {
+                    return defaultValue;
+                }
+                var parsed = JSON.parse(value);
+                return parsed == null ? defaultValue : parsed;
+            } catch (e) {
+                return defaultValue;
+            }
+        }
+        function __init__restoreLastSidebarState() {
+            var isMobile = window.matchMedia("(max-width: 600px)").matches;
+            if (isMobile) {
+                // Init last state if not mobile
+                return;
+            }
+            var sidebarState = __init__getSidebarState(true);
+            var book = document.querySelector(".book");
+            // Show sidebar if it enabled
+            if (sidebarState && book) {
+                book.classList.add("without-animation", "with-summary");
+            }
+        }
+
+        try {
+            __init__restoreLastSidebarState();
+        } finally {
+            var book = document.querySelector(".book");
+            book.classList.remove("honkit-cloak");
+        }
+    </script>
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-mermaid-gb3/book/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/@honkit/honkit-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    <script src="../gitbook/gitbook-plugin-mermaid-gb3/mermaid/mermaid.min.js"></script>
+
+    </body>
+</html>
+
