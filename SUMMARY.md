@@ -29,6 +29,8 @@
 * [Spring Boot Actuator](07-backend/06-springboot-actuator.md)
 * [티켓팅 시스템 대기열(Queue)](07-backend/queue-structure.md)
 * [좌석 락 시스템 가이드](07-backend/seat-lock-structure.md)
+* [MSA 환경에서 쿠키 기반 인증을 선택한 이유](07-backend/why-cookie-based-auth.md)
 
 ## Infra
 * [CICD](11-infra/CICD.md)
+* [AWS Cognito 인증 시스템 구축 가이드](11-infra/cognito-infra-setup.md)
